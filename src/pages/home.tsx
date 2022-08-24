@@ -48,7 +48,7 @@ const home: NextPage = () => {
             <div className="home_content">
                 <p className="home_title _title">Customer Care</p>
                 <p className="home_text _body">How can we help? Find all your answers in one place.</p>
-                <div className="home_panels">
+                <div className="home_container1">
                     <div className="home_panel"> 
                         <svg className="home_icon" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M58.3333 61.25V55.4167C58.3333 52.3225 57.1041 49.355 54.9162 47.1671C52.7283 44.9792 49.7608 43.75 46.6666 43.75H23.3333C20.2391 43.75 17.2716 44.9792 15.0837 47.1671C12.8958 49.355 11.6666 52.3225 11.6666 55.4167V61.25" stroke="#667080" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -72,9 +72,11 @@ const home: NextPage = () => {
                     </div>
                 </div>
 
-                <div className="home_panels2">
-                    <p className="home_bot_text _h3">Still need help?</p>
-                    <p className="home_bot_caption _body">Contact Us</p>
+                <div className="home_container2">
+                    <div className="home_panel2">
+                        <p className="home_bot_text _h3">Still need help?</p>
+                        <p className="home_bot_caption _body">Contact Us</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -22,8 +22,6 @@
 
   letter-spacing: -0.02em;
   text-align: center;
-
-  color: #000000;
 }
 
 ._h3 {
@@ -86,6 +84,11 @@
   justify-content: space-evenly;
 }
 
+.home_header_right :hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .home_header_text {
   bottom: 50%;
 }
@@ -97,7 +100,7 @@
   height: 87.5vh;
 }
 
-.home_panels {
+.home_container1 {
   position: absolute;
   left: 10%;
   top: 40%;
@@ -107,6 +110,12 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: white;
+}
+
+.home_container1 :hover {
+  background-color: aquamarine;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .home_panel {
@@ -131,13 +140,24 @@
   transform: translate(-50%, -50%); /*anchor center-center*/
 }
 
-.home_panels2 {
+.home_container2 {
   position: absolute;
   left: 10%;
   top: 70%;
   margin-top: 2.5vw;
   width: 80%;
   height: 17.5%;
+}
+
+.home_container2 :hover {
+  background-color: aquamarine;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.home_panel2 {
+  width: 100%;
+  height: 100%;
   background-color: #D9D9D9;
 }
 
