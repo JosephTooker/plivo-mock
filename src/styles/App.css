@@ -7,7 +7,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  font-size: 7.5vmin;
+  font-size: max(32px, 7.5vmin);
   line-height: 22px;
   text-align: center;
 }
@@ -16,7 +16,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.8vmin;
+  font-size: max(12px, 1.8vmin);
   line-height: 22px;
   /* identical to box height, or 138% */
 
@@ -30,7 +30,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  font-size: 2.4vmin;
+  font-size: max(16px, 2.4vmin);
   line-height: 22px;
 }
 
@@ -38,7 +38,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 2vmin;
+  font-size: max(14px, 2vmin);
   line-height: 130%;
   /* identical to box height, or 21px */
 
