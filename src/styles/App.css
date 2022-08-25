@@ -179,12 +179,13 @@
   border: 3px solid green;
 }
 
+/* SUPPORT MODAL*/
 
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
+}
 
-
-
-
-
+/* SUPPORT MODAL*/
 :root {
   --primary-color: #005fff;
   --primary-color-alpha: #005fff1a;
