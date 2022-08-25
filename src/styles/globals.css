@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 title {
-  font-family: 'Roboto';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 700;
   font-size: 64px;
@@ -15,11 +15,11 @@ title {
 }
 
 h1 {
-  font-family: "Roboto";
+  font-family: "Roboto Flex";
 }
 
 body {
-  font-family: "Roboto";
+  font-family: "Roboto Flex";
 }
 
 a {

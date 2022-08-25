@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 ._title {
-  font-family: "Roboto";
+  font-family: "Roboto Flex";
   font-style: normal;
   font-weight: 700;
   font-size: max(32px, 7.5vmin);
@@ -13,7 +12,7 @@
 }
 
 ._body {
-  font-family: "Roboto";
+  font-family: "Roboto Flex";
   font-style: normal;
   font-weight: 400;
   font-size: max(12px, 1.8vmin);
@@ -25,7 +24,7 @@
 }
 
 ._h3 {
-  font-family: "Roboto";
+  font-family: "Roboto Flex";
   font-style: normal;
   font-weight: 500;
   font-size: max(16px, 2.4vmin);
@@ -33,7 +32,7 @@
 }
 
 ._h5 {
-  font-family: 'Roboto';
+  font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 500;
   font-size: max(14px, 2vmin);
@@ -103,7 +102,7 @@
 .home_container1 {
   position: absolute;
   left: 10%;
-  top: 40%;
+  top: 35%;
   width: 80vw;
   height: 30%;
   display: flex;
@@ -120,7 +119,7 @@
 
 .home_panel {
   position: relative;
-  width: 25vw;
+  width: 25.5vw;
   height: 100%;
   text-align: center;
   background-color: #D9D9D9;
@@ -143,7 +142,7 @@
 .home_container2 {
   position: absolute;
   left: 10%;
-  top: 70%;
+  top: 63.5%;
   margin-top: 2.5vw;
   width: 80%;
   height: 17.5%;

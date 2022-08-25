@@ -1,5 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
+import SupportModal from "../components/SupportModal";
 
 /*
 const GroupCard = (props : any) => {
@@ -46,6 +47,8 @@ const home: NextPage = () => {
             </div>
 
             <div className="home_content">
+                <SupportModal/>
+
                 <p className="home_title _title">Customer Care</p>
                 <p className="home_text _body">How can we help? Find all your answers in one place.</p>
                 <div className="home_container1">
