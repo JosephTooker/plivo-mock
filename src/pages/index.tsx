@@ -10,7 +10,7 @@ const apiKey = 'nypvarqgsd9a';
 
 const client = StreamChat.getInstance(apiKey)
 
-const authToken = false
+const authToken = true
 
 const Home: NextPage = () => {
 
