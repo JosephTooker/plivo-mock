@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Cookies from "universal-cookie";
+import Link from "next/link";
 
 export default function login() {
     return (
@@ -76,7 +78,7 @@ export default function login() {
               <p className="text-center">
                 Not registered yet?{" "}
                 <a
-                  href="#"
+                  href="/signup"
                   className="text-indigo-600 font-medium inline-flex space-x-1 items-center"
                 >
                   <span>Register now </span>
