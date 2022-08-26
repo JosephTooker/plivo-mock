@@ -85,58 +85,58 @@ export default function ContactUs() {
 
       <label
         htmlFor="fullname"
-        className="text-gray-500 font-light mt-8 dark:text-gray-50"
+        className="text-black font-light mt-8 dark:text-gray-50"
       >
         Full name <span className="text-red-500 dark:text-gray-50">*</span>
       </label>
       <input
         type="text"
         name="fullname"
-        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       />
 
       <label
         htmlFor="email"
-        className="text-gray-500 font-light mt-4 dark:text-gray-50"
+        className="text-black font-light mt-4 dark:text-gray-50"
       >
         E-mail <span className="text-red-500">*</span>
       </label>
       <input
         type="email"
         name="email"
-        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       />
 
       <label
         htmlFor="subject"
-        className="text-gray-500 font-light mt-4 dark:text-gray-50"
+        className="text-black font-light mt-4 dark:text-gray-50"
       >
         Subject <span className="text-red-500">*</span>
       </label>
       <input
         type="text"
         name="subject"
-        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       />
 
       <label
         htmlFor="message"
-        className="text-gray-500 font-light mt-4 dark:text-gray-50"
+        className="text-black  font-light mt-4 dark:text-gray-50"
       >
         How can we help you? <span className="text-red-500">*</span>
       </label>
       <textarea
         name="message"
-        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       ></textarea>
-      <div className="flex flex-row items-center justify-start">
-        <button className="px-10 mt-8 mb-8 py-2 bg-[#130F49] text-gray-50 font-light text-lg flex flex-row items-center">
+      <div className="flex flex-row justify-center">
+        <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#9DA09F] text-gray-50 font-light text-lg  ">
           Send
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            className="text-cyan-500 ml-2"
+            className="white ml-2"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
