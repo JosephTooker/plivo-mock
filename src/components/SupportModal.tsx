@@ -89,33 +89,32 @@ export default function SupportModal() {
 
         </div>  
 
-
-        {menu === "Default" && 
-        <div className="bg=[#F5F5F5] p-8">
-            <h1 className="font-semibold py-2 underline">Suggestions</h1>
-            <div className='flex flex-col justify-start'>
-            <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Message")} }>1. Leave a message</button>
-            <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Text")} }>2. Send us a text</button>
-            </div>
-            <hr className='self-center border-1 border-black mt-28'></hr>
-            <button type="submit" className="text-start py-2 text-[#667080] hover:underline" onClick={()=> {setMenu("Chat")} }>Chat with us</button>
-            
-          </div>
-        }
         <div className="support-modal-content">
-        {menu === "Message" && 
-        <ContactUs />
-        }
 
-        {menu === "Text" && 
-        <div />
-        }
+            {menu === "Default" && 
+            <div className="bg=[#F5F5F5] p-8">
+                <h1 className="font-semibold py-2 underline">Suggestions</h1>
+                <div className='flex flex-col justify-start'>
+                <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Message")} }>1. Leave a message</button>
+                <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Text")} }>2. Send us a text</button>
+                </div>
+                <hr className='self-center border-1 border-black mt-28'></hr>
+                <button type="submit" className="text-start py-2 text-[#667080] hover:underline" onClick={()=> {setMenu("Chat")} }>Chat with us</button>
+                
+            </div>
+            }
+                {menu === "Message" && 
+                <ContactUs />
+                }
 
-        {menu === "Chat" && 
-        <div />
-        }
+                {menu === "Text" && 
+                <div />
+                }
+
+                {menu === "Chat" && 
+                <div />
+                }
         </div>
-
 
         </form>
       </div>

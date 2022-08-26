@@ -186,7 +186,8 @@
 }
 
 .support-modal-content{
-   overflow: scroll ;
+  overflow-y: auto;
+   height: 85%;
 }
 
 /* SUPPORT MODAL*/
