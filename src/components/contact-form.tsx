@@ -87,7 +87,7 @@ export default function ContactUs() {
         htmlFor="fullname"
         className="text-gray-500 font-light mt-8 dark:text-gray-50"
       >
-        Full name<span className="text-red-500 dark:text-gray-50">*</span>
+        Full name <span className="text-red-500 dark:text-gray-50">*</span>
       </label>
       <input
         type="text"
@@ -99,7 +99,7 @@ export default function ContactUs() {
         htmlFor="email"
         className="text-gray-500 font-light mt-4 dark:text-gray-50"
       >
-        E-mail<span className="text-red-500">*</span>
+        E-mail <span className="text-red-500">*</span>
       </label>
       <input
         type="email"
@@ -111,7 +111,7 @@ export default function ContactUs() {
         htmlFor="subject"
         className="text-gray-500 font-light mt-4 dark:text-gray-50"
       >
-        Subject<span className="text-red-500">*</span>
+        Subject <span className="text-red-500">*</span>
       </label>
       <input
         type="text"
@@ -123,14 +123,14 @@ export default function ContactUs() {
         htmlFor="message"
         className="text-gray-500 font-light mt-4 dark:text-gray-50"
       >
-        Message<span className="text-red-500">*</span>
+        How can we help you? <span className="text-red-500">*</span>
       </label>
       <textarea
         name="message"
         className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       ></textarea>
       <div className="flex flex-row items-center justify-start">
-        <button className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light text-lg flex flex-row items-center">
+        <button className="px-10 mt-8 mb-8 py-2 bg-[#130F49] text-gray-50 font-light text-lg flex flex-row items-center">
           Send
           <svg
             width="24"

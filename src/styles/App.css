@@ -185,6 +185,10 @@
   --tw-bg-opacity: 0.5;
 }
 
+.support-modal-content{
+   overflow: scroll ;
+}
+
 /* SUPPORT MODAL*/
 :root {
   --primary-color: #005fff;

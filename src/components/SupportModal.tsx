@@ -102,7 +102,7 @@ export default function SupportModal() {
             
           </div>
         }
-
+        <div className="support-modal-content">
         {menu === "Message" && 
         <ContactUs />
         }
@@ -114,6 +114,8 @@ export default function SupportModal() {
         {menu === "Chat" && 
         <div />
         }
+        </div>
+
 
         </form>
       </div>
