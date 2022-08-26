@@ -190,6 +190,14 @@
    height: 85%;
 }
 
+.PhoneInputInput {
+  border: none;
+}
+
+.PhoneInputInput:focus {
+  box-shadow: none;
+}
+
 /* SUPPORT MODAL*/
 :root {
   --primary-color: #005fff;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ContactUs from "./contact-form";
+import TextUs from "./text-form";
 
 export default function SupportModal() {
   const [hideModal, setHideModal] = useState(true);
@@ -108,7 +109,7 @@ export default function SupportModal() {
                 }
 
                 {menu === "Text" && 
-                <div />
+                <TextUs />
                 }
 
                 {menu === "Chat" && 

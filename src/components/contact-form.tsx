@@ -93,6 +93,7 @@ export default function ContactUs() {
         type="text"
         name="fullname"
         className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        required
       />
 
       <label
@@ -105,6 +106,7 @@ export default function ContactUs() {
         type="email"
         name="email"
         className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        required
       />
 
       <label
@@ -117,6 +119,7 @@ export default function ContactUs() {
         type="text"
         name="subject"
         className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        required
       />
 
       <label
@@ -128,6 +131,7 @@ export default function ContactUs() {
       <textarea
         name="message"
         className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+        required
       ></textarea>
       <div className="flex flex-row justify-center">
         <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#9DA09F] text-gray-50 font-light text-lg  ">
