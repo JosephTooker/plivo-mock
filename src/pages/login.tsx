@@ -37,12 +37,11 @@ export default function login() {
   }
 
     return (
-      <div className="min-h-screen  sm:flex sm:flex-row  justify-center ">
-        <div className=" mx-auto my-10 bg-gray-200 px-80  py-40  lg:p-50 ms:p-10 ss:p-5 rounded-3xl shadow-xl xl:m-20 m-6 ">
-          <h1 className="text-4xl font-medium">Login</h1>
-          <p className="text-slate-500">Hi, Welcome back 👋</p>
+      <div className="flex flex-row">
+        <div className="flex flex-col min-h-screen lg:w-[50%] align-middle justify-center text-center bg-white px-[10%] sm:w-[100%] scale-[80%]">
+          <h1 className="text-3xl font-medium">Welcome Back.👋 </h1>
           <div className="my-5">
-            <button className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
+            <button className="w-full text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
               <img
                 src="https://www.svgrepo.com/show/355037/google.svg"
                 className="w-6 h-6"
@@ -51,8 +50,15 @@ export default function login() {
               <span>Login with Google</span>
             </button>
           </div>
+
+          <div className="flex flex-row justify-evenly">
+            <div className="w-[100%] border-b border-gray-300 mb-2"/> <p className="mx-2"> Or </p> <div className="w-[100%] border-b border-gray-300 mb-2"/>
+          </div>
+
+          
+          <p className="text-slate-500 mt-5">Please enter your details. </p>
   
-          <form action="" className="my-10">
+          <form action="" className="my-5">
             <div className="flex flex-col space-y-5">
               <label htmlFor="email">
                 <p className="font-medium text-slate-700 pb-2">Email address</p>
@@ -80,7 +86,7 @@ export default function login() {
                     <input
                       type="checkbox"
                       id="remember"
-                      className="w-4 h-4 border-slate-200 focus:bg-indigo-600"
+                      className="mr-2 w-4 h-4 border-slate-200 focus:bg-indigo-600 rounded"
                     />
                     Remember me
                   </label>
@@ -136,14 +142,11 @@ export default function login() {
             </div>
           </form>
         </div>
-        <div className="flex-col flex  self-center lg:p-10 sm:max-w-5xl xl:max-w-lg  z-10 sm:p-1">
-          <div className="self-start hidden lg:flex flex-col  text-white">
-            <div className="flex items-center mb-5">
-              <img className="filter drop-shadow-lg" />
-            </div>
-            <h1 className="my-3 font-semibold text-5xl">Random text</h1>
+
+        <div className="sm:w-[50%] flex-col flex bg-[#F5F5F5] justify-center text-center">
+            <h1 className="my-3 font-semibold text-5xl text-white">Put Image Here</h1>
           </div>
-        </div>
+        
       </div>
     );
   }
