@@ -61,7 +61,7 @@ const signup = () => {
     if (userType === "User") {
       window.location.href = "http://localhost:3000/home";
     } else {
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "http://localhost:3000/dashboard";
     }
   };
 
