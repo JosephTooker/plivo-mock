@@ -27,7 +27,7 @@ export default function TextUs() {
           >
             Phone number <span className="text-red-500">*</span> <p className='text-gray-500 italic py-2'>Example: (123)-456-7890</p>
           </label>
-          
+
           <PhoneInput
             maxLength="14"
             country="US"
@@ -44,6 +44,8 @@ export default function TextUs() {
             How can we help you? <span className="text-red-500">*</span>
           </label>
           <textarea
+            placeholder='Type up to 180 characters'
+            maxLength={180}
             name="message"
             className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
           ></textarea>

@@ -21,7 +21,7 @@ export default function SupportModal() {
           <div className="flex flex-row h-[15%] items-center bg-[#9DA09F] px-8 rounded-t-md">
           { menu === "Default" && 
           <>
-            <h1 className="flex-auto font-semibold text-center text-white">
+            <h1 className="flex-auto ml-5 font-semibold text-center text-white">
               How can we help?
             </h1>
             <button className="flex-initial" type="button" onClick={onClose}>
@@ -69,21 +69,21 @@ export default function SupportModal() {
         }
 
         {menu === "Message" && 
-            <h1 className="flex-auto font-semibold text-center text-white">
+            <h1 className="flex-auto mr-5 font-semibold text-center text-white">
             Leave us a message
         </h1>
         }
 
         
         {menu === "Text" && 
-            <h1 className="flex-auto font-semibold text-center text-white">
+            <h1 className="flex-auto mr-5 font-semibold text-center text-white">
             Send us a text
         </h1>
         }
 
         
         {menu === "Chat" && 
-            <h1 className="flex-auto font-semibold text-center text-white">
+            <h1 className="flex-auto mr-5 font-semibold text-center text-white">
             Chat with us
         </h1>
         }
@@ -97,7 +97,7 @@ export default function SupportModal() {
                 <h1 className="font-semibold py-2 underline">Suggestions</h1>
                 <div className='flex flex-col justify-start'>
                 <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Message")} }>1. Leave a message</button>
-                <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Text")} }>2. Send us a text</button>
+                <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Text")} }>2. Send a text</button>
                 </div>
                 <hr className='self-center border-1 border-black mt-28'></hr>
                 <button type="submit" className="text-start py-2 text-[#667080] hover:underline" onClick={()=> {setMenu("Chat")} }>Chat with us</button>
