@@ -6,11 +6,23 @@ import Cookies from "universal-cookie";
 import { ChannelContainer, ChannelListContainer } from '../components'
 import Link from "next/link";
 
+const cookies = new Cookies()
+
 const apiKey = 'nypvarqgsd9a';
 
 const client = StreamChat.getInstance(apiKey)
 
-const authToken = true
+const authToken = cookies.get('token')
+
+if(authToken) {
+  client.connectUser({
+    id: cookies.get('userId'),
+    name: cookies.get('email'),
+    firstName: cookies.get('firstName'),
+    lastName: cookies.get('lastName'),
+    hashedPassword: cookies.get('hashedPassword')
+  }, authToken)
+}
 
 const Home: NextPage = () => {
 

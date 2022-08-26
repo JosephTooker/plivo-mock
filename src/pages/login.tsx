@@ -2,7 +2,40 @@ import React, { useState } from "react";
 import Cookies from "universal-cookie";
 import Link from "next/link";
 
+const cookies = new Cookies()
+
 export default function login() {
+
+  const [form, setForm] = useState()
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(form)
+
+    const { email, password, userType } = form
+
+    const URL = 'http://localhost:5000/auth'
+
+    const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/signup`, {
+        email, password
+    })
+
+    cookies.set('token', token)
+    cookies.set('email', email)
+    cookies.set('userId', userId)
+
+    if(userType === 'User') {
+        window.location.href = 'http://localhost:3000/home'
+    } else {
+        window.location.href = 'http://localhost:3000/'
+    }
+
+  }
+
     return (
       <div className="min-h-screen  sm:flex sm:flex-row  justify-center ">
         <div className=" mx-auto my-10 bg-gray-200 px-80  py-40  lg:p-50 ms:p-10 ss:p-5 rounded-3xl shadow-xl xl:m-20 m-6 ">
