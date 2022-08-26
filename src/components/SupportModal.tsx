@@ -28,12 +28,12 @@ export default function SupportModal() {
                 <div className="bg=[#F5F5F5] p-8">
                     <h1 className="font-semibold py-2 underline">Suggestions</h1>
                     <div className='flex flex-col justify-start'>
-                    <button type="submit" className="font-semibold text-start py-2" onClick={()=> {setMenu("Message")} }>1. Leave a message</button>
-                    <button type="submit" className="font-semibold text-start py-2" onClick={()=> {setMenu("Text")} }>2. Send us a text</button>
+                    <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Message")} }>1. Leave a message</button>
+                    <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Text")} }>2. Send us a text</button>
                     </div>
                     
                     <hr className='self-center border-1 border-black mt-28'></hr>
-                    <button type="submit" className="text-start py-2 text-[#667080]" onClick={()=> {setMenu("Chat")} }>Chat with us</button>
+                    <button type="submit" className="text-start py-2 text-[#667080] hover:underline" onClick={()=> {setMenu("Chat")} }>Chat with us</button>
 
                 </div>
             </form>
