@@ -81,8 +81,7 @@ export default function ContactUs() {
     console.log(fullname, email, subject, message);
   };
   return (
-    <form className="rounded-lg shadow-xl flex flex-col px-8 py-8">
-      <h1 className="text-2xl font-bold dark:text-gray-50">Send a message</h1>
+    <form className="rounded-lg flex flex-col px-8">
 
       <label
         htmlFor="fullname"
@@ -93,7 +92,7 @@ export default function ContactUs() {
       <input
         type="text"
         name="fullname"
-        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       />
 
       <label
@@ -105,7 +104,7 @@ export default function ContactUs() {
       <input
         type="email"
         name="email"
-        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       />
 
       <label
@@ -117,7 +116,7 @@ export default function ContactUs() {
       <input
         type="text"
         name="subject"
-        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       />
 
       <label
@@ -128,10 +127,10 @@ export default function ContactUs() {
       </label>
       <textarea
         name="message"
-        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+        className="bg-white border-b py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
       ></textarea>
       <div className="flex flex-row items-center justify-start">
-        <button className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center">
+        <button className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light text-lg flex flex-row items-center">
           Send
           <svg
             width="24"

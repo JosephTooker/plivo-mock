@@ -16,8 +16,10 @@ export default function SupportModal() {
   const Default = () => {
     return (
       <div className="chat-popup" id="myForm" hidden={hideModal}>
-        <form className="fixed z-50 gap-x-2.5 w-[25%] top-[40%] bottom-[3.9%] right-[3.05%] flex-col bg-[#F5F5F5] rounded-md">
+        <form className="flex fixed z-50 gap-x-2.5 w-[25%] top-[40%] bottom-[3.9%] right-[3.05%] flex-col bg-[#F5F5F5] rounded-md">
           <div className="flex flex-row h-[15%] items-center bg-[#9DA09F] px-8 rounded-t-md">
+          { menu === "Default" && 
+          <>
             <h1 className="flex-auto font-semibold text-center text-white">
               How can we help?
             </h1>
@@ -37,165 +39,82 @@ export default function SupportModal() {
                 />
               </svg>
             </button>
-          </div>
+            </>
+            }
 
+        {menu !== "Default" && 
+          <button
+            className="flex-initial"
+            type="button"
+            onClick={() => {
+              setMenu("Default");
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="white"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
+            </svg>
+          </button>
+        }
+
+        {menu === "Message" && 
+            <h1 className="flex-auto font-semibold text-center text-white">
+            Leave us a message
+        </h1>
+        }
+
+        
+        {menu === "Text" && 
+            <h1 className="flex-auto font-semibold text-center text-white">
+            Send us a text
+        </h1>
+        }
+
+        
+        {menu === "Chat" && 
+            <h1 className="flex-auto font-semibold text-center text-white">
+            Chat with us
+        </h1>
+        }
+
+        </div>  
+
+
+        {menu === "Default" && 
         <div className="bg=[#F5F5F5] p-8">
             <h1 className="font-semibold py-2 underline">Suggestions</h1>
             <div className='flex flex-col justify-start'>
             <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Message")} }>1. Leave a message</button>
             <button type="submit" className="font-semibold text-start py-2 hover:underline" onClick={()=> {setMenu("Text")} }>2. Send us a text</button>
             </div>
-    
             <hr className='self-center border-1 border-black mt-28'></hr>
             <button type="submit" className="text-start py-2 text-[#667080] hover:underline" onClick={()=> {setMenu("Chat")} }>Chat with us</button>
             
           </div>
-        </form>
-      </div>
-    );
-  };
+        }
 
-  const Message = () => {
-    return (
-      <div className="chat-popup" id="myForm" hidden={hideModal}>
-        <form className="fixed z-50 gap-x-2.5 w-[25%] top-[40%] bottom-[3.9%] right-[3.05%] flex-col bg-[#F5F5F5] rounded-md">
-          <div className="flex flex-row h-[15%] items-center bg-[#9DA09F] px-8 rounded-t-md">
-            <button
-              className="flex-initial"
-              type="button"
-              onClick={() => {
-                setMenu("Default");
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                />
-              </svg>
-            </button>
-            <h1 className="flex-auto font-semibold text-center text-white">
-              Leave us a message
-            </h1>
-          </div>
+        {menu === "Message" && 
+        <ContactUs />
+        }
 
-          {/* //Message */}
-          <ContactUs />
-          <div className="bg=[#F5F5F5] p-8">
-            <h1 className="font-semibold py-2 underline">Suggestions</h1>
-            <div className="flex flex-col justify-start">
-              <button type="submit" className="font-semibold text-start py-2">
-                1. Leave a message
-              </button>
-              <button type="submit" className="font-semibold text-start py-2">
-                2. Send us a text
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    );
-  };
+        {menu === "Text" && 
+        <div />
+        }
 
-  const Text = () => {
-    return (
-      <div className="chat-popup" id="myForm" hidden={hideModal}>
-        <form className="fixed z-50 gap-x-2.5 w-[25%] top-[40%] bottom-[3.9%] right-[3.05%] flex-col bg-[#F5F5F5] rounded-md">
-          <div className="flex flex-row h-[15%] items-center bg-[#9DA09F] px-8 rounded-t-md">
-            <button
-              className="flex-initial"
-              type="button"
-              onClick={() => {
-                setMenu("Default");
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                />
-              </svg>
-            </button>
-            <h1 className="flex-auto font-semibold text-center text-white">
-              Send us a text
-            </h1>
-          </div>
+        {menu === "Chat" && 
+        <div />
+        }
 
-          <div className="bg=[#F5F5F5] p-8">
-            <h1 className="font-semibold py-2 underline">Suggestions</h1>
-            <div className="flex flex-col justify-start">
-              <button type="submit" className="font-semibold text-start py-2">
-                1. Leave a message
-              </button>
-              <button type="submit" className="font-semibold text-start py-2">
-                2. Send us a text
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    );
-  };
-
-  const Chat = () => {
-    return (
-      <div className="chat-popup" id="myForm" hidden={hideModal}>
-        <form className="fixed z-50 gap-x-2.5 w-[25%] top-[40%] bottom-[3.9%] right-[3.05%] flex-col bg-[#F5F5F5] rounded-md">
-          <div className="flex flex-row h-[15%] items-center bg-[#9DA09F] px-8 rounded-t-md">
-            <button
-              className="flex-initial"
-              type="button"
-              onClick={() => {
-                setMenu("Default");
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                />
-              </svg>
-            </button>
-            <h1 className="flex-auto font-semibold text-center text-white">
-              Chat with us
-            </h1>
-          </div>
-
-          <div className="bg=[#F5F5F5] p-8">
-            <h1 className="font-semibold py-2 underline">Suggestions</h1>
-            <div className="flex flex-col justify-start">
-              <button type="submit" className="font-semibold text-start py-2">
-                1. Leave a message
-              </button>
-              <button type="submit" className="font-semibold text-start py-2">
-                2. Send us a text
-              </button>
-            </div>
-          </div>
         </form>
       </div>
     );
@@ -230,13 +149,8 @@ export default function SupportModal() {
         </svg>
       </button>
 
-      {menu === "Default" && <Default />}
+        <Default />
 
-      {menu === "Message" && <Message />}
-
-      {menu === "Text" && <Text />}
-
-      {menu === "Chat" && <Chat />}
     </div>
   );
 }
