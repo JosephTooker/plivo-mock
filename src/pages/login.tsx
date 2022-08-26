@@ -37,8 +37,8 @@ export default function login() {
   }
 
     return (
-      <div className="flex flex-row">
-        <div className="flex flex-col min-h-screen lg:w-[50%] align-middle justify-center text-center bg-white px-[10%] sm:w-[100%] scale-[80%]">
+      <div className="flex flex-row justify-center">
+        <div className="flex flex-col md:w-[50%] min-h-screen align-middle justify-center text-center bg-white md:px-[10%] md:scale-[80%]">
           <h1 className="text-3xl font-medium">Welcome Back.👋 </h1>
           <div className="my-5">
             <button className="w-full text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
@@ -92,7 +92,7 @@ export default function login() {
                   </label>
                 </div>
                 <div>
-                  <a href="#" className="font-medium text-indigo-600">
+                  <a href="#" className="ml-2 font-medium text-indigo-600">
                     Forgot Password?
                   </a>
                 </div>
@@ -143,7 +143,7 @@ export default function login() {
           </form>
         </div>
 
-        <div className="sm:w-[50%] flex-col flex bg-[#F5F5F5] justify-center text-center">
+        <div className="hidden md:w-[50%] flex-col md:flex bg-[#F5F5F5] justify-center text-center">
             <h1 className="my-3 font-semibold text-5xl text-white">Put Image Here</h1>
           </div>
         
