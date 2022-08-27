@@ -59,7 +59,7 @@ const signup = () => {
     cookies.set("userType", userType);
 
     if (userType === "User") {
-      window.location.href = "http://localhost:3000/home";
+      window.location.href = "http://localhost:3000/";
     } else {
       window.location.href = "http://localhost:3000/dashboard";
     }

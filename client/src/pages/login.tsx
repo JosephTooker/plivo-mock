@@ -19,31 +19,34 @@ export default function login() {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+
+    console.log("edited")
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
 
-    const { email, password, userType } = form;
+    const { email, password } = form;
 
     const URL = "http://localhost:5000/auth";
 
     const {
-      data: { token, userId, hashedPassword },
-    } = await axios.post(`${URL}/signup`, {
+      data: { token, userId, hashedPassword, userType },
+    } = await axios.post(`${URL}/login`, {
       email,
-      password,
+      password
     });
 
     cookies.set("token", token);
     cookies.set("email", email);
+    cookies.set("userType", userType)
     cookies.set("userId", userId);
 
     if (userType === "User") {
-      window.location.href = "http://localhost:3000/home";
-    } else {
       window.location.href = "http://localhost:3000/";
+    } else {
+      window.location.href = "http://localhost:3000/dashboard";
     }
   };
 
@@ -70,7 +73,7 @@ export default function login() {
 
         <p className="text-slate-500 mt-5">Please enter your details. </p>
 
-        <form action="" className="my-5">
+        <form action="" className="my-5" onSubmit={handleSubmit}>
           <div className="flex flex-col space-y-5">
             <label htmlFor="email">
               <p className="font-medium text-slate-700 pb-2">Email address</p>
@@ -80,6 +83,7 @@ export default function login() {
                 type="email"
                 className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                 placeholder="Enter email address"
+                onChange={handleChange}
               />
             </label>
             <label htmlFor="password">
@@ -90,6 +94,7 @@ export default function login() {
                 type="password"
                 className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                 placeholder="Enter your password"
+                onChange={handleChange}
               />
             </label>
             <div className="flex flex-row justify-between">
@@ -124,7 +129,7 @@ export default function login() {
                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                 />
               </svg>
-              <span>Login</span>
+              <span onClick={handleSubmit}>Login</span>
             </button>
             <p className="text-center">
               Not registered yet?{" "}

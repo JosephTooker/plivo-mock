@@ -1,7 +1,8 @@
 import React from 'react'
 import { GrAddCircle } from 'react-icons/gr'
+import { AddChannel } from '../assets/AddChannel'
 
-const TeamChannelList = ({ children, error = false, loading, type }) => {
+const TeamChannelList = ({ children, error = false, loading, type, isCreating, setIsCreating, setCreateType, setIsEditing }) => {
     if(error) {
         return type === 'team' ? (
             <div className='team-channel-list'>
@@ -28,6 +29,13 @@ const TeamChannelList = ({ children, error = false, loading, type }) => {
                 <p className='team-channel__header__title'>
                     {type === 'team' ? 'Channels' : 'Direct Messages'}
                 </p>
+                <AddChannel
+                    isCreating={isCreating} 
+                    setIsCreating={setIsCreating}
+                    setCreateType={setCreateType}
+                    setIsEditing={setIsEditing}
+                    type={type === 'team' ? 'team' : 'messaging'}
+                />
             </div>
             {children}
         </div>
