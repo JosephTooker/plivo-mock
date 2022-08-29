@@ -20,7 +20,7 @@ export default function login() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
 
-    console.log("edited")
+    console.log("edited");
   };
 
   const handleSubmit = async (e) => {
@@ -33,14 +33,14 @@ export default function login() {
 
     const {
       data: { token, userId, hashedPassword, userType },
-    } = await axios.post(`${URL}/login`, {
+    } = await axios.post(`${URL}/signup`, {
       email,
-      password
+      password,
     });
 
     cookies.set("token", token);
     cookies.set("email", email);
-    cookies.set("userType", userType)
+    cookies.set("userType", userType);
     cookies.set("userId", userId);
 
     if (userType === "User") {

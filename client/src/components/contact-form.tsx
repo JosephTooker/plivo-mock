@@ -82,7 +82,6 @@ export default function ContactUs() {
   };
   return (
     <form className="rounded-lg flex flex-col px-8">
-
       <label
         htmlFor="fullname"
         className="text-black font-light mt-8 dark:text-gray-50"
