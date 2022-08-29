@@ -2650,3 +2650,1236 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2022-08-29T06:13:14.629Z] shutdown requested via /__/quitquitquit
 
 [error] !!  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: ReferenceError: context is not defined {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: ReferenceError: context is not defined"}}
+[debug] [2022-08-29T06:14:45.348Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:14:46.348Z] Validating nodejs source
+[debug] [2022-08-29T06:14:48.585Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:14:48.585Z] Building nodejs source
+[debug] [2022-08-29T06:14:48.585Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:14:48.586Z] Could not find functions.yaml. Must use http discovery
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005 {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005"}}
+[debug] [2022-08-29T06:14:48.763Z] Serving at port 9005
+
+[debug] [2022-08-29T06:14:48.835Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-08-29T06:14:58.299Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:14:59.301Z] Validating nodejs source
+[debug] [2022-08-29T06:15:01.247Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:15:01.247Z] Building nodejs source
+[debug] [2022-08-29T06:15:01.247Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:15:01.248Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:15:01.432Z] Serving at port 9005
+
+[debug] [2022-08-29T06:15:01.474Z] Got response from /__/functions.yaml Failed to generate manifest from function source: ReferenceError: context is not defined
+[debug] [2022-08-29T06:15:01.474Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 65:
+     ...  function source: ReferenceError: context is not defined
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: ReferenceError: context is not defined\n\u0000","position":64,"line":0,"column":64},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 65:\n     ...  function source: ReferenceError: context is not defined\n                                         ^"}
+[debug] [2022-08-29T06:15:08.683Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:15:09.683Z] Validating nodejs source
+[debug] [2022-08-29T06:15:11.641Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:15:11.642Z] Building nodejs source
+[debug] [2022-08-29T06:15:11.642Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:15:11.642Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:15:11.815Z] Serving at port 9005
+
+[debug] [2022-08-29T06:15:11.862Z] Got response from /__/functions.yaml Failed to generate manifest from function source: ReferenceError: context is not defined
+[debug] [2022-08-29T06:15:11.863Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 65:
+     ...  function source: ReferenceError: context is not defined
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: ReferenceError: context is not defined\n\u0000","position":64,"line":0,"column":64},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 65:\n     ...  function source: ReferenceError: context is not defined\n                                         ^"}
+[debug] [2022-08-29T06:15:19.264Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:15:20.265Z] Validating nodejs source
+[debug] [2022-08-29T06:15:22.185Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:15:22.185Z] Building nodejs source
+[debug] [2022-08-29T06:15:22.185Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:15:22.186Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:15:22.356Z] Serving at port 9005
+
+[debug] [2022-08-29T06:15:22.394Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:15:25.026Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:15:26.028Z] Validating nodejs source
+[debug] [2022-08-29T06:15:28.215Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:15:28.215Z] Building nodejs source
+[debug] [2022-08-29T06:15:28.215Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:15:28.216Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:15:28.370Z] Serving at port 9005
+
+[debug] [2022-08-29T06:15:28.421Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:15:28.425Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[debug] [2022-08-29T06:15:42.134Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:15:43.135Z] Validating nodejs source
+[debug] [2022-08-29T06:15:44.994Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:15:44.994Z] Building nodejs source
+[debug] [2022-08-29T06:15:44.994Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:15:44.994Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:15:45.181Z] Serving at port 9005
+
+[debug] [2022-08-29T06:15:45.235Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:15:45.239Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:16:16.125Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:16:17.127Z] Validating nodejs source
+[debug] [2022-08-29T06:16:19.095Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:16:19.096Z] Building nodejs source
+[debug] [2022-08-29T06:16:19.096Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:16:19.096Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:16:19.272Z] Serving at port 9005
+
+[debug] [2022-08-29T06:16:19.327Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:16:19.331Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:17:23.327Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:17:24.329Z] Validating nodejs source
+[debug] [2022-08-29T06:17:26.227Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:17:26.227Z] Building nodejs source
+[debug] [2022-08-29T06:17:26.227Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:17:26.227Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:17:26.396Z] Serving at port 9005
+
+[debug] [2022-08-29T06:17:26.455Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:18:58.295Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:18:59.295Z] Validating nodejs source
+[debug] [2022-08-29T06:19:01.199Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:19:01.199Z] Building nodejs source
+[debug] [2022-08-29T06:19:01.199Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:19:01.199Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:19:01.400Z] Serving at port 9005
+
+[debug] [2022-08-29T06:19:01.486Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:19:33.789Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:19:34.790Z] Validating nodejs source
+[debug] [2022-08-29T06:19:36.644Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:19:36.644Z] Building nodejs source
+[debug] [2022-08-29T06:19:36.644Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:19:36.644Z] Could not find functions.yaml. Must use http discovery
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005 {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005"}}
+[debug] [2022-08-29T06:19:36.822Z] Serving at port 9005
+
+[debug] [2022-08-29T06:19:36.889Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-08-29T06:19:39.879Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:19:40.880Z] Validating nodejs source
+[debug] [2022-08-29T06:19:42.740Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:19:42.741Z] Building nodejs source
+[debug] [2022-08-29T06:19:42.741Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:19:42.741Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:19:42.911Z] Serving at port 9005
+
+[debug] [2022-08-29T06:19:42.965Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:19:42.969Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:19:46.074Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:19:47.074Z] Validating nodejs source
+[debug] [2022-08-29T06:19:49.032Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:19:49.032Z] Building nodejs source
+[debug] [2022-08-29T06:19:49.032Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:19:49.032Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:19:49.218Z] Serving at port 9005
+
+[debug] [2022-08-29T06:19:49.300Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:19:49.304Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:19:53.765Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:19:54.765Z] Validating nodejs source
+[debug] [2022-08-29T06:19:56.630Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:19:56.630Z] Building nodejs source
+[debug] [2022-08-29T06:19:56.631Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:19:56.631Z] Could not find functions.yaml. Must use http discovery
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005 {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005"}}
+[debug] [2022-08-29T06:19:56.807Z] Serving at port 9005
+
+[debug] [2022-08-29T06:19:56.893Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-08-29T06:19:59.333Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:20:00.334Z] Validating nodejs source
+[debug] [2022-08-29T06:20:02.190Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:20:02.190Z] Building nodejs source
+[debug] [2022-08-29T06:20:02.190Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:20:02.190Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:20:02.366Z] Serving at port 9006
+
+[debug] [2022-08-29T06:20:02.442Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:20:02.447Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:20:04.898Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:20:05.899Z] Validating nodejs source
+[debug] [2022-08-29T06:20:07.754Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:20:07.754Z] Building nodejs source
+[debug] [2022-08-29T06:20:07.754Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:20:07.754Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:20:07.918Z] Serving at port 9005
+
+[debug] [2022-08-29T06:20:07.993Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:20:07.997Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:20:21.264Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:20:22.264Z] Validating nodejs source
+[debug] [2022-08-29T06:20:24.117Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:20:24.118Z] Building nodejs source
+[debug] [2022-08-29T06:20:24.118Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:20:24.118Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:20:24.289Z] Serving at port 9005
+
+[debug] [2022-08-29T06:20:24.374Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:20:24.379Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:20:28.423Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:20:29.424Z] Validating nodejs source
+[debug] [2022-08-29T06:20:31.279Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:20:31.279Z] Building nodejs source
+[debug] [2022-08-29T06:20:31.279Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:20:31.279Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:20:31.432Z] Serving at port 9005
+
+[debug] [2022-08-29T06:20:31.505Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:20:31.508Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:20:35.293Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:20:36.293Z] Validating nodejs source
+[debug] [2022-08-29T06:20:38.182Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:20:38.182Z] Building nodejs source
+[debug] [2022-08-29T06:20:38.182Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:20:38.183Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:20:38.358Z] Serving at port 9005
+
+[debug] [2022-08-29T06:20:38.432Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:20:38.436Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:21:08.037Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:21:09.038Z] Validating nodejs source
+[debug] [2022-08-29T06:21:10.934Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:21:10.934Z] Building nodejs source
+[debug] [2022-08-29T06:21:10.934Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:21:10.934Z] Could not find functions.yaml. Must use http discovery
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005 {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005"}}
+[debug] [2022-08-29T06:21:11.125Z] Serving at port 9005
+
+[debug] [2022-08-29T06:21:11.215Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-08-29T06:21:12.896Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:21:13.897Z] Validating nodejs source
+[debug] [2022-08-29T06:21:15.746Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:21:15.746Z] Building nodejs source
+[debug] [2022-08-29T06:21:15.747Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:21:15.747Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:21:15.938Z] Serving at port 9005
+
+[debug] [2022-08-29T06:21:16.014Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:21:16.018Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:39:00.894Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:39:01.895Z] Validating nodejs source
+[debug] [2022-08-29T06:39:04.174Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:39:04.174Z] Building nodejs source
+[debug] [2022-08-29T06:39:04.174Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:39:04.175Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:39:04.364Z] Serving at port 9006
+
+[debug] [2022-08-29T06:39:04.438Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:39:04.442Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:39:16.994Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:39:17.995Z] Validating nodejs source
+[debug] [2022-08-29T06:39:19.879Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:39:19.879Z] Building nodejs source
+[debug] [2022-08-29T06:39:19.879Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:39:19.879Z] Could not find functions.yaml. Must use http discovery
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005 {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005"}}
+[debug] [2022-08-29T06:39:20.072Z] Serving at port 9005
+
+[debug] [2022-08-29T06:39:20.152Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-08-29T06:44:44.959Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:44:45.960Z] Validating nodejs source
+[debug] [2022-08-29T06:44:48.315Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:44:48.315Z] Building nodejs source
+[debug] [2022-08-29T06:44:48.316Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:44:48.316Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:44:48.536Z] Serving at port 9006
+
+[debug] [2022-08-29T06:44:48.562Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:46:48.055Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:46:49.057Z] Validating nodejs source
+[debug] [2022-08-29T06:46:50.951Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:46:50.951Z] Building nodejs source
+[debug] [2022-08-29T06:46:50.951Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:46:50.951Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:46:51.157Z] Serving at port 9007
+
+[debug] [2022-08-29T06:46:51.237Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:46:51.241Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail."}}
+[debug] [2022-08-29T06:55:22.629Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:55:23.630Z] Validating nodejs source
+[debug] [2022-08-29T06:55:25.962Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:55:25.962Z] Building nodejs source
+[debug] [2022-08-29T06:55:25.962Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:55:25.963Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:55:26.175Z] Serving at port 9007
+
+[debug] [2022-08-29T06:55:26.232Z] Got response from /__/functions.yaml Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'
+Require stack:
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\runtime\loader.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\bin\firebase-functions.js
+[debug] [2022-08-29T06:55:26.232Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:
+     ... fest from function source: Error: Cannot find module '@sendgrid/ ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'\nRequire stack:\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\runtime\\loader.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\bin\\firebase-functions.js\n\u0000","position":55,"line":0,"column":55},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:\n     ... fest from function source: Error: Cannot find module '@sendgrid/ ... \n                                         ^"}
+[debug] [2022-08-29T06:55:26.235Z] shutdown requested via /__/quitquitquit
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'
+Require stack:
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\runtime\loader.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\bin\firebase-functions.js {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'\nRequire stack:\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\runtime\\loader.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\bin\\firebase-functions.js"}}
+[debug] [2022-08-29T06:55:31.453Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:55:32.455Z] Validating nodejs source
+[debug] [2022-08-29T06:55:34.428Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:55:34.428Z] Building nodejs source
+[debug] [2022-08-29T06:55:34.428Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:55:34.429Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:55:34.594Z] Serving at port 9006
+
+[debug] [2022-08-29T06:55:34.647Z] Got response from /__/functions.yaml Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'
+Require stack:
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\runtime\loader.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\bin\firebase-functions.js
+[debug] [2022-08-29T06:55:34.647Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:
+     ... fest from function source: Error: Cannot find module '@sendgrid/ ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'\nRequire stack:\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\runtime\\loader.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\bin\\firebase-functions.js\n\u0000","position":55,"line":0,"column":55},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:\n     ... fest from function source: Error: Cannot find module '@sendgrid/ ... \n                                         ^"}
+[debug] [2022-08-29T06:55:34.651Z] shutdown requested via /__/quitquitquit
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'
+Require stack:
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\runtime\loader.js
+- C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\node_modules\firebase-functions\lib\bin\firebase-functions.js {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module '@sendgrid/mail'\nRequire stack:\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\runtime\\loader.js\n- C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\node_modules\\firebase-functions\\lib\\bin\\firebase-functions.js"}}
+[debug] [2022-08-29T06:55:51.335Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\package-lock.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\package-lock.json changed, reloading triggers"}}
+[debug] [2022-08-29T06:55:51.341Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\package.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\package.json changed, reloading triggers"}}
+[debug] [2022-08-29T06:55:52.343Z] Validating nodejs source
+[debug] [2022-08-29T06:55:54.321Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:55:54.321Z] Building nodejs source
+[debug] [2022-08-29T06:55:54.321Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:55:54.322Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:55:54.482Z] Serving at port 9005
+
+[debug] [2022-08-29T06:55:54.587Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"},"postemails":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"postemails"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:55:54.590Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail, postemails. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail, postemails."}}
+[info] +  functions[us-central1-postemails]: http function initialized (http://localhost:5001/plivo-mock/us-central1/postemails). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/plivo-mock/us-central1/postemails)."}}
+[debug] [2022-08-29T06:56:57.030Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:56:58.030Z] Validating nodejs source
+[debug] [2022-08-29T06:56:59.898Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:56:59.899Z] Building nodejs source
+[debug] [2022-08-29T06:56:59.899Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:56:59.899Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:57:00.055Z] Serving at port 9005
+
+[debug] [2022-08-29T06:57:00.160Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"},"postemails":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"postemails"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:57:00.164Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail, postemails. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail, postemails."}}
+[debug] [2022-08-29T06:57:51.160Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T06:57:52.161Z] Validating nodejs source
+[debug] [2022-08-29T06:57:53.983Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T06:57:53.983Z] Building nodejs source
+[debug] [2022-08-29T06:57:53.983Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T06:57:53.983Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T06:57:54.151Z] Serving at port 9005
+
+[debug] [2022-08-29T06:57:54.261Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"},"postemails":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"postemails"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T06:57:54.265Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail, postemails. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail, postemails."}}
+[debug] [2022-08-29T07:00:41.486Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T07:00:42.488Z] Validating nodejs source
+[debug] [2022-08-29T07:00:44.801Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T07:00:44.801Z] Building nodejs source
+[debug] [2022-08-29T07:00:44.801Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T07:00:44.801Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T07:00:44.959Z] Serving at port 9005
+
+[debug] [2022-08-29T07:00:45.063Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"},"postemails":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"postemails"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T07:00:45.067Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: getemail, postemails. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getemail, postemails."}}
+[debug] [2022-08-29T07:01:29.603Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T07:01:30.603Z] Validating nodejs source
+[debug] [2022-08-29T07:01:32.666Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T07:01:32.666Z] Building nodejs source
+[debug] [2022-08-29T07:01:32.666Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T07:01:32.666Z] Could not find functions.yaml. Must use http discovery
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005 {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9005/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:9005"}}
+[debug] [2022-08-29T07:01:32.840Z] Serving at port 9005
+
+[debug] [2022-08-29T07:01:32.948Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-08-29T07:02:41.658Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T07:02:42.658Z] Validating nodejs source
+[debug] [2022-08-29T07:02:44.631Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T07:02:44.631Z] Building nodejs source
+[debug] [2022-08-29T07:02:44.631Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T07:02:44.631Z] Could not find functions.yaml. Must use http discovery
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9006/__/quitquitquit failed, reason: read ECONNRESET {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9006/__/quitquitquit failed, reason: read ECONNRESET"}}
+[debug] [2022-08-29T07:02:44.830Z] Serving at port 9006
+
+[debug] [2022-08-29T07:02:44.961Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-08-29T07:02:51.246Z] File C:\Users\thech\Documents\Summer 2022\Headstart\plivo-mock\cloud\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\thech\\Documents\\Summer 2022\\Headstart\\plivo-mock\\cloud\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-29T07:02:52.248Z] Validating nodejs source
+[debug] [2022-08-29T07:02:54.520Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T07:02:54.520Z] Building nodejs source
+[debug] [2022-08-29T07:02:54.520Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T07:02:54.521Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T07:02:54.700Z] Serving at port 9006
+
+[debug] [2022-08-29T07:02:54.820Z] Got response from /__/functions.yaml {"endpoints":{"getemail":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"getemail"},"postemails":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"postemails"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[error] !!  functions: Failed to load function definition from source: FetchError: request to http://localhost:9006/__/quitquitquit failed, reason: read ECONNRESET {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FetchError: request to http://localhost:9006/__/quitquitquit failed, reason: read ECONNRESET"}}
+[debug] [2022-08-29T07:02:54.825Z] shutdown requested via /__/quitquitquit
+
