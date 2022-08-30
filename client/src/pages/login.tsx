@@ -76,7 +76,7 @@ export default function login() {
         <form action="" className="my-5" onSubmit={handleSubmit}>
           <div className="flex flex-col space-y-5">
             <label htmlFor="email">
-              <p className="font-medium text-slate-700 pb-2">Email address</p>
+              <p className="font-medium text-slate-700 pb-2 text-left">Email address</p>
               <input
                 id="email"
                 name="email"
@@ -87,7 +87,7 @@ export default function login() {
               />
             </label>
             <label htmlFor="password">
-              <p className="font-medium text-slate-700 pb-2">Password</p>
+              <p className="font-medium text-slate-700 pb-2 text-left">Password</p>
               <input
                 id="password"
                 name="password"
