@@ -58,7 +58,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
         <SideBar logout={logout}/>
         <div className='channel-list__list__wrapper'>
             <CompanyHeader />
-            <ChannelSearch />
+            {/*<ChannelSearch />*/}
             <ChannelList 
                 filters={filters}
                 channelRenderFilterFn={customeChannelTeamFilter}
