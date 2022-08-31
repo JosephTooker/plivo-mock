@@ -33,7 +33,7 @@ export default function login() {
 
     const {
       data: { token, userId, hashedPassword, userType },
-    } = await axios.post(`${URL}/signup`, {
+    } = await axios.post(`${URL}/login`, {
       email,
       password,
     });
