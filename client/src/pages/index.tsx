@@ -39,20 +39,16 @@ const Home: NextPage = () => {
       <div className="home_header">
         <div className="_h5">
           company logo
-          <Link href="/login">
-            <button
-              type="button"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Login
-            </button>
-          </Link>
         </div>
         <div className="home_header_right">
           <p className="_h5">Home</p>
           <p className="_h5">About Us</p>
           <p className="_h5">Shop</p>
           <p className="_h5">Help</p>
+          <Link href="/login">
+            <p className="_h5">Login</p>
+          </Link>
+
         </div>
       </div>
 
