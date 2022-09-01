@@ -2,6 +2,8 @@ import React from "react";
 import type { NextPage } from "next";
 import SupportModal from "../components/SupportModal";
 import Link from "next/link";
+import { UserAuth } from '../context/AuthContext'
+import { useRouter } from 'next/router'
 
 /*
 const GroupCard = (props : any) => {
@@ -34,6 +36,22 @@ const GroupCard = (props : any) => {
   };
 */
 const Home: NextPage = () => {
+  const {user, logOut} = UserAuth()
+  const router = useRouter()
+
+  async function handleLogout(){   
+    if (window.confirm("Do you really want to leave?")) {
+      try{
+          await logOut()
+          router.push('/login')
+      } catch (error : any){
+          const errorMessage = error.message;
+          console.log("Failed to log out: " + errorMessage)
+      }      
+    }
+  }
+
+
   return (
     <div className="home">
       <div className="home_header">
@@ -45,9 +63,12 @@ const Home: NextPage = () => {
           <p className="_h5">About Us</p>
           <p className="_h5">Shop</p>
           <p className="_h5">Help</p>
-          <Link href="/login">
+          { user !== null ? 
+            <span onClick={handleLogout} className="_h5">Log Out</span> :
+            <Link href="/login">
             <p className="_h5">Login</p>
           </Link>
+          }
 
         </div>
       </div>

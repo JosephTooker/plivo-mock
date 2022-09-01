@@ -1,53 +1,41 @@
-import React, { useState } from "react";
-import Cookies from "universal-cookie";
-import Link from "next/link";
-import axios from "axios";
-import { string } from "zod";
-
-const cookies = new Cookies();
+import React, { useState, useRef, useEffect } from "react";
+import { UserAuth } from '../context/AuthContext'
+import { useRouter } from 'next/router'
+import toast from 'react-hot-toast';
 
 export default function login() {
-  const [form, setForm] = useState<{
-    email: string;
-    password: string;
-    userType: string;
-  }>({
-    email: "",
-    password: "",
-    userType: "",
-  });
+  const emailRef = useRef<HTMLInputElement>(null)
+  const passwordRef = useRef<HTMLInputElement>(null)
+  const [loading, setLoading] = useState(false)
+  const {logIn, googleSignIn} = UserAuth()
+  const router = useRouter()
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-
-    console.log("edited");
-  };
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault()
+    try{
+        setLoading(true)
+        await googleSignIn()
+        router.push('/')
+    } catch(error: any){
+      var errorMessage = error.message
+      var str = errorMessage.substr(errorMessage.indexOf(":") + 1);
+      toast.error(str);
+    }
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(form);
-
-    const { email, password } = form;
-
-    const URL = "http://localhost:5000/auth";
-
-    const {
-      data: { token, userId, hashedPassword, userType },
-    } = await axios.post(`${URL}/login`, {
-      email,
-      password,
-    });
-
-    cookies.set("token", token);
-    cookies.set("email", email);
-    cookies.set("userType", userType);
-    cookies.set("userId", userId);
-
-    if (userType === "User") {
-      window.location.href = "http://localhost:3000/";
-    } else {
-      window.location.href = "http://localhost:3000/dashboard";
+    e.preventDefault()
+    try{
+        setLoading(true)
+        await logIn(emailRef.current.value, passwordRef.current.value)
+        console.log("Submit")
+        router.push('/')
+    } catch (error: any) {
+        var errorMessage = error.message
+        var str = errorMessage.substr(errorMessage.indexOf(":") + 1);
+        toast.error(str);
     }
+    setLoading(false)
   };
 
   return (
@@ -55,7 +43,9 @@ export default function login() {
       <div className="flex flex-col md:w-[50%] min-h-screen align-middle justify-center text-center bg-white md:px-[10%] md:scale-[80%]">
         <h1 className="text-3xl font-medium">Welcome Back.👋 </h1>
         <div className="my-5">
-          <button className="w-full text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
+          <button 
+          onClick={handleGoogleSignIn}
+          className="w-full text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
               className="w-6 h-6"
@@ -81,9 +71,10 @@ export default function login() {
                 id="email"
                 name="email"
                 type="email"
+                ref={emailRef}
                 className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                 placeholder="Enter email address"
-                onChange={handleChange}
+                required
               />
             </label>
             <label htmlFor="password">
@@ -92,9 +83,10 @@ export default function login() {
                 id="password"
                 name="password"
                 type="password"
+                ref={passwordRef} 
                 className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                 placeholder="Enter your password"
-                onChange={handleChange}
+                required
               />
             </label>
             <div className="flex flex-row justify-between">
@@ -114,7 +106,7 @@ export default function login() {
                 </a>
               </div>
             </div>
-            <button className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
+            <button disabled = {loading} className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -129,7 +121,7 @@ export default function login() {
                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                 />
               </svg>
-              <span onClick={handleSubmit}>Login</span>
+              <span >Login</span>
             </button>
             <p className="text-center">
               Not registered yet?{" "}
