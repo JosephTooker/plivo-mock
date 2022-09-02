@@ -7,6 +7,7 @@ import 'stream-chat-react/dist/css/index.css'
 import { httpsCallable } from "firebase/functions";
 import { functions } from "../firebase-config"
 import { UserAuth } from '../context/AuthContext'
+import LoadingSpinner from "../components/LoadingSpinner";
 
 // const cookies = new Cookies();
 
@@ -47,7 +48,9 @@ export default function dashboard() {
 // const authToken = cookies.get("token");
   return (
     <>
-    {client === undefined ? <div> Loading </div>:
+    {client === undefined ? 
+    <LoadingSpinner/>
+    :
     <div className="app__wrapper">
       <Chat client={client} theme="team light">
         <ChannelListContainer
