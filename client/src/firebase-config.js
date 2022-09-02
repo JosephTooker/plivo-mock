@@ -14,18 +14,19 @@ import { getFunctions } from 'firebase/functions';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCWNnXZWspBsUh5gXigYqdhE6UKZWX_jdk",
-  authDomain: "plivo-testing-a703f.firebaseapp.com",
-  projectId: "plivo-testing-a703f",
-  storageBucket: "plivo-testing-a703f.appspot.com",
-  messagingSenderId: "967339940207",
-  appId: "1:967339940207:web:3c281f76634bb1c55d709a",
-  measurementId: "G-CME24BQTJ3"
+  apiKey: "AIzaSyCWuPpTErML8WOLcEag_jxAgfcF8I3fboU",
+  authDomain: "plivo-mock.firebaseapp.com",
+  databaseURL: "https://plivo-mock-default-rtdb.firebaseio.com",
+  projectId: "plivo-mock",
+  storageBucket: "plivo-mock.appspot.com",
+  messagingSenderId: "162974648414",
+  appId: "1:162974648414:web:9386ecae6975dd255ecccf",
+  measurementId: "G-ZSTH9D2S4P"
 };
 
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const functions = getFunctions(app);

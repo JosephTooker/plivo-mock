@@ -5,6 +5,10 @@ import { doc, setDoc, getDoc } from "firebase/firestore";
 
 const AuthContext = createContext()
 
+export const UserAuth = () => {
+    return useContext(AuthContext)
+}
+
 export const AuthContextProvider = ({children}) => {
 
     const [user, setUser] = useState({})
@@ -62,6 +66,7 @@ export const AuthContextProvider = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            setLoading(false)
             // console.log("User", currentUser)
         });
         return () => {
@@ -80,11 +85,8 @@ export const AuthContextProvider = ({children}) => {
 
     return (
         <AuthContext.Provider value={value}>
-            {children}
+            {!loading && children}
         </AuthContext.Provider>
     )
 }
 
-export const UserAuth = () => {
-    return useContext(AuthContext)
-}
