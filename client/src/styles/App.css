@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
 ._title {
   font-family: "Roboto Flex";
   font-style: normal;
@@ -11,16 +25,25 @@
   text-align: center;
 }
 
-._body {
-  font-family: "Roboto Flex";
+._h1 {
+  font-family: 'Noto Sans';
   font-style: normal;
-  font-weight: 400;
-  font-size: max(12px, 1.8vmin);
+  font-weight: 600;
+  font-size: max(16px, 2.8vmin);
   line-height: 22px;
-  /* identical to box height, or 138% */
+  /* identical to box height, or 92% */
 
   letter-spacing: -0.02em;
-  text-align: center;
+}
+
+._h2 {
+  /* text-xl/font-semibold */
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: max(12px, 2.4vmin);
+  display: flex;
+  align-items: center;
 }
 
 ._h3 {
@@ -45,11 +68,23 @@
   color: #4B5563;
 }
 
+._body {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: max(10px, 2vmin);
+  display: flex;
+  align-items: center;
+}
+
+
+
 .home {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: white;
+  overflow: hidden;
 }
 
 .home_title {
@@ -178,10 +213,528 @@
   width: 100%;
   text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dashSidebar {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  width: 12.5vw;
+  height: 100vh;
+  background: #817589;
+}
+
+.dashSidebarLogo {
+  margin: 50%;
+  transform: translate(-50%, -60%) scale(0.33); /*anchor center-center*/
+}
+
+.dashSidebarNavContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 33vh;
+  left: 0.75vw;
+  width: 10.5vw;
+  height: 67vh;
+}
+
+.dashSidebarNavContainer :hover {
+  cursor: pointer;
+  background-color: #005fff;
+  background: #908E8F;
+  border-radius: 5px;
+}
+
+.dashSidebar nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  transition: 0.3s;
+  width: 100%;
+  height: 7.5vh;
+  justify-content: space-between;
+  align-content: space-around;
+  align-items: center;
+
+  margin-bottom: 1vh;
+}
+
+.dashSidebarCardIcon {
+  pointer-events: none;
+  position: absolute;
+  margin-left: 20%;
+  transform: translate(-50%, 0); /*anchor center-center*/
+}
+
+.dashSidebarCardText {
+  pointer-events: none;
+  position: absolute;
+  margin-left: 42%;
+
+  font-weight: 500;
+
+  /* identical to box height, or 110% */
+
+  align-items: center;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+
+
+
+
+
+
+.dashFlyout {
+  position: absolute;
+  top: 0vh;
+  left: 12.5vw;
+  width: 87.5vw;
+  height: 100vh;
+}
+
+.dashFeature {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;  /* relative to dashFlyout */
+  width: 30vw;
+  height: 100vh;
+}
+
+.dashFeatureIcon {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  transform: translate(-50%, -3%) scale(0.8);
+}
+
+.dashFeatureHeader {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.dashFeatureSub1 {
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.dashFeatureSub1 :hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.dashFeatureSub2 {
+  position: absolute;
+  top: 10%;
+  right: 6%;
+  white-space: nowrap;
+  font-weight: 500;
+  color: #9DA09F;
+}
+
+.dashFeatureSub2 :hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.dashFeatureLine {
+  position: absolute;
+  top: 15%;
+  left: 4%;
+  width: 92%;
+  border-top: solid 1px black;
+}
+
+.dashFeatureBody {
+  position: absolute;
+  top: 17%;
+  left: 6%;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #000000;
+}
+
+.dashFeatureType {
+  position: absolute;
+  top: 21%;
+  left: 6%;
+  font-weight: 900;
+}
+
+.dashTickets {
+  position: relative;
+  top: 25%;
+  height: 75%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.dashTickets::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.dashTickets::-webkit-scrollbar-track {
+  background: gainsboro;
+  border-radius: 5px;
+}
+
+/* Handle */
+.dashTickets::-webkit-scrollbar-thumb {
+  background: #b089c9;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.dashTickets::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dashTickets :hover {
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid #8c62a8;
+}
+
+
+
+.dashTickets nav {
+  position: relative;
+
+  width: calc(100% - 4.5vmin);
+  min-height: 8.5vh;
+
+  margin-left: 2.25vmin;
+  margin-bottom: 2.25vmin;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  background: #F5F5F5;
+  border: 1px solid #D9D9D9;
+  border-radius: 1vmin;
+}
+
+
+
+
+
+
+.dashPanel {
+  position: absolute;
+  display: flex; /* allow the dashPanelBox to fill the remaining space */
+  top: 0vh;
+  left: 30vw; /* relative to dashFlyout */
+  width: 57.5vw;
+  height: 100vh;
+}
+
+.dashPanelBox {
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+  margin: 3vmin;
+  padding: 2.25vmin;
+  flex-grow: 1;
+  border: 2px solid #D9D9D9;
+  border-radius: 10px;
+}
+
+.dashPanelImage {
+  position: relative;
+  width: 12.5%;
+  height: 12.5%;
+}
+
+.dashSectionInfo {
+  position: relative;
+  top: 0%;
+  left: 15%;
+  width: 85%;
+  height: 12.5%;
+  /* border: 1px solid aquamarine; */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dashFlow {
+  position: relative;
+  height: 87.5%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+
+  border: 1.5px solid #D9D9D9;
+  border-radius: 5px;
+}
+
+.dashFlow nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 12vh;
+  padding-left: 4.5vmin;
+  padding-right: 9vmin;
+  padding-bottom: 2.25vh;
+  border-bottom: 1.5px solid #D9D9D9;
+}
+
+.dashFlow::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.dashFlow::-webkit-scrollbar-track {
+  background: gainsboro;
+  border-radius: 5px;
+}
+
+/* Handle */
+.dashFlow::-webkit-scrollbar-thumb {
+  background: #b089c9;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.dashFlow::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dashSection1 {
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 20%;
+  left: 6%;
+  width: 88%;
+  height: 30%;
+
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+}
+
+.dashSection2 {
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 55%;
+  left: 6%;
+  width: 88%;
+  height: 40%;
+
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+}
+
+
+
+
+
+.dashPanelName {
+  position: absolute;
+  top: 20%;
+  transform: translate(0%, -50%);
+  color: #111827;
+  white-space: nowrap;
+}
+
+
+.dashPanelActive {
+  position: absolute;
+  top: 66%;
+  left: 20px;
+  transform: translate(0%, -50%);
+
+  font-weight: 400;
+  white-space: nowrap;
+
+  color: #000000;
+}
+
+.dashPanelAddress {
+  position: absolute;
+  left: 35%;
+  top: 20%;
+  transform: translate(0%, -50%);
+
+  font-weight: 400;
+  white-space: nowrap;
+
+  color: #000000;
+}
+
+.dashPanelEmail {
+  position: absolute;
+  left: 35%;
+  top: 66%;
+  transform: translate(0%, -50%);
+
+  font-weight: 400;
+  white-space: nowrap;
+
+  color: #000000;
+}
+
+
+
+
+
+
+
+.ticketActive {
+  pointer-events: none;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+  width: 1vmin;
+  background-color: #87F94C;
+}
+
+.ticketInactive {
+  pointer-events: none;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+  width: 1vmin;
+  background-color: #F23620;
+}
+
+.ticketName {
+  pointer-events: none;
+  position: absolute;
+  top: 27.5%;
+  left: 7.5%;
+  transform: translate(0%, -50%);
+  color: #111827;
+  white-space: nowrap;
+}
+
+.ticketMessage {
+  pointer-events: none;
+  position: absolute;
+  top: 72.5%;
+  left: 7.5%;
+  transform: translate(0%, -50%);
+  color: #6D7280;
+  white-space: nowrap;
+}
+
+.ticketDate {
+  pointer-events: none;
+  position: absolute;
+  top: 66%;
+  left: 66%;
+  color: #000000;
+  transform: translate(0%, -50%);
+  white-space: nowrap;
+}
+
+.ticketId {
+  pointer-events: none;
+  position: absolute;
+  top: 33%;
+  left: 66%;
+  color: #000000;
+  transform: translate(0%, -50%);
+  white-space: nowrap;
+}
+
+
+
+
+.emailSender {
+  position: absolute;
+  top: 4vh;
+  left: 7.5%;
+  font-weight: 700;
+  transform: translate(0%, -50%);
+  white-space: nowrap;
+}
+
+.emailName {
+  position: absolute;
+  top: 7vh;
+  left: 7.5%;
+  transform: translate(0%, -50%);
+  white-space: nowrap;
+}
+
+.emailBody {
+  white-space: pre-wrap;
+}
+
+.emailId {
+  position: absolute;
+  top: 4vh;
+  left: 80%;
+  transform: translate(0%, -50%);
+  white-space: nowrap;
+}
+
+.emailDate {
+  position: absolute;
+  top: 7vh;
+  left: 80%;
+  transform: translate(0%, -50%);
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
 .center2 {
   text-align: center;
   border: 3px solid green;
 }
+
+
+
+
 
 /* SUPPORT MODAL*/
 
