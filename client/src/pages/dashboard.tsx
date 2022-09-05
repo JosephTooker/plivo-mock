@@ -1,42 +1,56 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { StreamChat } from "stream-chat";
+
+import { DefaultGenerics, StreamChat } from "stream-chat";
 import { Chat } from "stream-chat-react";
-import Cookies from "universal-cookie";
 import { ChannelContainer, ChannelListContainer } from "../components";
-import Link from "next/link";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import 'stream-chat-react/dist/css/index.css'
+import { httpsCallable } from "firebase/functions";
+import { functions } from "../firebase-config"
+import { UserAuth } from '../context/AuthContext'
+import LoadingSpinner from "../components/LoadingSpinner";
 
-const cookies = new Cookies();
-
-const apiKey = "nypvarqgsd9a";
-
-const client = StreamChat.getInstance(apiKey);
-
-const authToken = cookies.get("token");
-
-if (authToken) {
-  client.connectUser(
-    {
-      id: cookies.get("userId"),
-      name: cookies.get("email"),
-      firstName: cookies.get("firstName"),
-      lastName: cookies.get("lastName"),
-      userType: cookies.get("userTypre"),
-      hashedPassword: cookies.get("hashedPassword"),
-    },
-    authToken
-  );
-}
+// const cookies = new Cookies();
 
 export default function dashboard() {
+  const {user} = UserAuth()
   const [ createType, setCreateType ] = useState('')
   const [ isCreating, setIsCreating ] = useState(false)
   const [ isEditing, setIsEditing ] = useState(false)
+  const [client, setClient] = useState()
 
+  let authToken: any;
+  const userID = user.uid;
+
+  const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
+  res({})
+  .then((result) => {
+    const data: any = result.data;
+    authToken = data
+    if (user.uid !== undefined){
+      const apiKey = "nypvarqgsd9a";
+      const client = StreamChat.getInstance(apiKey, {
+        timeout: 6000,
+      });    
+      console.log(authToken)
+      console.log(userID)
+      client.connectUser(
+        {
+          id: userID,
+          name: user.email,
+        },
+        authToken
+      );
+      setClient(client)
+    }
+  })
+
+
+// const authToken = cookies.get("token");
   return (
+    <>
+    {client === undefined ? 
+    <LoadingSpinner/>
+    :
     <div className="app__wrapper">
       <Chat client={client} theme="team light">
         <ChannelListContainer
@@ -55,5 +69,7 @@ export default function dashboard() {
         />
       </Chat>
     </div>
-  );
+    }
+    </>
+  )
 }
