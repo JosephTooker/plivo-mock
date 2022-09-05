@@ -8,6 +8,8 @@ import { httpsCallable } from "firebase/functions";
 import { functions } from "../firebase-config"
 import { UserAuth } from '../context/AuthContext'
 import LoadingSpinner from "../components/LoadingSpinner";
+import { useRouter } from 'next/router'
+
 
 // const cookies = new Cookies();
 
@@ -17,10 +19,18 @@ export default function dashboard() {
   const [ isCreating, setIsCreating ] = useState(false)
   const [ isEditing, setIsEditing ] = useState(false)
   const [client, setClient] = useState()
+  const router = useRouter()
+
+  useEffect(()=>{
+    if(user === null){
+      router.push('/login')
+    }
+  }, [user])
 
   let authToken: any;
-  const userID = user.uid;
+  const userID = user?.uid;
 
+  if(user !== null){
   const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
   res({})
   .then((result) => {
@@ -43,7 +53,7 @@ export default function dashboard() {
       setClient(client)
     }
   })
-
+}
 
 // const authToken = cookies.get("token");
   return (
