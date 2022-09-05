@@ -2,13 +2,20 @@ import React, { useState, useRef, useEffect } from "react";
 import { UserAuth } from '../context/AuthContext'
 import { useRouter } from 'next/router'
 import toast from 'react-hot-toast';
+import {auth} from '../firebase-config'
+import {browserSessionPersistence, inMemoryPersistence} from "firebase/auth";
 
 export default function login() {
   const emailRef = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
   const [loading, setLoading] = useState(false)
   const {logIn, googleSignIn} = UserAuth()
+  const [checked, setChecked] = useState(false)
   const router = useRouter()
+
+  useEffect(()=> {
+    console.log(checked)
+  }, [checked])
 
   const handleGoogleSignIn = async (e) => {
     e.preventDefault()
@@ -27,6 +34,9 @@ export default function login() {
     e.preventDefault()
     try{
         setLoading(true)
+        if(!checked){
+          await auth.setPersistence(inMemoryPersistence)
+        }
         await logIn(emailRef.current.value, passwordRef.current.value)
         console.log("Submit")
         router.push('/')
@@ -96,6 +106,8 @@ export default function login() {
                     type="checkbox"
                     id="remember"
                     className="mr-2 w-4 h-4 border-slate-200 focus:bg-indigo-600 rounded"
+                    onChange={()=>{setChecked(!checked)}}
+                    checked={checked}
                   />
                   Remember me
                 </label>

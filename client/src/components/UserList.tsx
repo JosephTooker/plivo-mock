@@ -57,8 +57,8 @@ const UserList = ({ setSelectedUsers }) => {
             try {
                 const response = await client.queryUsers(
                     { id: { $ne: client.userID } },
-                    { id: 1 },
-                    { limit: 100 }
+                    { last_active: -1},
+                    { presence: true },
                 )
 
                 if(response.users.length) {
