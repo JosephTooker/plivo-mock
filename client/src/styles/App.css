@@ -744,7 +744,7 @@
 
 .support-modal-content{
   overflow-y: auto;
-   height: 85%;
+  height: 85%;
 }
 
 .PhoneInputInput {
@@ -753,6 +753,14 @@
 
 .PhoneInputInput:focus {
   box-shadow: none;
+}
+
+.supportChat .str-chat-channel .str-chat__container{
+  height: 100%;
+}
+
+.supportChat .str-chat-channel.messaging .str-chat__main-panel{
+  padding: 0;
 }
 
 /* SUPPORT MODAL*/
