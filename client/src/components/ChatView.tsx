@@ -21,40 +21,47 @@ function ChatView() {
     if(user === null){
       setMessage("Please log in to chat with an agent.")
     }
-    else{
-      setMessage("Chat with an agent?")
-      let authToken: any;
-      const userID = user?.uid;
+    // else{
+    //   setMessage("Would you like to chat with an agent?")
+    //   let authToken: any;
+    //   const userID = user?.uid;
     
-      const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
-      res({})
-      .then((result) => {
-        const data: any = result.data;
-        authToken = data
-        if (user.uid !== undefined){
-          const apiKey = "nypvarqgsd9a";
-          const client = StreamChat.getInstance(apiKey, {
-            timeout: 6000,
-          });    
-          console.log(authToken)
-          console.log(userID)
-          client.connectUser(
-            {
-              id: userID,
-              name: user.email,
-            },
-            authToken
-          );
-          setClient(client)
-        }
-      })
-    }
+    //   const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
+    //   res({})
+    //   .then((result) => {
+    //     const data: any = result.data;
+    //     authToken = data
+    //     if (user.uid !== undefined){
+    //       const apiKey = "nypvarqgsd9a";
+    //       const client = StreamChat.getInstance(apiKey, {
+    //         timeout: 6000,
+    //       });    
+    //       console.log(authToken)
+    //       console.log(userID)
+    //       client.connectUser(
+    //         {
+    //           id: userID,
+    //           name: user.email,
+    //         },
+    //         authToken
+    //       );
+    //       setClient(client)
+    //     }
+    //   })
+    // }
   }, [user])
 
   return (
     <>
-    <div className='text-center justify-center p-4'>{message}</div>
-      {client === undefined ? 
+    <div className='bg-white h-full'>
+    <div className='chatRequestContainer'>
+    <div className="str-chat__avatar str-chat__avatar--circle" data-testid="avatar" title="test@test.com">
+      <div className="str-chat__avatar-fallback" data-testid="avatar-fallback">CC</div>
+      </div>
+      <div className='supportModalChatRequest'><p>{message}</p></div>
+    </div>
+      
+      {/* {client === undefined ? 
         null
         :
       <div className="supportChat">
@@ -69,7 +76,8 @@ function ChatView() {
         </Channel>
       </Chat>
       </div>
-      }
+      } */}
+    </div>
     </>
   )
 }

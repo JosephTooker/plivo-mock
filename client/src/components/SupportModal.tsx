@@ -85,7 +85,7 @@ export default function SupportModal() {
         
         {menu === "Chat" && 
             <h1 className="flex-auto mr-5 font-semibold text-center text-white">
-            Chat with us
+            Chat with Customer Care
         </h1>
         }
 

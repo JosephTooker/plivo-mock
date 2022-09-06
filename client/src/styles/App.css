@@ -763,6 +763,38 @@
   padding: 0;
 }
 
+.chatRequestContainer {
+  align-items: center;
+  padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: white;
+}
+
+.supportModalChatRequest {
+  flex: initial;
+  display: block;
+  min-height: 32px;
+  padding: var(--xxs-p) var(--xs-p);
+  font-size: var(--lg-font);
+  color: var(--black);
+  border-radius: var(--border-radius) var(--border-radius) var(--border-radius) 0;
+  background: var(--grey-whisper);
+  border: 1px solid var(--border);
+  border-color: transparent;
+  margin-left: 0;
+  text-align: left;
+}
+
+.supportModalChatRequest p {
+  margin: 0;
+  white-space: pre-line;
+  line-height: 20px;
+  text-align: left;
+}
+
 /* SUPPORT MODAL*/
 :root {
   --primary-color: #005fff;
