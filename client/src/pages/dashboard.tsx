@@ -25,35 +25,34 @@ export default function dashboard() {
     if(user === null){
       router.push('/login')
     }
+    else{
+      const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
+      res({})
+      .then((result) => {
+        const data: any = result.data;
+        authToken = data
+        if (user.uid !== undefined){
+          const apiKey = "nypvarqgsd9a";
+          const client = StreamChat.getInstance(apiKey, {
+            timeout: 6000,
+          });    
+          console.log(authToken)
+          console.log(userID)
+          client.connectUser(
+            {
+              id: userID,
+              name: user.email,
+            },
+            authToken
+          );
+          setClient(client)
+        }
+      })
+    }
   }, [user])
 
   let authToken: any;
   const userID = user?.uid;
-
-  if(user !== null){
-  const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
-  res({})
-  .then((result) => {
-    const data: any = result.data;
-    authToken = data
-    if (user.uid !== undefined){
-      const apiKey = "nypvarqgsd9a";
-      const client = StreamChat.getInstance(apiKey, {
-        timeout: 6000,
-      });    
-      console.log(authToken)
-      console.log(userID)
-      client.connectUser(
-        {
-          id: userID,
-          name: user.email,
-        },
-        authToken
-      );
-      setClient(client)
-    }
-  })
-}
 
 // const authToken = cookies.get("token");
   return (
