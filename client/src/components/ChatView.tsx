@@ -23,40 +23,37 @@ function ChatView() {
     }
     else{
       setMessage("Chat with an agent?")
+      let authToken: any;
+      const userID = user?.uid;
+    
+      const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
+      res({})
+      .then((result) => {
+        const data: any = result.data;
+        authToken = data
+        if (user.uid !== undefined){
+          const apiKey = "nypvarqgsd9a";
+          const client = StreamChat.getInstance(apiKey, {
+            timeout: 6000,
+          });    
+          console.log(authToken)
+          console.log(userID)
+          client.connectUser(
+            {
+              id: userID,
+              name: user.email,
+            },
+            authToken
+          );
+          setClient(client)
+        }
+      })
     }
   }, [user])
 
-  let authToken: any;
-  const userID = user?.uid;
-
-  if(user !== null){
-    const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
-    res({})
-    .then((result) => {
-      const data: any = result.data;
-      authToken = data
-      if (user.uid !== undefined){
-        const apiKey = "nypvarqgsd9a";
-        const client = StreamChat.getInstance(apiKey, {
-          timeout: 6000,
-        });    
-        console.log(authToken)
-        console.log(userID)
-        client.connectUser(
-          {
-            id: userID,
-            name: user.email,
-          },
-          authToken
-        );
-        setClient(client)
-      }
-    })
-  }
-
   return (
     <>
-    <div>{message}</div>
+    <div className='text-center justify-center p-4'>{message}</div>
       {client === undefined ? 
         null
         :
