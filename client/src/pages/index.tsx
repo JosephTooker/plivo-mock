@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import SupportModal from "../components/SupportModal";
 import Link from "next/link";
@@ -39,6 +39,10 @@ const Home: NextPage = () => {
   const {user, logOut} = UserAuth()
   const router = useRouter()
 
+  const [latitude, setLatitude] = useState('') 
+  const [longitude, setLongitude] = useState('')
+  const [location, setLocation] = useState('')
+
   async function handleLogout(){   
     if (window.confirm("Do you really want to leave?")) {
       try{
@@ -50,6 +54,29 @@ const Home: NextPage = () => {
       }      
     }
   }
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      //console.log(position.coords)
+      //store latitude and longitude
+      setLatitude(position.coords.latitude)
+      setLongitude(position.coords.longitude)
+      findCity()
+    })
+  }, [])
+
+  const findCity = () => {
+    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+
+    fetch(geoApiUrl)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      console.log(data.locality + ", " + data.principalSubdivision)
+      setLocation(data.locality + ", " + data.principalSubdivision)
+    })
+  }
+  
 
 
   return (
@@ -106,6 +133,7 @@ const Home: NextPage = () => {
               />
             </svg>
             <p className="home_panel_text _h3">My Account</p>
+            <p className="">{location}</p>
           </div>
           <div className="home_panel">
             <svg
