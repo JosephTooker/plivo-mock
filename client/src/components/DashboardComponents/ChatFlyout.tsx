@@ -5,7 +5,8 @@ function ChatFlyout(props: any) {
     const {
     } = props;
 
-    const [assigned, setAssigned] = useState(false);
+    const [assigned, setAssigned] = useState(true);
+    const [ticket, setTicket]:any = useState(null);
 
     function assign(){
         setAssigned(true)
@@ -16,15 +17,19 @@ function ChatFlyout(props: any) {
     }
     console.log(assigned);
 
-    function handleTicket(id){
-        console.log(id);
+    function handleTicket(ticket){
+        setTicket(ticket);
     }
 
     const tickets:any = [];
-    const ticket1 = {"active":"1","name":"Albert Flores", "message":"Hi, I received the wrong ...", "id":"1323", "date":"Today 9:12am"}
-    const ticket2 = {"active":"","name":"", "message":"", "id":"", "date":""}
+    const ticket1 = {"active":"true","name":"Albert Flores", "message":"Hi, I received the wrong ...", "id":"Qev5C2hXJNeJ56VJtKAjKgzoAKx1", "date":"Sep 8, 2022"}
 
     tickets.push(ticket1);
+
+    const unassignedTickets:any = [];
+    const ticket2 = {"active":"","name":"John Doe", "message":"", "id":"r9NkUkRrlaWG6OrkVu2xwfS3uyk1", "date":"Sep 8, 2022"}
+
+    unassignedTickets.push(ticket2);
 
     return (
         <div className="dashFlyout">
@@ -34,17 +39,19 @@ function ChatFlyout(props: any) {
             </svg>
     
             <div className="dashFeatureHeader _h1">CHAT: Customer Queue </div>
-            <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you</p></button>
-            <button className="dashFeatureSub2 _h2" onClick={unassign}><p>Unassigned</p></button>
-            <span className="dashFeatureLine"/>
-
-            <div className="dashFeatureBody _body">16 conversations</div>
-            <div className="dashFeatureType _h2">Chat</div>
-            <div className="dashTickets">
-            { tickets.map((ticket)=>(
-                <Ticket active = {ticket.active} name = {ticket.name} message={ticket.message} id = {ticket.id} date = {ticket.date} onClick={()=>{handleTicket(ticket.id)}}/>
-            )) }
-            </div>
+            { assigned ?
+            <><button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
+                        {tickets.map((ticket) => (
+                            <Ticket active={ticket.active} name={ticket.name} message={ticket.message} id={ticket.id} date={ticket.date} onClick={() => { handleTicket(ticket); } } />
+                        ))}
+                    </div></>
+            : 
+            <><button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
+            {unassignedTickets.map((ticket) => (
+                <Ticket active={ticket.active} name={ticket.name} message={ticket.message} id={ticket.id} date={ticket.date} onClick={() => { handleTicket(ticket); } } />
+            ))}
+        </div></>
+            }
           </div>
     
           <div className="dashPanel">
@@ -53,7 +60,7 @@ function ChatFlyout(props: any) {
                 <img src="/dashboard/profile.png" />
               </div>*/}
               <div className="dashSectionInfo">
-                <div className="dashPanelName _h2">Dianne Russell</div>
+                <div className="dashPanelName _h2">{ticket?.name}</div>
                 <div className="dashPanelActive _h2">Ticket active</div>
                 <div className="dashPanelAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
                 <div className="dashPanelEmail _h2">Email: dianne.russell@mail.com</div>

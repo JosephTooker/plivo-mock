@@ -1,31 +1,23 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import { UserAuth } from '../context/AuthContext'
-import { useRouter } from 'next/router'
 import { Chat, Window, Channel, MessageList, MessageInput} from "stream-chat-react";
 import { httpsCallable } from "firebase/functions";
 import { functions } from "../firebase-config"
-import { DefaultGenerics, StreamChat } from "stream-chat";
-import { ChannelContainer, ChannelListContainer } from "../components";
+import { StreamChat } from "stream-chat";
 import 'stream-chat-react/dist/css/index.css'
 import { doc, setDoc, serverTimestamp, onSnapshot } from "firebase/firestore"; 
 import {db} from '../firebase-config'
-import LoadingSpinner from './LoadingSpinner';
 
 
 function ChatView() {
   const {user} = UserAuth()
-  const [ createType, setCreateType ] = useState('')
-  const [ isCreating, setIsCreating ] = useState(false)
-  const [ isEditing, setIsEditing ] = useState(false)
   const [message, setMessage] = useState('')
   const [client, setClient] = useState<any>()
-  const [documentID, setDocumentID] = useState("")
   const [adminID, setAdminID] = useState("")
   const [loading, setLoading] = useState(false)
   const [connected, setConnected] = useState(false)
-
-
+  
   useEffect(()=>{
     if(user === null){
       setMessage("Please log in to chat with an agent.")

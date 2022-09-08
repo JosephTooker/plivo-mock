@@ -355,6 +355,9 @@
   top: 10%;
   right: 6%;
   white-space: nowrap;
+}
+
+.dashUnfocused {
   font-weight: 500;
   color: #9DA09F;
 }
