@@ -4,6 +4,8 @@ import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from 'next/router'
 import toast from 'react-hot-toast';
 import {db, auth} from "../firebase-config"
+import {updateProfile } from "firebase/auth";
+
 
 const signup = () => {
   const firstNameRef = useRef<HTMLInputElement>(null)
@@ -38,6 +40,12 @@ const signup = () => {
           first_name: firstNameRef.current.value,
           last_name: lastNameRef.current.value,
           user_type: userTypeRef.current.value
+        }).then(function() {
+          return updateProfile(auth.currentUser, {
+            displayName: firstNameRef.current.value + " " + lastNameRef.current.value
+          })
+        }).catch(function(error) {
+          console.log(error);
         });
         router.push('/')
     } catch (error: any){

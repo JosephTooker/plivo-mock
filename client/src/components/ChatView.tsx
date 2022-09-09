@@ -34,6 +34,7 @@ function ChatView() {
     if(window.confirm("Would you like to chat with support?")){
       try {
        const docRef : any = await setDoc(doc(db, 'chatQueue', user?.uid),{
+          name: user?.displayName,
           userID: user?.uid,
           createdAt: serverTimestamp() ,
           resolved: false,
@@ -48,40 +49,45 @@ function ChatView() {
     }
   }
 
-  const unsub = onSnapshot(doc(db, "chatQueue", user?.uid), (doc) => {
-    console.log("Current data: ", doc.data());
-    if(doc.data()?.isAssigned === true && doc.data()?.adminID !== ""){
-      console.log(true);
-      console.log(doc.data()?.adminID);
-      setLoading(false)
-      setConnected(true)
-      setAdminID(doc.data()?.adminID)
-      let authToken: any;
-      const userID = user?.uid;
-        const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
-        res({})
-        .then(async (result) => {
-          const data: any = result.data;
-          authToken = data
-          if (user.uid !== undefined){
-            const apiKey = "nypvarqgsd9a";
-            const client = StreamChat.getInstance(apiKey, {
-              timeout: 6000,
-            });    
-            console.log(authToken)
-            console.log(userID)
-            client.connectUser(
-              {
-                id: userID,
-                name: user.email,
-              },
-              authToken
-            );
-            setClient(client)
-          }
-        })
+  useEffect(()=> {
+    const unsub = onSnapshot(doc(db, "chatQueue", user?.uid), (doc) => {
+      console.log("Current data: ", doc.data());
+      if(doc.data()?.isAssigned === true && doc.data()?.adminID !== ""){
+        console.log(true);
+        console.log(doc.data()?.adminID);
+        setLoading(false)
+        setConnected(true)
+        setAdminID(doc.data()?.adminID)
+        let authToken: any;
+        const userID = user?.uid;
+          const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
+          res({})
+          .then(async (result) => {
+            const data: any = result.data;
+            authToken = data
+            if (user.uid !== undefined){
+              const apiKey = "nypvarqgsd9a";
+              const client = StreamChat.getInstance(apiKey, {
+                timeout: 6000,
+              });    
+              console.log(authToken)
+              console.log(userID)
+              client.connectUser(
+                {
+                  id: userID,
+                  name: user.displayName,
+                },
+                authToken
+              );
+              setClient(client)
+            }
+          })
+      }
+    })
+    return () => {
+      unsub();
     }
-  })
+  }, [])
 
   return (
     <>

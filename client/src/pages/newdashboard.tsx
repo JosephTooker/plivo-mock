@@ -81,7 +81,7 @@ const NewDash: NextPage = () => {
           client.connectUser(
             {
               id: userID,
-              name: user.email,
+              name: user.displayName,
             },
             authToken
           );

@@ -795,6 +795,45 @@
 }
 
 /* SUPPORT MODAL*/
+
+/* Chat Queue*/
+
+.dashboardChat{
+  padding-top: 2vh;
+  position: relative;
+}
+
+.dashboardChat .messaging.str-chat .str-chat__list .str-chat__reverse-infinite-scroll {
+  padding-top: 0;
+}
+.dashboardChat .str-chat {
+  height: 75.5vh;
+  width: 100%;
+  position: absolute;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+}
+
+.dashboardChat .messaging.str-chat .str-chat__list{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dashboardChat .str-chat__input-flat{
+  border-top:1px solid #D9D9D9;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.dashboardChat .str-chat-channel.messaging .str-chat__main-panel{
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Chat Queue*/
+
 :root {
   --primary-color: #005fff;
   --primary-color-alpha: #005fff1a;

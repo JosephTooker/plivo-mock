@@ -1,6 +1,30 @@
 import React, {useState, useEffect} from 'react'
-import Ticket from './Ticket';
 import { Chat, Window, Channel, MessageList, MessageInput} from "stream-chat-react";
+import { WindowsFilled } from '@ant-design/icons';
+import { collection, query, where, getDocs, onSnapshot, doc, Timestamp } from "firebase/firestore";
+import {db} from '../../firebase-config'
+
+function Ticket(props : any) {
+  const {
+      active,
+      name,
+      message,
+      id,
+      createdAt,
+      onClick
+    } = props;
+
+  return (
+      <button onClick={props.onClick}>
+          <span className={active ? "ticketActive" : "ticketInactive"} />
+          <div className="ticketName _h2">{name}</div>
+          <div className="ticketMessage _body">{id}</div>
+          <div className="ticketId _body">Created On:</div>
+          <div className="ticketDate _body">{createdAt}</div>
+      </button>
+  );
+}
+
 
 function ChatFlyout(props: any) {
     const {
@@ -8,17 +32,33 @@ function ChatFlyout(props: any) {
       client
     } = props;
 
-    useEffect(()=>{
-      console.log("User loaded")
-    }, [user])
-
     const [assigned, setAssigned] = useState(true);
     const [ticket, setTicket]:any = useState(null);
     const [channel, setChannel]:any = useState();
+    const tickets:any = [];
+    const [unassignedTickets, setUnassignedTickets] = useState([]);
+
+    useEffect(()=>{
+      console.log("User loaded")
+    }, [user]);
+
+    const q = query(collection(db, "chatQueue"), where("isAssigned", "==", false));
+
+    useEffect(()=>{
+      const data:any = []
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          data.push(doc.data());
+        });
+        setUnassignedTickets(data);
+        console.log(data);
+      });
+      return () => unsubscribe()
+    }, []);
 
     useEffect(()=>{
       if(ticket!==null){
-        setChannel(client.channel('messaging', "support-"+user?.uid , {
+        setChannel(client.channel('messaging', "support-"+ticket.id , {
           name: 'Welcome to customer support.',
           members: [user.uid, ticket.id],
         }));
@@ -37,18 +77,16 @@ function ChatFlyout(props: any) {
         setTicket(ticket)
     }
 
-    const tickets:any = [];
-    const ticket1 = {"active":"true","name":"Albert Flores", "message":"Hi, I received the wrong ...", "id":"1hJFZfFU4ehhT8cshc8jimfUOX13", "date":"Sep 8, 2022"}
-
-    tickets.push(ticket1);
-
-    const unassignedTickets:any = [];
-    const ticket2 = {"active":"","name":"John Doe", "message":"", "id":"wJCGyAgqvsV2kdD4hCrkOYwCiAF3", "date":"Sep 8, 2022"}
-
-    unassignedTickets.push(ticket2);
-    if(ticket !== null){
-      console.log("ADMIN ID: "+user.uid, "CUSTOMER ID: " +ticket.id)
+    function assignTicket(ticket){
+      if(window.confirm("Would you like to add this ticket")){
+        console.log(ticket.id)
+      }
     }
+
+    const ticket1 = {"active":"false","name":"Albert Flores", "id":"dspb4LDeJQPJjFDwjIGjmk0cHQh1", "date":"Sep 8, 2022"}
+    const ticket2 = {"active":"true","name":"Joe Don", "id":"RgIsGvmYPkNGkZQSfAcgsjwYqy83", "date":"Sep 8, 2022"}
+    tickets.push(ticket1);
+    tickets.push(ticket2);
 
     return (
         <div className="dashFlyout">
@@ -61,14 +99,17 @@ function ChatFlyout(props: any) {
             { assigned ?
             <><button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
                         {tickets.map((ticket) => (
-                            <Ticket active={ticket.active} name={ticket.name} message={ticket.message} id={ticket.id} date={ticket.date} onClick={() => { handleTicket(ticket); } } />
+                            <Ticket active={ticket.active} name={ticket.name} message={ticket.message} id={ticket.id} createdAt={ticket.date} onClick={() => { handleTicket(ticket); } } />
                         ))}
                     </div></>
             : 
             <><button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
-            {unassignedTickets.map((ticket) => (
-                <Ticket active={ticket.active} name={ticket.name} message={ticket.message} id={ticket.id} date={ticket.date} onClick={() => { handleTicket(ticket); } } />
-            ))}
+            {
+            unassignedTickets.map((ticket:any) => (
+                <Ticket active={ticket.resolved} name={ticket.name} message={ticket.message} id={ticket.userID} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { assignTicket(ticket); } } />
+            ))
+            
+            }
         </div></>
             }
           </div>
@@ -80,19 +121,21 @@ function ChatFlyout(props: any) {
               </div>*/}
               <div className="dashSectionInfo">
                 <div className="dashPanelName _h2">{ticket?.name}</div>
-                <div className="dashPanelActive _h2">Ticket active</div>
+                <div className="dashPanelActive _h2">{ticket?.active === true ? "Chat Active" : "Chat Inactive"}</div>
                 <div className="dashPanelAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
                 <div className="dashPanelEmail _h2">Email: dianne.russell@mail.com</div>
               </div>
               {ticket === null ? null:
-              <Chat client={client}>
-                <Channel channel={channel}>
-                  <Window>
-                  <MessageList />
-                  <MessageInput/>
-                  </Window> 
-                </Channel>
-              </Chat>
+               <div className="dashboardChat">
+                <Chat client={client}>
+                  <Channel channel={channel}>
+                    <Window>
+                    <MessageList />
+                    <MessageInput/>
+                    </Window> 
+                  </Channel>
+                </Chat>
+              </div>
               }
             </div>
           </div>
