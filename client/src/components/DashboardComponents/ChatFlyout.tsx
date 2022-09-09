@@ -57,7 +57,7 @@ function ChatFlyout(props: any) {
       return () => unsubscribe()
     }, []);
 
-    const qActive = query(collection(db, "chatQueue"), where("isAssigned", "==", true));
+    const qActive = query(collection(db, "chatQueue"), where("isAssigned", "==", true), where("adminID", "==", user.uid));
 
     useEffect(()=>{
       const unsubscribe = onSnapshot(qActive, (querySnapshot) => {
