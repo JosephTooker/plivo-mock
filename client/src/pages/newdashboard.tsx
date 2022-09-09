@@ -19,8 +19,9 @@ const Sidebar = (props: any) => {
   
   return (
     <div className="dashSidebar">
-
-      <img className="dashSidebarLogo" src='/dashboard/logo.svg' alt='logo'/>
+      <div className="dashSidebarLogo">
+        <img src='/dashboard/logo.svg' alt='logo'/>
+      </div>
 
       <div className="dashSidebarNavContainer">
         <nav onClick={() => setPanel("chat")}>

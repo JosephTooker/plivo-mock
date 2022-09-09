@@ -241,8 +241,9 @@
 }
 
 .dashSidebarLogo {
-  margin: 50%;
-  transform: translate(-50%, -60%) scale(0.33); /*anchor center-center*/
+  position: absolute;
+  margin: 33%;
+  margin-top: 20%;
 }
 
 .dashSidebarNavContainer {
