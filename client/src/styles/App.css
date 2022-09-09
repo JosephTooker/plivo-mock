@@ -259,6 +259,8 @@
   left: 0.75vw;
   width: 10.5vw;
   height: 67vh;
+  fill: #D6B8B6;
+  stroke: #7F7587;
 }
 
 .dashSidebarNavContainer :hover {
@@ -266,6 +268,7 @@
   background-color: #005fff;
   background: #908E8F;
   border-radius: 5px;
+  fill: white;
 }
 
 .dashSidebar nav {
