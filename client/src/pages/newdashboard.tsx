@@ -1,15 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import type { NextPage } from "next";
+import { useRouter } from 'next/router'
 import EmailFlyout from "../components/DashboardComponents/EmailFlyout";
 import SMSFlyout from "../components/DashboardComponents/SMSFlyout";
 import ChatFlyout from "../components/DashboardComponents/ChatFlyout";
+import { UserAuth } from '../context/AuthContext'
+import { httpsCallable } from "firebase/functions";
+import { functions } from "../firebase-config"
+import 'stream-chat-react/dist/css/index.css'
+import { StreamChat } from "stream-chat";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 // Sidebar component - The sidebar shows the links on the left side of the screen.
 const Sidebar = (props: any) => {
   const {
     setPanel,
   } = props;
-
+  
   return (
     <div className="dashSidebar">
 
@@ -50,20 +57,59 @@ const Sidebar = (props: any) => {
 const NewDash: NextPage = () => {
 
   const [panel, setPanel] = React.useState("email");
+  const [client, setClient] = useState()
+  const {user} = UserAuth()
+  const router = useRouter()
+  let authToken: any;
+  const userID = user?.uid;
+
+  useEffect(()=>{
+    if(user === null){
+      router.push('/login')
+    }
+    else{
+      const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
+      res({})
+      .then((result) => {
+        const data: any = result.data;
+        authToken = data
+        if (user.uid !== undefined){
+          const apiKey = "nypvarqgsd9a";
+          const client = StreamChat.getInstance(apiKey, {
+            timeout: 6000,
+          });    
+          client.connectUser(
+            {
+              id: userID,
+              name: user.email,
+            },
+            authToken
+          );
+          setClient(client)
+        }
+      })
+    }
+  }, [user])
 
   return (
+    <>
+    {client === undefined ? 
+      <LoadingSpinner/>
+      :    
     <div className="home">
-        <Sidebar setPanel={setPanel} />
-  
-        {panel === "email"
-          ? <EmailFlyout />
-          : panel === "sms"
-          ? <SMSFlyout />
-          : panel === "chat"
-          ? <ChatFlyout />
-          : null
-        }
+      <Sidebar setPanel={setPanel} />
+
+      {panel === "email"
+        ? <EmailFlyout />
+        : panel === "sms"
+        ? <SMSFlyout />
+        : panel === "chat"
+        ? <ChatFlyout user={user} client={client}/>
+        : null
+      }
     </div>
+    }
+   </>
   );
 };
 

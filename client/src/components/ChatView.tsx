@@ -6,8 +6,9 @@ import { httpsCallable } from "firebase/functions";
 import { functions } from "../firebase-config"
 import { StreamChat } from "stream-chat";
 import 'stream-chat-react/dist/css/index.css'
-import { doc, setDoc, serverTimestamp, onSnapshot } from "firebase/firestore"; 
+import { doc, setDoc, serverTimestamp, onSnapshot, deleteDoc } from "firebase/firestore"; 
 import {db} from '../firebase-config'
+
 
 
 function ChatView() {
@@ -59,7 +60,7 @@ function ChatView() {
       const userID = user?.uid;
         const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
         res({})
-        .then((result) => {
+        .then(async (result) => {
           const data: any = result.data;
           authToken = data
           if (user.uid !== undefined){
@@ -114,8 +115,9 @@ function ChatView() {
           :
         <div className="supportChat">
           <Chat client={client}>
-          <Channel channel={client.channel('messaging', {
-              members: [user?.uid, adminID],
+          <Channel channel={client.channel('messaging', "support-"+user?.uid , {
+              name: 'Welcome to customer support.',
+              members: [user.uid, adminID],
             })}>
             <Window>
             <MessageList />

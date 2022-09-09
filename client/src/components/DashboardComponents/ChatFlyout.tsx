@@ -1,12 +1,29 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Ticket from './Ticket';
+import { Chat, Window, Channel, MessageList, MessageInput} from "stream-chat-react";
 
 function ChatFlyout(props: any) {
     const {
+      user,
+      client
     } = props;
+
+    useEffect(()=>{
+      console.log("User loaded")
+    }, [user])
 
     const [assigned, setAssigned] = useState(true);
     const [ticket, setTicket]:any = useState(null);
+    const [channel, setChannel]:any = useState();
+
+    useEffect(()=>{
+      if(ticket!==null){
+        setChannel(client.channel('messaging', "support-"+user?.uid , {
+          name: 'Welcome to customer support.',
+          members: [user.uid, ticket.id],
+        }));
+      }
+    }, [ticket])
 
     function assign(){
         setAssigned(true)
@@ -15,21 +32,23 @@ function ChatFlyout(props: any) {
     function unassign(){
         setAssigned(false)
     }
-    console.log(assigned);
 
     function handleTicket(ticket){
-        setTicket(ticket);
+        setTicket(ticket)
     }
 
     const tickets:any = [];
-    const ticket1 = {"active":"true","name":"Albert Flores", "message":"Hi, I received the wrong ...", "id":"Qev5C2hXJNeJ56VJtKAjKgzoAKx1", "date":"Sep 8, 2022"}
+    const ticket1 = {"active":"true","name":"Albert Flores", "message":"Hi, I received the wrong ...", "id":"1hJFZfFU4ehhT8cshc8jimfUOX13", "date":"Sep 8, 2022"}
 
     tickets.push(ticket1);
 
     const unassignedTickets:any = [];
-    const ticket2 = {"active":"","name":"John Doe", "message":"", "id":"r9NkUkRrlaWG6OrkVu2xwfS3uyk1", "date":"Sep 8, 2022"}
+    const ticket2 = {"active":"","name":"John Doe", "message":"", "id":"wJCGyAgqvsV2kdD4hCrkOYwCiAF3", "date":"Sep 8, 2022"}
 
     unassignedTickets.push(ticket2);
+    if(ticket !== null){
+      console.log("ADMIN ID: "+user.uid, "CUSTOMER ID: " +ticket.id)
+    }
 
     return (
         <div className="dashFlyout">
@@ -65,10 +84,16 @@ function ChatFlyout(props: any) {
                 <div className="dashPanelAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
                 <div className="dashPanelEmail _h2">Email: dianne.russell@mail.com</div>
               </div>
-              <div className="dashSection1">
-              </div>
-              <div className="dashSection2">
-              </div>
+              {ticket === null ? null:
+              <Chat client={client}>
+                <Channel channel={channel}>
+                  <Window>
+                  <MessageList />
+                  <MessageInput/>
+                  </Window> 
+                </Channel>
+              </Chat>
+              }
             </div>
           </div>
         </div>

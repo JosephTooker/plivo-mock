@@ -1,5 +1,5 @@
 
-import { DefaultGenerics, StreamChat } from "stream-chat";
+import { StreamChat } from "stream-chat";
 import { Chat } from "stream-chat-react";
 import { ChannelContainer, ChannelListContainer } from "../components";
 import { useState, useEffect } from "react";
