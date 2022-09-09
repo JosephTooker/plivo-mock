@@ -246,6 +246,10 @@
   margin-top: 20%;
 }
 
+.dashSidebarLogo :hover {
+  cursor: pointer;
+}
+
 .dashSidebarNavContainer {
   position: absolute;
   display: flex;

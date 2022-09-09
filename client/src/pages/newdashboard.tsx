@@ -17,10 +17,12 @@ const Sidebar = (props: any) => {
     setPanel,
   } = props;
   
+  const router = useRouter()
+
   return (
     <div className="dashSidebar">
       <div className="dashSidebarLogo">
-        <img src='/dashboard/logo.svg' alt='logo'/>
+        <img src='/dashboard/logo.svg' alt='logo' onClick={() => router.push('/')}/>
       </div>
 
       <div className="dashSidebarNavContainer">
