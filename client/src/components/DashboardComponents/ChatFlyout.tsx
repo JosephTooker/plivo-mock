@@ -110,7 +110,7 @@ function ChatFlyout(props: any) {
               throw "Chat is already assigned!";
             }
         
-            transaction.update(chatDoc, 
+            transaction.update(chatRef, 
               { 
                 isAssigned: true,  
                 adminID: user.uid,
@@ -135,13 +135,13 @@ function ChatFlyout(props: any) {
             { assigned ?
             <><button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
                         {tickets.map((ticket:any) => (
-                            <Ticket active={ticket.resolved} name={ticket.name} message={ticket.message} id={ticket.userID} createdAt={ticket.date} onClick={() => { handleTicket(ticket); } } />
+                            <Ticket active={ticket.resolved} name={ticket.name} message={ticket.message} id={ticket.userID} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { handleTicket(ticket); } } />
                         ))}
                     </div></>
             : 
             <><button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
                         {unassignedTickets.map((ticket:any) => (
-                        <Ticket active={ticket.resolved} name={ticket.name} message={ticket.message} id={ticket.userID} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { assignTicket(ticket); } } />
+                            <Ticket active={ticket.resolved} name={ticket.name} message={ticket.message} id={ticket.userID} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { assignTicket(ticket); } } />
                         ))}
                     </div></>
             }
