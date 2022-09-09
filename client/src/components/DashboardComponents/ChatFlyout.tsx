@@ -45,13 +45,14 @@ function ChatFlyout(props: any) {
     const q = query(collection(db, "chatQueue"), where("isAssigned", "==", false));
 
     useEffect(()=>{
-      const data:any = []
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        let data:any= [];
         querySnapshot.forEach((doc) => {
-          data.push(doc.data());
+          if(!data.includes(doc.data())){
+            data.push(doc.data());
+          }
         });
-        setUnassignedTickets(data);
-        console.log(data);
+        setUnassignedTickets(data);  
       });
       return () => unsubscribe()
     }, []);
