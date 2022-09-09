@@ -92,12 +92,16 @@ function ChatView() {
   return (
     <>
     <div className='bg-white h-full'>
+    {client !== undefined ? 
+          null
+          :
     <div className='chatRequestContainer'>
     <div className="str-chat__avatar str-chat__avatar--circle" data-testid="avatar" title="test@test.com">
       <div className="str-chat__avatar-fallback" data-testid="avatar-fallback">CC</div>
       </div>
       <div className='supportModalChatRequest'><p>{message}</p></div>
     </div>
+    }
       {user && loading === false && connected === false &&
       <>
       <h1 className='justify-center text-center m-1 font-bold'>Possible Actions</h1>
