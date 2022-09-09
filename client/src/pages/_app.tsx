@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <>
+      <link rel="stylesheet" href="https://use.typekit.net/jvi6yqw.css"></link>
       <Toaster />
       <AuthContextProvider>
         <Component {...pageProps} />;
