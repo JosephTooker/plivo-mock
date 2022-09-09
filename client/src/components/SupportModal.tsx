@@ -126,7 +126,7 @@ export default function SupportModal() {
   return (
     <div className="supportModal">
       <button
-        className="fixed z-50 px-8 gap-x-2.5 top-[91.21%] bottom-[3.9%] right-[3.05%] bg-[#9DA09F] hover:bg-[#289D8C] text-gray-800 font-bold inline-flex items-center rounded-md"
+        className="home_button"
         type="button"
         onClick={onClick}
       >

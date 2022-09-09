@@ -82,6 +82,7 @@ const Home: NextPage = () => {
   return (
     
     <div className="home">
+      
       <span className="home_background" />
       <div className="home_header">
 
@@ -108,7 +109,6 @@ const Home: NextPage = () => {
       </div>
 
       <div className="home_content">
-        <SupportModal />
 
         <p className="home_title">Customer Care</p>
         <p className="home_text">
@@ -161,6 +161,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       
+      <SupportModal />
     </div>
   );
 };
