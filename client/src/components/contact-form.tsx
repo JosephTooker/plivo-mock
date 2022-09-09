@@ -133,7 +133,7 @@ export default function ContactUs() {
         required
       ></textarea>
       <div className="flex flex-row justify-center">
-        <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#9DA09F] text-gray-50 font-light text-lg  ">
+        <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#A9C6BB] text-black font-semibold text-lg  ">
           Send
           <svg
             width="24"

@@ -18,11 +18,11 @@ export default function SupportModal() {
   const Default = () => {
     return (
       <div className="chat-popup" id="myForm" hidden={hideModal}>
-        <form className="flex fixed z-50 gap-x-2.5 w-[25%] top-[40%] bottom-[3.9%] right-[3.05%] flex-col bg-[#F5F5F5] rounded-md">
-          <div className="flex flex-row h-[15%] items-center bg-[#9DA09F] px-8 rounded-t-md">
+        <form className="flex fixed z-50 gap-x-2.5 w-[25%] top-[40%] bottom-[3.9%] right-[3.05%] flex-col bg-[#FFFFFF] rounded-md">
+          <div className="flex flex-row h-[15%] items-center bg-[#ADCABF] px-8 rounded-t-md">
           { menu === "Default" && 
           <>
-            <h1 className="flex-auto ml-5 font-semibold text-center text-white">
+            <h1 className="flex-auto ml-5 font-semibold text-center text-black">
               How can we help?
             </h1>
             <button className="flex-initial" type="button" onClick={onClose}>
@@ -70,21 +70,21 @@ export default function SupportModal() {
         }
 
         {menu === "Message" && 
-            <h1 className="flex-auto mr-5 font-semibold text-center text-white">
+            <h1 className="flex-auto mr-5 font-semibold text-center text-black">
             Leave us a message
         </h1>
         }
 
         
         {menu === "Text" && 
-            <h1 className="flex-auto mr-5 font-semibold text-center text-white">
+            <h1 className="flex-auto mr-5 font-semibold text-center text-black">
             Send us a text
         </h1>
         }
 
         
         {menu === "Chat" && 
-            <h1 className="flex-auto mr-5 font-semibold text-center text-white">
+            <h1 className="flex-auto mr-5 font-semibold text-center text-black">
             Chat with Customer Care
         </h1>
         }

@@ -82,9 +82,10 @@
 
 .home_background {
   position: absolute;
+  top: 12.5vh;
   min-width: 100vw;
   min-height: 100vh;
-  object-fit: cover;
+  background-size: cover;
   background: url(/background.svg);
 }
 
@@ -96,7 +97,12 @@
 }
 
 .home_name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   position: absolute;
+  align-items: center;
+
   font-family: 'Averia Sans Libre';
   font-style: italic;
   font-weight: 700;
@@ -109,7 +115,7 @@
 
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  transform: translate(0%, -32%);
+  transform: translate(0%, -50%);
 }
 
 .home_title {
@@ -224,8 +230,7 @@
 .home_container2 {
   position: absolute;
   left: 10%;
-  top: 63.5%;
-  margin-top: 2.5vw;
+  top: calc(65% + 1.75vw);
   width: 80%;
   height: 20%;
 }

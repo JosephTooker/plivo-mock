@@ -50,7 +50,7 @@ export default function TextUs() {
             className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
           ></textarea>
           <div className="flex flex-row justify-center">
-            <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#9DA09F] text-gray-50 font-light text-lg  ">
+            <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#A9C6BB] text-black font-semibold text-lg  ">
               Send
               <svg
                 width="24"

@@ -91,7 +91,7 @@ const Home: NextPage = () => {
             <path d="M45.0332 0.516662L30.3974 18.0667L22.5165 39.5167L14.6357 18.0667L-0.00011979 0.516659L22.5165 4.41666L45.0332 0.516662Z" fill="#598C55"/>
           </svg>
         </div>
-        <div className="home_name">Best-T’s</div>
+        <div className="home_name"><p>Best-T’s</p></div>
 
         <div className="home_header_right">
           <p className="_h5">Home</p>
@@ -160,7 +160,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      
+
       <SupportModal />
     </div>
   );
