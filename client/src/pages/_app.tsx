@@ -9,7 +9,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <link rel="stylesheet" href="https://use.typekit.net/jvi6yqw.css"></link>
       <Toaster />
       <AuthContextProvider>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </AuthContextProvider>
   </>
 };
