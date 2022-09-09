@@ -38,7 +38,7 @@
 }
 
 ._h3 {
-  font-family: "Roboto Flex";
+  font-family: aktiv-grotesk;
   font-style: normal;
   font-weight: 500;
   font-size: max(16px, 2.4vmin);
@@ -46,11 +46,12 @@
 }
 
 ._h5 {
-  font-family: 'Roboto Flex';
+  font-family: aktiv-grotesk;
   font-style: normal;
   font-weight: 500;
   font-size: max(14px, 2vmin);
   line-height: 130%;
+  white-space: nowrap;
   /* identical to box height, or 21px */
 
   display: flex;
@@ -87,6 +88,30 @@
   background: url(/background.svg);
 }
 
+.home_logo {
+  position: absolute;
+  transform: translate(0%, -50%);
+  left: 1.5vw;
+  top: 50%;
+}
+
+.home_name {
+  position: absolute;
+  font-family: 'Averia Sans Libre';
+  font-style: italic;
+  font-weight: 700;
+  font-size: max(24px, 5vmin);
+  /* identical to box height, or 55% */
+
+  top: 50%;
+  left: 6vw;
+  height: 100%;
+
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  transform: translate(0%, -32%);
+}
+
 .home_title {
   position: absolute;
   top: 15%;
@@ -106,21 +131,25 @@
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
+  font-family: aktiv-grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: max(12px, 2.2vmin);
+  line-height: 130%;
+  white-space: nowrap;
 }
 
 .home_header {
   position: absolute;
-  width: 100%;
-  height: 12.5%;
-  background-color: #D9D9D9;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 12.5vh;
+  background-color: #BFE0D4;
 }
 
-.home_logo {
-  position: absolute;
-  top: 50%;
-  margin-left: 1.5vw;
-  transform: translate(0%, -50%);
-}
+
 
 .home_header_right {
   display: flex;
@@ -128,10 +157,10 @@
   align-items: center;
   position: absolute;
   top: 0%;
-  left: 70%;
-  width: 30%;
+  right: 3vw;
   height: 100%;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  gap: 3vw;
 }
 
 .home_header_right :hover {
@@ -172,7 +201,7 @@
   width: 25.5vw;
   height: 100%;
   text-align: center;
-  background-color: #D9D9D9;
+  background-color: #F5F5F5;
   border-radius: 10px;
   box-shadow: 0px 165px 66px rgba(0, 0, 0, 0.01), 0px 93px 56px rgba(0, 0, 0, 0.05), 0px 41px 41px rgba(0, 0, 0, 0.09), 0px 10px 23px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);}
 
@@ -198,7 +227,7 @@
   top: 63.5%;
   margin-top: 2.5vw;
   width: 80%;
-  height: 17.5%;
+  height: 20%;
 }
 
 .home_container2 :hover {
@@ -208,28 +237,25 @@
 }
 
 .home_panel2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #D9D9D9;
+  background-color: #F5F5F5;
   box-shadow: 0px 165px 66px rgba(0, 0, 0, 0.01), 0px 93px 56px rgba(0, 0, 0, 0.05), 0px 41px 41px rgba(0, 0, 0, 0.09), 0px 10px 23px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);  border-radius: 10px;
 }
 
 .home_bot_text {
   pointer-events: none;
-  position: absolute;
   text-align: center;
-  top: 40%;
-  width: 100%;
 }
 
 .home_bot_caption {
   pointer-events: none;
-  position: absolute;
   text-align: center;
-  top: 72%;
-  left: 50%;
   text-decoration: underline;
-  transform: translate(-50%, -50%);
 }
 
 
