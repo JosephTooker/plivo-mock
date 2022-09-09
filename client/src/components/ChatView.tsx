@@ -50,6 +50,7 @@ function ChatView() {
   }
 
   useEffect(()=> {
+    if(user !== null){
     const unsub = onSnapshot(doc(db, "chatQueue", user?.uid), (doc) => {
       console.log("Current data: ", doc.data());
       if(doc.data()?.isAssigned === true && doc.data()?.adminID !== ""){
@@ -87,6 +88,7 @@ function ChatView() {
     return () => {
       unsub();
     }
+  }
   }, [])
 
   return (

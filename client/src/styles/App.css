@@ -754,12 +754,30 @@
   box-shadow: none;
 }
 
-.supportChat .str-chat-channel .str-chat__container{
-  height: 100%;
+.supportChat{
+  position: relative;
+}
+
+.supportChat .str-chat{
+  height: 45vh;
+  width: 100%;
+  position: relative;
 }
 
 .supportChat .str-chat-channel.messaging .str-chat__main-panel{
+  display: flex;
+  flex-direction: column;
   padding: 0;
+}
+
+.supportChat .messaging.str-chat .str-chat__list .str-chat__reverse-infinite-scroll {
+  padding-top: 0;
+}
+
+.supportChat .str-chat__input-flat{
+  overflow-x: clip;
+  border-top:1px solid #D9D9D9;
+  bottom: 0;
 }
 
 .chatRequestContainer {
