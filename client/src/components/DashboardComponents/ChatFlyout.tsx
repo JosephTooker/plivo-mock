@@ -28,30 +28,20 @@ function ChatFlyout(props: any) {
     useEffect(()=>{
       const q = query(collection(db, "chatQueue"), where("isAssigned", "==", false));
 
-      const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        let data:any= [];
-        querySnapshot.forEach((doc) => {
-          if(!data.includes(doc.data())){
-            data.push(doc.data());
-          }
-        });
-        setUnassignedTickets(data);  
+      const unsubscribe = onSnapshot(q, (querySnapshot:any) => {
+        setUnassignedTickets(querySnapshot.docs.map(doc => doc.data()))
       });
+
       return () => unsubscribe()
     }, []);
 
     useEffect(()=>{
       const qActive = query(collection(db, "chatQueue"), where("isAssigned", "==", true), where("adminID", "==", user?.uid));
 
-      const unsubscribe = onSnapshot(qActive, (querySnapshot) => {
-        let data:any= [];
-        querySnapshot.forEach((doc) => {
-          if(!data.includes(doc.data())){
-            data.push(doc.data());
-          }
-        });
-        setTickets(data);  
+      const unsubscribe = onSnapshot(qActive, (querySnapshot:any) => {
+        setTickets(querySnapshot.docs.map(doc => doc.data()))
       });
+
       return () => unsubscribe()
     }, []);
 
@@ -64,8 +54,6 @@ function ChatFlyout(props: any) {
         }));
       }
     }, [ticket])
-
-
 
     async function assignTicket(ticket){
       if(window.confirm("Would you like to add this ticket")){
