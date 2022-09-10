@@ -1,9 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Ticket from './Ticket';
+import { query, collection, doc, onSnapshot, Timestamp } from 'firebase/firestore' 
+import {db} from '../../firebase-config'
+import { AiOutlineSend } from 'react-icons/ai'
+import axios from 'axios';
 
 function SMSFlyout(props: any) {
     const {
     } = props;
+
+    const [tickets, setTickets] = useState([])
+    const [ticket, setTicket] = useState(null)
+    const [activeTicket, setActiveTicket] = useState(tickets[0]) 
+    const [name, setName] = useState("")
+    const [number, setNumber] = useState("")
+    const [message, setMessage] = useState("")
+    const [body, setBody] = useState("")
+
+    const qActive = query(collection(db, "text-form"))
+
+    const bodyRef = useRef<HTMLInputElement>(null)
+
+    useEffect(()=>{
+      const unsubscribe = onSnapshot(qActive, (querySnapshot) => {
+        let data:any= [];
+        querySnapshot.forEach((doc) => {
+          if(!data.includes(doc.data())){
+            data.push(doc.data());
+          }
+        });
+        setTickets(data);  
+      });
+      return () => unsubscribe()
+    }, []);
+
+    function handleTicket(ticket){
+      setName(ticket.full_name)
+      setNumber(ticket.phone_number)
+      setMessage(ticket.message)
+    }
+
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+
+      setBody(bodyRef.current.value)
+
+      const URL = "http://localhost:5000/text"
+
+      //const { data: { body, number},} = await axios.post(`${URL}/text`)
+      await axios.post(`${URL}/text`, {
+        body: body,
+        number: number
+      })
+      
+    }
 
     return (
         <div className="dashFlyout">
@@ -16,15 +66,12 @@ function SMSFlyout(props: any) {
             <div className="dashFeatureSub1 _h2"><p>Assigned to you</p></div>
             <div className="dashFeatureSub2 _h2"><p>Unassigned</p></div>
             <span className="dashFeatureLine"/>
-            <div className="dashFeatureBody _body">16 conversations</div>
+            <div className="dashFeatureBody _body">{tickets.length} conversations</div>
             <div className="dashFeatureType _h2">SMS</div>
             <div className="dashTickets">
-              <Ticket active="1" name="Albert Flores" message="Hi, I received the wrong ..." id="1323" date="Today 9:12am" />
-              <Ticket active="1" name="Cameron Williamson" message="Hi, Is it possible to get a..." id="1389" date="Today 10:23am" />
-              <Ticket active="1" name="Devon Lane" message="Hi, Is it possible to get a..." id="1321" date="Today 9:00am" />
-              <Ticket name="Guy Hawkins" message="Hey, I have a question a..." id="1322" date="Today 9:09am" />
-              <Ticket name="Leslie Alexander" message="Hey, I have a question a..." id="1452" date="Today 11:18am" />
-              <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" />
+              {tickets.map((ticket:any) => (
+                <Ticket active={ticket.resolved} name={ticket.full_name} message={ticket.message} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { handleTicket(ticket); } } />
+              ))}
             </div>
           </div>
     
@@ -34,14 +81,24 @@ function SMSFlyout(props: any) {
                 <img src="/dashboard/profile.png" />
               </div>*/}
               <div className="dashSectionInfo">
-                <div className="dashPanelName _h2">Dianne Russell</div>
+                <div className="dashPanelName _h2">Name: {name}</div>
                 <div className="dashPanelActive _h2">Ticket active</div>
-                <div className="dashPanelAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
-                <div className="dashPanelEmail _h2">Email: dianne.russell@mail.com</div>
+                <div className="dashPanelAddress _h2">Santa Ana, Illinois</div>
+                <div className="dashPanelEmail _h2">Phone: {number}</div>
               </div>
               <div className="dashSection1">
+                {message}
               </div>
               <div className="dashSection2">
+                <textarea 
+                  id="message" 
+                  rows="4" 
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                  placeholder="Your message..."
+                  ref={bodyRef}>
+
+                  </textarea>
+                <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={handleSubmit}>Send Text <AiOutlineSend /> </button>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 
 const authRoutes = require("./routes/auth.js")
+const textRoutes = require("./routes/text.js")
 
 const app = express();
 const PORT = process.env.PORT || 5000
@@ -46,5 +47,6 @@ app.post('/', (req, res) => {
 })
 
 app.use('/auth', authRoutes)
+app.use('/text', textRoutes)
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

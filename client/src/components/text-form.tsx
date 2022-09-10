@@ -1,10 +1,26 @@
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input/input'
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { db } from "../firebase-config"
+import { doc, setDoc } from "firebase/firestore"
 
 
 export default function TextUs() {
     const [phoneNumber, setPhoneNumber] = useState();
+    const nameRef = useRef<HTMLInputElement>(null)
+    const numberRef = useRef<HTMLInputElement>(null)
+    const messageRef = useRef<HTMLInputElement>(null)
+
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+      console.log("Sending data")
+      await setDoc(doc(db, "text-form", nameRef.current.value), {
+        full_name: nameRef.current.value,
+        phone_number: numberRef.current.value,
+        message: messageRef.current.value
+      })
+
+    }
 
     return (
         <form className="rounded-lg flex flex-col px-8">
@@ -19,6 +35,7 @@ export default function TextUs() {
             type="text"
             name="fullname"
             className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+            ref={nameRef}
           />
         
           <label
@@ -35,6 +52,7 @@ export default function TextUs() {
             value={phoneNumber}
             onChange={setPhoneNumber}
             className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+            ref={numberRef}
           />
     
           <label
@@ -48,9 +66,10 @@ export default function TextUs() {
             maxLength={180}
             name="message"
             className="bg-white border-2 border-[#D9D9D9] py-2 pl-4 focus:outline-none focus:ring-1 ring-green-500 font-light text-gray-500"
+            ref={messageRef}
           ></textarea>
           <div className="flex flex-row justify-center">
-            <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#A9C6BB] text-black font-semibold text-lg  ">
+            <button className="flex flex-row items-center justify-center w-full px-10 mt-8 mb-8 py-2 bg-[#A9C6BB] text-black font-semibold text-lg  " onClick={handleSubmit}>
               Send
               <svg
                 width="24"
