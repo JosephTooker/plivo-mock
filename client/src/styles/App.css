@@ -185,6 +185,12 @@
   height: 87.5vh;
 }
 
+.home_container1 :hover, .home_container2 :hover {
+  background-color: aquamarine;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
 .home_container1 {
   position: absolute;
   left: 10%;
@@ -194,12 +200,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.home_container1 :hover {
-  background-color: aquamarine;
-  transition: 0.3s;
-  cursor: pointer;
 }
 
 .home_panel {
@@ -233,12 +233,6 @@
   top: calc(65% + 1.75vw);
   width: 80%;
   height: 20%;
-}
-
-.home_container2 :hover {
-  background-color: aquamarine;
-  transition: 0.3s;
-  cursor: pointer;
 }
 
 .home_panel2 {
@@ -422,11 +416,6 @@
   letter-spacing: -0.02em;
 }
 
-.dashFeatureSub1 :hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 .dashFeatureSub2 {
   position: absolute;
   top: 10%;
@@ -439,9 +428,10 @@
   color: #6E727F;
 }
 
-.dashFeatureSub2 :hover {
+.dashFeatureSub1 :hover, .dashFeatureSub2 :hover {
   cursor: pointer;
   text-decoration: underline;
+  color: #8c62a8;
 }
 
 .dashFeatureLine {
@@ -505,7 +495,7 @@
 .dashTickets button:hover {
   cursor: pointer;
   background-color: white;
-  border: 2px solid #8c62a8;
+  border: 0.2vmin solid #8c62a8;
 }
 
 .dashTickets button {
@@ -524,7 +514,7 @@
   overflow: hidden;
 
   background: #F5F5F5;
-  border: 1px solid #D9D9D9;
+  border: 0.2vmin solid #D9D9D9;
   border-radius: 1vmin;
 }
 
@@ -597,7 +587,7 @@
 
 /* Track */
 .dashFlow::-webkit-scrollbar-track {
-  background: F5F5F5;
+  background: #F5F5F5;
   border-radius: 5px;
 }
 
