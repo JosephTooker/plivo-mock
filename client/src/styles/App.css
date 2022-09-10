@@ -97,8 +97,9 @@
   top: 12.5vh;
   min-width: 100vw;
   min-height: 100vh;
-  background-size: cover;
   background: url(/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .home_logo {
