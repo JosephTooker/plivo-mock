@@ -61,9 +61,17 @@ function ChatFlyout(props: any) {
       }
     }, [ticket])
 
-    const assign = () => setAssigned(true);
-    const unassign = () => setAssigned(false);
-    const handleTicket = () => setTicket(ticket);
+    function assign(){
+        setAssigned(true)
+    }
+
+    function unassign(){
+        setAssigned(false)
+    }
+
+    function handleTicket(ticket){
+        setTicket(ticket)
+    }
 
     async function assignTicket(ticket){
       if(window.confirm("Would you like to add this ticket")){
