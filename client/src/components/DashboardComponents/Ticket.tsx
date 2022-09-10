@@ -1,6 +1,12 @@
 import React from 'react'
+import { doc, getDocs } from "firebase/firestore";
+import { collection } from 'firebase/firestore';
+import { db } from '../../firebase-config';
 
-function Ticket(props : any) {
+
+
+
+ function Ticket(props : any) {
     const {
         active,
         name,
@@ -9,7 +15,24 @@ function Ticket(props : any) {
         createdAt,
         onClick
       } = props;
-  
+
+    //   const docRef = collection(db, "emailQueue", name, "emails");
+    //   const docSnaps = getDocs(docRef); 
+    //   console.log(docSnaps[0])
+
+      
+        async function cal(){
+
+            const querySnapshot = await getDocs(collection(db, "emailQueue", name, "emails"));
+            console.log(querySnapshot)
+            querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            });
+        }
+        cal();
+
+
     return (
         <button onClick={onClick}>
             <span className={active ? "ticketActive" : "ticketInactive"} />
