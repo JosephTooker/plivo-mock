@@ -133,11 +133,11 @@ function ChatFlyout(props: any) {
             }
           </div>
     
-          <div className="dashPanel">
-            <div className="dashPanelBox">
+          <div className="dashRight">
+            <div className="dashRightBox">
 
-              <div className="dashPanelHeader">
-                <div className="dashPanelImage">
+              <div className="dashRightHeader">
+                <div className="dashRightImage">
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo">

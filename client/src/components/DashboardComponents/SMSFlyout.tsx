@@ -102,11 +102,12 @@ function SMSFlyout(props: any) {
             }
           </div>
     
-          <div className="dashPanel">
-            <div className="dashPanelBox">
+          <div className="dashRight">
+            <div className="dashRightBox">
 
-              <div className="dashPanelHeader">
-                <div className="dashPanelImage">
+              {/* Border Box + Info Card Header + Profile Image */}
+              <div className="dashRightHeader">
+                <div className="dashRightImage">
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo">
@@ -117,20 +118,23 @@ function SMSFlyout(props: any) {
                   <span className={"dashInfoDot " + (ticket?.active && "active")} />
                 </div>
               </div>
-              <div className="dashSection1">
-                {message}
-              </div>
-              <div className="dashSection2">
-                <textarea 
-                  id="message" 
-                  rows="4" 
-                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                  placeholder="Your message..."
-                  ref={bodyRef}>
 
-                  </textarea>
-                <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={handleSubmit}>Send Text <AiOutlineSend /> </button>
+              {/* Content Area */}
+              <div className="dashContent">
+                <div className="dashContentHeader"></div>
+                <div className="dashContentFlow _body">{message}</div>
+                <textarea
+                  id="message" 
+                  rows="auto"
+                  class="dashContentTextArea _body"
+                  placeholder="Your message..."
+                  ref={bodyRef}
+                />
+                <div className="dashContentFooter">
+                  <button className='dashContentSendButton' onClick={handleSubmit}>Send Text<AiOutlineSend/></button>
+                </div>
               </div>
+
             </div>
           </div>
         </div>

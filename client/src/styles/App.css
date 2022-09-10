@@ -150,7 +150,7 @@
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+
   font-family: aktiv-grotesk;
   font-style: normal;
   font-weight: 500;
@@ -538,7 +538,7 @@
 
 
 
-.dashPanel {
+.dashRight {
   position: absolute;
   display: flex; /* allow the dashPanelBox to fill the remaining space */
   top: 0vh;
@@ -547,7 +547,7 @@
   height: 100vh;
 }
 
-.dashPanelBox {
+.dashRightBox {
   display: flex;
   flex-direction: column;
   box-sizing: content-box;
@@ -559,7 +559,7 @@
   gap: 2.25vmin;
 }
 
-.dashPanelHeader {
+.dashRightHeader {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -568,7 +568,7 @@
   height: 12.5%;
 }
 
-.dashPanelImage {
+.dashRightImage {
   position: relative;
   width: 11.18vh;
   clip-path: circle(50% at 50% 50%);
@@ -582,6 +582,102 @@
   /* border: 1px solid aquamarine; */
   border-radius: 5px;
   overflow: hidden;
+}
+
+.dashContent {
+  position: relative;
+  height: 87.5%;
+
+  border: 0.2vmin solid #D9D9D9;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.dashContentHeader {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 10%;
+}
+
+.dashContentFlow {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 57%;
+}
+
+.dashContentTextArea {
+  position: absolute;
+  top: 67%;
+  width: 100%;
+  height: 23%;
+
+  padding: 2.5%;
+
+  background-color: #F9FAFB;
+  border-radius: 10px 10px 0px 0px;
+  border-width: 0.2vmin;
+  border-color: #D9D9D9;
+
+  overflow-y: auto;
+  resize: none;
+}
+
+.dashContentTextArea::-webkit-scrollbar {
+  margin-right: 15px;
+  width: 6px;
+}
+
+/* Track */
+.dashContentTextArea::-webkit-scrollbar-track {
+  background: #F5F5F5;
+  border-radius: 5px;
+}
+
+/* Handle */
+.dashContentTextArea::-webkit-scrollbar-thumb {
+  background: #D9D9D9;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.dashContentTextArea::-webkit-scrollbar-thumb:hover {
+  background: #908E8F;
+}
+
+.dashContentFooter {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 10%;
+
+  background: #F5F5F5;
+}
+
+.dashContentSendButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 10px;
+
+  top: 50%;
+  right: 2.25vmin;
+
+  position: absolute;
+  width: auto;
+  height: 50%;
+
+  background: #817589;
+  border-radius: 10px;
+
+  color: white;
+  white-space: nowrap;
+
+  transform: translate(0%, -50%);
 }
 
 .dashFlow {
@@ -634,7 +730,7 @@
 .dashSection1 {
   box-sizing: border-box;
 
-  position: absolute;
+  position: relative;
   top: 20%;
   left: 6%;
   width: 88%;
@@ -647,7 +743,7 @@
 .dashSection2 {
   box-sizing: border-box;
 
-  position: absolute;
+  position: relative;
   top: 55%;
   left: 6%;
   width: 88%;
@@ -656,7 +752,6 @@
   border: 0.2vmin solid #D9D9D9;
   border-radius: 5px;
 }
-
 
 
 
