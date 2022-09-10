@@ -33,11 +33,11 @@ function SMSFlyout(props: any) {
               {/*<div className="dashPanelImage fill">
                 <img src="/dashboard/profile.png" />
               </div>*/}
-              <div className="dashSectionInfo">
-                <div className="dashPanelName _h2">Dianne Russell</div>
-                <div className="dashPanelActive _h2">Ticket active</div>
-                <div className="dashPanelAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
-                <div className="dashPanelEmail _h2">Email: dianne.russell@mail.com</div>
+              <div className="dashInfo">
+                <div className="dashInfoName _h2">Dianne Russell</div>
+                <div className="dashInfoActive _h2">Ticket active</div>
+                <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
+                <div className="dashInfoEmail _h2">Email: dianne.russell@mail.com</div>
               </div>
               <div className="dashSection1">
               </div>

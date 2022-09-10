@@ -156,11 +156,11 @@ function ChatFlyout(props: any) {
               {/*<div className="dashPanelImage fill">
                 <img src="/dashboard/profile.png" />
               </div>*/}
-              <div className="dashSectionInfo">
-                <div className="dashPanelName _h2">{ticket?.name}</div>
-                <div className="dashPanelActive _h2">{ticket?.active == true ? "Chat Active" : "Chat Inactive"}</div>
-                <div className="dashPanelAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
-                <div className="dashPanelEmail _h2">Email: dianne.russell@mail.com</div>
+              <div className="dashInfo">
+                <div className="dashInfoName _h2">{ticket?.name}</div>
+                <div className="dashInfoActive _h2">{ticket?.active == true ? "Chat Active" : "Chat Inactive"}</div>
+                <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
+                <div className="dashInfoEmail _h2">Email: dianne.russell@mail.com</div>
               </div>
               {ticket === null ? null:
                <div className="dashboardChat">

@@ -549,7 +549,7 @@
   height: 12.5%;
 }
 
-.dashSectionInfo {
+.dashInfo {
   position: relative;
   top: 0%;
   left: 15%;
@@ -637,7 +637,7 @@
 
 
 
-.dashPanelName {
+.dashInfoName {
   position: absolute;
   top: 20%;
   transform: translate(0%, -50%);
@@ -646,7 +646,7 @@
 }
 
 
-.dashPanelActive {
+.dashInfoActive {
   position: absolute;
   top: 66%;
   left: 20px;
@@ -658,7 +658,7 @@
   color: #000000;
 }
 
-.dashPanelAddress {
+.dashInfoAddress {
   position: absolute;
   left: 35%;
   top: 20%;
@@ -670,7 +670,7 @@
   color: #000000;
 }
 
-.dashPanelEmail {
+.dashInfoEmail {
   position: absolute;
   left: 35%;
   top: 66%;
