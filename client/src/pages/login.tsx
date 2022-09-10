@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import toast from 'react-hot-toast';
 import {auth} from '../firebase-config'
 import {browserSessionPersistence, inMemoryPersistence} from "firebase/auth";
+import backgroundExample from "../assets/backgroundExample";
 
 export default function login() {
   const emailRef = useRef<HTMLInputElement>(null)
@@ -36,6 +37,9 @@ export default function login() {
         setLoading(true)
         if(!checked){
           await auth.setPersistence(inMemoryPersistence)
+        } 
+        else{
+          await auth.setPersistence(browserSessionPersistence)
         }
         await logIn(emailRef.current.value, passwordRef.current.value)
         console.log("Submit")
@@ -49,8 +53,8 @@ export default function login() {
   };
 
   return (
-    <div className="flex flex-row justify-center">
-      <div className="flex flex-col md:w-[50%] min-h-screen align-middle justify-center text-center bg-white md:px-[10%] md:scale-[80%]">
+    <div className="flex flex-row justify-center h-screen overflow-hidden">
+      <div className="flex flex-col md:w-[50%] max-h-screen align-middle justify-center text-center bg-white md:px-[10%] md:scale-[80%]">
         <h1 className="text-3xl font-medium">Welcome Back.👋 </h1>
         <div className="my-5">
           <button 
@@ -71,7 +75,7 @@ export default function login() {
           <div className="w-[100%] border-b border-gray-300 mb-2" />
         </div>
 
-        <p className="text-slate-500 mt-5">Please enter your details. </p>
+        <p className="text-[#37414F] mt-5">Please enter your details. </p>
 
         <form action="" className="my-5" onSubmit={handleSubmit}>
           <div className="flex flex-col space-y-5">
@@ -105,7 +109,7 @@ export default function login() {
                   <input
                     type="checkbox"
                     id="remember"
-                    className="mr-2 w-4 h-4 border-slate-200 focus:bg-indigo-600 rounded"
+                    className="mr-2 w-4 h-4 border-slate-200 focus:bg-[#A5CBBE] rounded"
                     onChange={()=>{setChecked(!checked)}}
                     checked={checked}
                   />
@@ -113,18 +117,18 @@ export default function login() {
                 </label>
               </div>
               <div>
-                <a href="#" className="ml-2 font-medium text-indigo-600">
+                <a href="#" className="ml-2 font-medium text-[#A5CBBE]">
                   Forgot Password?
                 </a>
               </div>
             </div>
-            <button disabled = {loading} className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
+            <button disabled = {loading} className="w-full py-3 font-medium text-white bg-[#A5CBBE] hover:bg-[#85A499] rounded-lg border-[#A5CBBE] hover:shadow inline-flex space-x-2 items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="black"
                 strokeWidth={2}
               >
                 <path
@@ -133,13 +137,13 @@ export default function login() {
                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                 />
               </svg>
-              <span >Login</span>
+              <span className="text-black">Login</span>
             </button>
             <p className="text-center">
               Not registered yet?{" "}
               <a
                 href="/signup"
-                className="text-indigo-600 font-medium inline-flex space-x-1 items-center"
+                className="text-[#A5CBBE] font-medium inline-flex space-x-1 items-center"
               >
                 <span>Register now </span>
                 <span>
@@ -165,9 +169,9 @@ export default function login() {
       </div>
 
       <div className="hidden md:w-[50%] flex-col md:flex bg-[#F5F5F5] justify-center text-center">
-        <h1 className="my-3 font-semibold text-5xl text-white">
-          Put Image Here
-        </h1>
+        <div className="object-fill">
+            {backgroundExample()}
+        </div>
       </div>
     </div>
   );
