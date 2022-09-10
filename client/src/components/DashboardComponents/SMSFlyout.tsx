@@ -9,6 +9,8 @@ function SMSFlyout(props: any) {
     const {
     } = props;
 
+    const [assigned, setAssigned] = useState(true);
+
     const [tickets, setTickets] = useState([])
     const [ticket, setTicket] = useState(null)
     const [activeTicket, setActiveTicket] = useState(tickets[0]) 
@@ -16,6 +18,10 @@ function SMSFlyout(props: any) {
     const [number, setNumber] = useState("")
     const [message, setMessage] = useState("")
     const [body, setBody] = useState("")
+
+    const assign = () => setAssigned(true);
+    const unassign = () => setAssigned(false);
+
 
     const qActive = query(collection(db, "text-form"))
 
@@ -62,28 +68,54 @@ function SMSFlyout(props: any) {
             </svg>
     
             <div className="dashFeatureHeader _h1">SMS: Customer Queue</div>
-            <div className="dashFeatureSub1 _h2"><p>Assigned to you</p></div>
-            <div className="dashFeatureSub2 _h2"><p>Unassigned</p></div>
-            <span className="dashFeatureLine"/>
-            <div className="dashFeatureBody _body">{tickets.length} conversations</div>
-            <div className="dashFeatureType _h2">SMS</div>
-            <div className="dashTickets">
-              {tickets.map((ticket:any) => (
-                <Ticket active={ticket.resolved} name={ticket.full_name} message={ticket.message} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { handleTicket(ticket); } } />
-              ))}
-            </div>
+            { assigned ?
+              <>
+                <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you ◂</p></button>
+                <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button>
+                <span className="dashFeatureLine" />
+                <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
+                <div className="dashFeatureType _h2">Chat</div>
+                <div className="dashTickets">
+                {tickets.map((ticket:any) => (
+                  <Ticket active={ticket.resolved} name={ticket.full_name} message={ticket.message} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { handleTicket(ticket); } } />
+                ))}
+                </div>
+              </>
+            : 
+              <>
+                <button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button>
+                <button className="dashFeatureSub2 _h2" onClick={unassign}><p>▸ Unassigned</p></button>
+                <span className="dashFeatureLine" />
+                <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
+                <div className="dashFeatureType _h2">Chat</div>
+                <div className="dashTickets">
+                  {unassignedTickets.map((t : any) => (
+                    <Ticket 
+                      name={t.name}
+                      message={t.userID} 
+                      createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
+                      onClick={ () => assignTicket(t) }
+                    />
+                  ))}
+                </div>
+              </>
+            }
           </div>
     
           <div className="dashPanel">
             <div className="dashPanelBox">
-              {/*<div className="dashPanelImage fill">
-                <img src="/dashboard/profile.png" />
-              </div>*/}
-              <div className="dashSectionInfo">
-                <div className="dashPanelName _h2">Name: {name}</div>
-                <div className="dashPanelActive _h2">Ticket active</div>
-                <div className="dashPanelAddress _h2">Santa Ana, Illinois</div>
-                <div className="dashPanelEmail _h2">Phone: {number}</div>
+
+              <div className="dashPanelHeader">
+                <div className="dashPanelImage">
+                  <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
+                </div>
+                <div className="dashInfo">
+                  <div className="dashInfoName _h2">{ticket?.name}</div>
+                  <div className="dashInfoActive _h2">{ticket?.active == true ? "Ticket Active" : "Ticket Inactive"}</div>
+                  <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
+                  <div className="dashInfoEmail _h2">Email: dianne.russell@mail.com</div>
+                  <span className={"dashInfoDot " + (ticket?.active && "active")} />
+                </div>
               </div>
               <div className="dashSection1">
                 {message}
