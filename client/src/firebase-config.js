@@ -4,6 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "@firebase/firestore"
 import { getAuth } from "firebase/auth"
 import { getFunctions } from 'firebase/functions';
+import { collection } from "firebase/firestore";
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -28,9 +29,6 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+export const emailCollection = collection(db, "emailQueue")
 export const auth = getAuth(app);
 export const functions = getFunctions(app);
-
-
-
-

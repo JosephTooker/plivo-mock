@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState, useEffect} from 'react'
 import Ticket from './Ticket';
 import Email from './Email';
-import { emailCollection } from '../../firebase-config';
-import { collection, query, where, onSnapshot, Timestamp, runTransaction, doc, getDoc } from "firebase/firestore";
+import { collection, query, where, onSnapshot, Timestamp, runTransaction, doc } from "firebase/firestore";
 
 function EmailFlyout(props: any) {
     const {
@@ -16,18 +15,6 @@ function EmailFlyout(props: any) {
     const assign = () => setAssigned(true);
     const unassign = () => setAssigned(false);
     const handleTicket = (ticket: any) => setTicket(ticket);
-
-    const [emails, setEmails] = useState([]);
-      
-    useEffect(() => {
-        onSnapshot(emailCollection, (snapshot: any) => {
-            setEmails(snapshot.docs.map(doc => ({
-                email: doc.id,
-                data: doc.data()
-            })))
-        })
-    }, [])
-  
 
     return (
         <div className="dashFlyout">
@@ -45,13 +32,15 @@ function EmailFlyout(props: any) {
                 <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Emails</div>
                 <div className="dashTickets">
-
-
-                { emails.map(({email}) => (
-                  <Ticket active="1" name={email} message="{data[0]}" id="1323" date="Today 9:12am" />
-                ))}
-
-                
+                  {tickets.map((t : any) => (
+                    <Ticket 
+                      current={t !== ticket} 
+                      name={t.name}
+                      message={t.userID} 
+                      createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
+                      onClick={ () => handleTicket(t) } 
+                    />
+                  ))}
                 </div>
               </>
             : 
@@ -92,6 +81,45 @@ function EmailFlyout(props: any) {
               </div>
 
               <div className="dashFlow">
+                <Email 
+                  sender="customers@mail.com" 
+                  name="customerservice"
+                  body="Hi, I receved the wrong color shoes in my order and wanted to get them exchanged. How would I do that? Thanks! Dianne"
+                  id="1321"
+                  date="Today 9:00am"
+                />
+                <Email 
+                  sender="customers@mail.com" 
+                  name="customerservice"
+                  body="Hi, I receved the wrong color shoes in my order and wanted to get them exchanged. How would I do that? Thanks! Dianne"
+                  id="1321"
+                  date="Today 9:00am"
+                />
+                <Email 
+                  sender="customers@mail.com" 
+                  name="customerservice"
+                  body="Hi, I receved the wrong color shoes in my order and wanted to get them exchanged. How would I do that? Thanks! Dianne"
+                  id="1321"
+                  date="Today 9:00am"
+                />
+                <Email 
+                  sender="customers@mail.com" 
+                  name="customerservice"
+                  body="Hi, I receved the wrong color shoes in my order and wanted to get them exchanged. How would I do that?
+                  <br>\n
+                  \r\n
+                  \n
+                  Thanks! Dianne"
+                  id="1321"
+                  date="Today 9:00am"
+                />
+                <Email 
+                  sender="customers@mail.com" 
+                  name="customerservice"
+                  body="Hi, I receved the wrong color shoes in my order and wanted to get them exchanged. How would I do that? Thanks! Dianne"
+                  id="1321"
+                  date="Today 9:00am"
+                />
               </div>
             </div>
           </div>
