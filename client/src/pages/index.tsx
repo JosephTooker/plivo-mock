@@ -77,7 +77,9 @@ const Home: NextPage = () => {
     })
   }
   
-
+  // Determines whether the help button is open or closed.
+  const [hideModal, setHideModal] = useState(true);
+  const toggleModal = () => setHideModal(!hideModal); // Open / Close the help button.
 
   return (
     
@@ -97,7 +99,7 @@ const Home: NextPage = () => {
           <p className="_h5">Home</p>
           <p className="_h5">About Us</p>
           <p className="_h5">Shop</p>
-          <p className="_h5">Help</p>
+          <p className="_h5" onClick={toggleModal}>Help</p>
           { user !== null ? 
             <span onClick={handleLogout} className="_h5">Log Out</span> :
             <Link href="/login">
@@ -154,14 +156,14 @@ const Home: NextPage = () => {
         </div>
 
         <div className="home_container2">
-          <div className="home_panel2">
+          <div className="home_panel2" onClick={toggleModal}>
             <p className="home_bot_text _h3">Still need help?</p>
             <p className="home_bot_caption _body">Contact Us</p>
           </div>
         </div>
       </div>
 
-      <SupportModal />
+      <SupportModal hideModal={hideModal} setHideModal={setHideModal}/>
     </div>
   );
 };
