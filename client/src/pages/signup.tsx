@@ -12,7 +12,6 @@ const signup = () => {
   const lastNameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
-  const userTypeRef = useRef<HTMLSelectElement>(null)
   const { signUp, googleSignIn } = UserAuth()
   const [loading, setLoading] = useState(false)
   const router = useRouter()
@@ -39,7 +38,7 @@ const signup = () => {
         await setDoc(doc(db, "users", auth.currentUser.uid), {
           first_name: firstNameRef.current.value,
           last_name: lastNameRef.current.value,
-          user_type: userTypeRef.current.value
+          user_type: "User"
         }).then(function() {
           return updateProfile(auth.currentUser, {
             displayName: firstNameRef.current.value + " " + lastNameRef.current.value
@@ -59,7 +58,7 @@ const signup = () => {
   return (
     <div className="flex flex-row justify-center">
       <div className="flex flex-col md:w-[50%] min-h-screen align-middle justify-center text-center bg-white md:px-[10%] scale-[80%]">
-          <h1 className="text-4xl font-medium ">Sign Up. 🙌</h1>
+          <h1 className="text-4xl font-medium ">Create an account. 🙌</h1>
           <div className="my-5">
             <button 
             onClick={handleGoogleSignIn}
@@ -146,28 +145,9 @@ const signup = () => {
                 />
             </div>
 
-            <div className="flex flex-wrap -mx-3 mb-6">
-              <div className="w-full px-3">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="userType"
-                >
-                  User or Admin
-                </label>
-                <select
-                  className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-                  name="userType"
-                  ref={userTypeRef}
-                  required
-                >
-                  <option className=" font-sans">User</option>
-                  <option className=" font-sans">Admin</option>
-                </select>
-              </div>
-            </div>
-            <button
+            <button 
               type="submit"
-              className="w-full py-3 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold px-4 rounded"
+              className="w-full py-3 my-3 shadow bg-black hover:bg-[#85A499] focus:shadow-outline focus:outline-none text-white font-bold px-4 rounded"
               disabled={loading}
             >
               Sign Up
@@ -177,7 +157,7 @@ const signup = () => {
               Already a member?{" "}
               <a
                 href="/login"
-                className="text-indigo-600 font-medium inline-flex space-x-1 items-center"
+                className="text-[#A5CBBE] font-medium inline-flex space-x-1 items-center"
               >
                 <span>Log In </span>
                 <span>
@@ -202,10 +182,16 @@ const signup = () => {
           </form>
         </div>
 
-        <div className="hidden md:w-[50%] flex-col md:flex bg-[#F5F5F5] justify-center text-center">
-        <h1 className="my-3 font-semibold text-5xl text-white">
-          Put Image Here
-        </h1>
+        <div className="hidden md:w-[50%] flex-col md:flex bg-[#B7E1D3] justify-center text-center">
+        <h1 className="italic font-bold text-3xl">
+            Keep it simple.
+          </h1>
+          <h1 className="italic font-extrabold text-9xl text-white" style={{fontFamily:"Averia Sans Libre"}}>
+            <p>BEST-T's</p>
+            <p className="text-black">BEST-T's</p>
+            <p>BEST-T's</p>
+            <p className="text-black">BEST-T's</p>
+          </h1>
       </div>
 
       </div>
