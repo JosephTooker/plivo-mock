@@ -47,9 +47,8 @@ function SMSFlyout(props: any) {
 
       const URL = "http://localhost:5000/text"
 
-      //const { data: { body, number},} = await axios.post(`${URL}/text`)
       await axios.post(`${URL}/text`, {
-        body: body,
+        body: bodyRef.current.value,
         number: number
       })
       
