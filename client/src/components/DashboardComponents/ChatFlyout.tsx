@@ -17,6 +17,10 @@ function ChatFlyout(props: any) {
     const [tickets, setTickets] = useState([])
     const [unassignedTickets, setUnassignedTickets] = useState([]);
 
+    const assign = () => setAssigned(true);
+    const unassign = () => setAssigned(false);
+    const handleTicket = (ticket: any) => setTicket(ticket);
+
     useEffect(()=>{
       console.log("User loaded")
     }, [user]);
@@ -61,17 +65,7 @@ function ChatFlyout(props: any) {
       }
     }, [ticket])
 
-    function assign(){
-        setAssigned(true)
-    }
 
-    function unassign(){
-        setAssigned(false)
-    }
-
-    function handleTicket(ticket){
-        setTicket(ticket)
-    }
 
     async function assignTicket(ticket){
       if(window.confirm("Would you like to add this ticket")){
@@ -113,7 +107,7 @@ function ChatFlyout(props: any) {
             <div className="dashFeatureHeader _h1">CHAT: Customer Queue</div>
             { assigned ?
               <>
-                <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you</p></button>
+                <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you ◂</p></button>
                 <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button>
                 <span className="dashFeatureLine" />
                 <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
@@ -133,7 +127,7 @@ function ChatFlyout(props: any) {
             : 
               <>
                 <button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button>
-                <button className="dashFeatureSub2 _h2" onClick={unassign}><p>Unassigned</p></button>
+                <button className="dashFeatureSub2 _h2" onClick={unassign}><p>▸ Unassigned</p></button>
                 <span className="dashFeatureLine" />
                 <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>
@@ -153,15 +147,20 @@ function ChatFlyout(props: any) {
     
           <div className="dashPanel">
             <div className="dashPanelBox">
-              {/*<div className="dashPanelImage fill">
-                <img src="/dashboard/profile.png" />
-              </div>*/}
-              <div className="dashInfo">
-                <div className="dashInfoName _h2">{ticket?.name}</div>
-                <div className="dashInfoActive _h2">{ticket?.active == true ? "Chat Active" : "Chat Inactive"}</div>
-                <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
-                <div className="dashInfoEmail _h2">Email: dianne.russell@mail.com</div>
+
+              <div className="dashPanelHeader">
+                <div className="dashPanelImage">
+                  <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
+                </div>
+                <div className="dashInfo">
+                  <div className="dashInfoName _h2">{ticket?.name}</div>
+                  <div className="dashInfoActive _h2">{ticket?.active == true ? "Chat Active" : "Chat Inactive"}</div>
+                  <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
+                  <div className="dashInfoEmail _h2">Email: dianne.russell@mail.com</div>
+                  <span className={"dashInfoDot " + (ticket?.active && "active")} />
+                </div>
               </div>
+
               {ticket === null ? null:
                <div className="dashboardChat">
                 <Chat client={client}>

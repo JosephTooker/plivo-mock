@@ -2,12 +2,13 @@ import React from 'react'
 
 function Ticket(props : any) {
     const {
+        active,
         current,
         name,
         message,
         id,
         createdAt,
-        onClick
+        onClick,
       } = props;
   
     return (

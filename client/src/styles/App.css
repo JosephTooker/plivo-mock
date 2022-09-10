@@ -543,18 +543,27 @@
   border-radius: 10px;
 }
 
+.dashPanelHeader {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 12.5%;
+}
+
 .dashPanelImage {
   position: relative;
   width: 12.5%;
-  height: 12.5%;
+  height: calc(100%-2.25vmin);
+  clip-path: circle(50% at 50% 50%);
 }
 
 .dashInfo {
   position: relative;
   top: 0%;
-  left: 15%;
   width: 85%;
-  height: 12.5%;
+  height: 100%;
   /* border: 1px solid aquamarine; */
   border-radius: 5px;
   overflow: hidden;
@@ -616,7 +625,7 @@
   width: 88%;
   height: 30%;
 
-  border: 1px solid #D9D9D9;
+  border: 0.2vmin solid #D9D9D9;
   border-radius: 5px;
 }
 
@@ -629,7 +638,7 @@
   width: 88%;
   height: 40%;
 
-  border: 1px solid #D9D9D9;
+  border: 0.2vmin solid #D9D9D9;
   border-radius: 5px;
 }
 
@@ -645,11 +654,25 @@
   white-space: nowrap;
 }
 
+.dashInfoDot {
+  position: absolute;
+  top: 66%;
+  left: 0px;
+  background-color: red;
+  transform: translate(0%, -50%);
+  width: 2vmin;
+  height: 2vmin;
+  clip-path: circle(1vmin);
+}
+
+.dashInfoDot.active {
+  background-color: #7AAC6C;
+}
 
 .dashInfoActive {
   position: absolute;
   top: 66%;
-  left: 20px;
+  left: calc(2vmin + 1%);
   transform: translate(0%, -50%);
 
   font-weight: 400;
@@ -803,7 +826,7 @@
 
 .support-modal-content{
   overflow-y: auto;
-   height: 85%;
+  height: 85%;
 }
 
 .PhoneInputInput {
@@ -816,6 +839,7 @@
 
 .supportChat{
   position: relative;
+  overflow: hidden;
 }
 
 .supportChat .str-chat{
