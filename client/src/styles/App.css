@@ -411,7 +411,7 @@
   top: 5%;
   left: 15%;
   white-space: nowrap;
-  color: #000000;
+  color: #6E727F;
 }
 
 .dashFeatureSub1 {
@@ -420,7 +420,6 @@
   left: 6%;
   white-space: nowrap;
   letter-spacing: -0.02em;
-  color: #000000;
 }
 
 .dashFeatureSub1 :hover {
@@ -437,7 +436,7 @@
 
 .dashUnfocused {
   font-weight: 500;
-  color: #9DA09F;
+  color: #6E727F;
 }
 
 .dashFeatureSub2 :hover {
@@ -450,7 +449,7 @@
   top: 15%;
   left: 4%;
   width: 92%;
-  border-top: solid 1px black;
+  border-top: solid 0.25vmin #6E727F;
 }
 
 .dashFeatureBody {
@@ -461,7 +460,7 @@
   text-align: center;
   letter-spacing: -0.02em;
 
-  color: #000000;
+  color: #6E727F;
 }
 
 .dashFeatureType {
@@ -545,7 +544,7 @@
   margin: 3vmin;
   padding: 2.25vmin;
   flex-grow: 1;
-  border: 2px solid #D9D9D9;
+  border: 0.4vmin solid #D9D9D9;
   border-radius: 10px;
 }
 
@@ -575,7 +574,7 @@
   justify-content: flex-start;
   overflow-y: auto;
 
-  border: 1.5px solid #D9D9D9;
+  border: 0.2vmin solid #D9D9D9;
   border-radius: 5px;
 }
 
@@ -589,7 +588,7 @@
   padding-left: 4.5vmin;
   padding-right: 9vmin;
   padding-bottom: 2.25vh;
-  border-bottom: 1.5px solid #D9D9D9;
+  border-bottom: 0.2vmin solid #D9D9D9;
 }
 
 .dashFlow::-webkit-scrollbar {
@@ -910,7 +909,7 @@
   height: 75.5vh;
   width: 100%;
   position: absolute;
-  border: 1px solid #D9D9D9;
+  border: 0.2vmin solid #D9D9D9;
   border-radius: 5px;
 }
 
@@ -923,7 +922,6 @@
   border-top:1px solid #D9D9D9;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-
 }
 
 .dashboardChat .str-chat-channel.messaging .str-chat__main-panel{
