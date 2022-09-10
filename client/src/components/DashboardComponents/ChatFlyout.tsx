@@ -15,7 +15,7 @@ function Ticket(props : any) {
     } = props;
 
   return (
-      <button onClick={props.onClick}>
+      <button onClick={onClick}>
           <span className={active ? "ticketActive" : "ticketInactive"} />
           <div className="ticketName _h2">{name}</div>
           <div className="ticketMessage _body">{id}</div>
