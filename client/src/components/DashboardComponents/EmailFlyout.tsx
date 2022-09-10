@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Ticket from './Ticket';
 import Email from './Email';
+import { onSnapshot } from 'firebase/firestore';
+import { emailCollection } from '../../firebase-config';
+import { doc, getDoc } from "firebase/firestore";
+
+
+
+
+
 
 function EmailFlyout(props: any) {
     const {
     } = props;
+
+    const [emails, setEmails] = useState([]);
+      
+    useEffect(() => {
+        onSnapshot(emailCollection, (snapshot: any) => {
+            setEmails(snapshot.docs.map(doc => ({
+                email: doc.id,
+                data: doc.data()
+            })))
+        })
+    }, [])
+
+
 
     return (
         <div className="dashFlyout">
@@ -20,10 +41,20 @@ function EmailFlyout(props: any) {
             <div className="dashFeatureBody _body">16 conversations</div>
             <div className="dashFeatureType _h2">Email</div>
             <div className="dashTickets">
-              <Ticket active="1" name="Devon Lane" message="Hi, Is it possible to get a..." id="1321" date="Today 9:00am" />
-              <Ticket name="Guy Hawkins" message="Hey, I have a question a..." id="1322" date="Today 9:09am" />
-              <Ticket name="Albert Flores" message="Hi, I received the wrong ..." id="1323" date="Today 9:12am" />
-              <Ticket active="1" name="Cameron Williamson" message="Hi, Is it possible to get a..." id="1389" date="Today 10:23am" />
+            <div>
+   
+          
+        </div>
+        
+        <div></div>
+        { emails.map(({email}) => (
+                <Ticket active="1" name={email} message="{data[0]}" id="1323" date="Today 9:12am" />
+                
+            ))}
+              
+              {/* <Ticket name="Guy Hawkins" message="Hey, I have a question a..." id="1322" date="Today 9:09am" />
+              
+              <Ticket  name="Cameron Williamson" message="Hi, Is it possible to get a..." id="1389" date="Today 10:23am" />
               <Ticket active="1" name="Leslie Alexander" message="Hey, I have a question a..." id="1452" date="Today 11:18am" />
               <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" />
               <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" />
@@ -34,7 +65,7 @@ function EmailFlyout(props: any) {
               <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" />
               <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" />
               <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" />
-              <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" />
+              <Ticket name="Robert Fox" message="Hi, I received the wrong ...." id="1479" date="Today 12:03am" /> */}
             </div>
           </div>
     
