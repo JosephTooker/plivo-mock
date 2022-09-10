@@ -36,11 +36,8 @@ export default function login() {
     try{
         setLoading(true)
         if(!checked){
-          await auth.setPersistence(inMemoryPersistence)
-        } 
-        else{
           await auth.setPersistence(browserSessionPersistence)
-        }
+        } 
         await logIn(emailRef.current.value, passwordRef.current.value)
         console.log("Submit")
         router.push('/')
