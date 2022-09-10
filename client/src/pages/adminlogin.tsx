@@ -22,7 +22,7 @@ export default function login() {
     try{
         setLoading(true)
         await googleSignIn()
-        router.push('/')
+        router.push('/newdashboard')
     } catch(error: any){
       var errorMessage = error.message
       var str = errorMessage.substr(errorMessage.indexOf(":") + 1);
@@ -39,7 +39,7 @@ export default function login() {
         } 
         await logIn(emailRef.current.value, passwordRef.current.value)
         console.log("Submit")
-        router.push('/')
+        router.push('/newdashboard')
     } catch (error: any) {
         var errorMessage = error.message
         var str = errorMessage.substr(errorMessage.indexOf(":") + 1);
@@ -55,7 +55,7 @@ export default function login() {
         <div className="my-5">
           <button 
           onClick={handleGoogleSignIn}
-          className="w-full text-center py-3 border flex space-x-2 items-center justify-center border-[#667080] rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
+          className="bg-white w-full text-center py-3 border flex space-x-2 items-center justify-center border-[#667080] rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
               className="w-6 h-6"
@@ -138,7 +138,7 @@ export default function login() {
             <p className="text-center">
               Don't have an account?{" "}
               <a
-                href="/signup"
+                href="/adminsignup"
                 className="font-medium inline-flex space-x-1 items-center"
               >
                 <span>Create Account </span>
@@ -165,7 +165,7 @@ export default function login() {
       </div>
 
       <div className="">
-        <img className="mr-[50px] mt-[50px]"src='/logoFull.svg' alt='logo' onClick={() => router.push('/')}/>
+        <img className="mr-[50px] mt-[50px]"src='/logoFull.svg' alt='logo'/>
       </div>
 
       </div>

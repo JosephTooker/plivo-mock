@@ -27,7 +27,6 @@ const Sidebar = (props: any) => {
     if (window.confirm("Do you really want to leave?")) {
       try{
           await logOut()
-          router.push('/login')
       } catch (error : any){
           const errorMessage = error.message;
           console.log("Failed to log out: " + errorMessage)
@@ -95,7 +94,7 @@ const NewDash: NextPage = () => {
 
   useEffect(()=>{
     if(user === null){
-      router.push('/login')
+      router.push('/adminlogin')
     }
     else{
       const res = httpsCallable(functions, 'ext-auth-chat-getStreamUserToken');
