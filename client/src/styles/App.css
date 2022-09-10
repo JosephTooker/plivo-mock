@@ -721,10 +721,11 @@
   color: #111827;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: 200;
 }
 
 .ticketName.selected {
-  font-weight: 200;
+  font-weight: 700;
 }
 
 .ticketMessage {
