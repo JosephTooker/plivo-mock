@@ -11,13 +11,29 @@ import 'stream-chat-react/dist/css/index.css'
 import { StreamChat } from "stream-chat";
 import LoadingSpinner from "../components/LoadingSpinner";
 
+
 // Sidebar component - The sidebar shows the links on the left side of the screen.
 const Sidebar = (props: any) => {
+  const {logOut} = UserAuth()
+  
+
   const {
     setPanel,
   } = props;
   
   const router = useRouter()
+
+  async function handleLogout(){
+    if (window.confirm("Do you really want to leave?")) {
+      try{
+          await logOut()
+          router.push('/login')
+      } catch (error : any){
+          const errorMessage = error.message;
+          console.log("Failed to log out: " + errorMessage)
+      }      
+    }
+  }
 
   return (
     <div className="dashSidebar">
@@ -49,6 +65,17 @@ const Sidebar = (props: any) => {
           </svg>
           <div className="dashSidebarCardText _h1">SMS</div>
         </nav>
+
+        
+        <nav onClick={() => handleLogout()}>
+          <div className="dashSidebarCardIcon">
+            <svg className="ml-2 h-8 w-8 text-[#D6B8B6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+            </svg>
+          </div>
+          <div className="dashSidebarCardText _h1">Logout</div>
+        </nav>
+
       </div>
     </div>
   )

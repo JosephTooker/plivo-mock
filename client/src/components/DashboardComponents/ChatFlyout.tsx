@@ -25,9 +25,9 @@ function ChatFlyout(props: any) {
       console.log("User loaded")
     }, [user]);
 
-    const q = query(collection(db, "chatQueue"), where("isAssigned", "==", false));
-
     useEffect(()=>{
+      const q = query(collection(db, "chatQueue"), where("isAssigned", "==", false));
+
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
         let data:any= [];
         querySnapshot.forEach((doc) => {
@@ -40,9 +40,9 @@ function ChatFlyout(props: any) {
       return () => unsubscribe()
     }, []);
 
-    const qActive = query(collection(db, "chatQueue"), where("isAssigned", "==", true), where("adminID", "==", user.uid));
-
     useEffect(()=>{
+      const qActive = query(collection(db, "chatQueue"), where("isAssigned", "==", true), where("adminID", "==", user?.uid));
+
       const unsubscribe = onSnapshot(qActive, (querySnapshot) => {
         let data:any= [];
         querySnapshot.forEach((doc) => {
