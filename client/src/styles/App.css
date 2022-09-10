@@ -431,7 +431,7 @@
 .dashFeatureSub1 :hover, .dashFeatureSub2 :hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #8c62a8;
+  color: #9321ed;
 }
 
 .dashFeatureLine {
@@ -471,6 +471,35 @@
   overflow-y: auto;
 }
 
+.dashTickets button {
+  position: relative;
+
+  width: calc(100% - 4.5vmin);
+  min-height: 8.5vh;
+
+  margin-left: 2.25vmin;
+  margin-bottom: 2.25vmin;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  background: #F5F5F5;
+  border: 0.2vmin solid #D9D9D9;
+  border-radius: 1vmin;
+}
+
+.dashTickets button:hover {
+  cursor: pointer;
+  border: 0.2vmin solid #8c62a8;
+}
+
+.dashTicketsSelected {
+  background: white !important;
+}
+
 .dashTickets::-webkit-scrollbar {
   width: 6px;
 }
@@ -492,31 +521,7 @@
   background: #908E8F;
 }
 
-.dashTickets button:hover {
-  cursor: pointer;
-  background-color: white;
-  border: 0.2vmin solid #8c62a8;
-}
 
-.dashTickets button {
-  position: relative;
-
-  width: calc(100% - 4.5vmin);
-  min-height: 8.5vh;
-
-  margin-left: 2.25vmin;
-  margin-bottom: 2.25vmin;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-
-  background: #F5F5F5;
-  border: 0.2vmin solid #D9D9D9;
-  border-radius: 1vmin;
-}
 
 .dashPanel {
   position: absolute;
@@ -683,26 +688,6 @@
 
 
 
-.ticketActive {
-  pointer-events: none;
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  height: 100%;
-  width: 1vmin;
-  background-color: #87F94C;
-}
-
-.ticketInactive {
-  pointer-events: none;
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  height: 100%;
-  width: 1vmin;
-  background-color: #F23620;
-}
-
 .ticketName {
   pointer-events: none;
   position: absolute;
@@ -715,6 +700,10 @@
   overflow: hidden;
 }
 
+.ticketName.selected {
+  font-weight: 200;
+}
+
 .ticketMessage {
   pointer-events: none;
   position: absolute;
@@ -722,7 +711,7 @@
   left: 7.5%;
   width: 57%;
   transform: translate(0%, -50%);
-  color: #6D7280;
+  color: #6E727F;
   white-space: nowrap;
   overflow: hidden;
 }

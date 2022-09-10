@@ -2,7 +2,7 @@ import React from 'react'
 
 function Ticket(props : any) {
     const {
-        active,
+        current,
         name,
         message,
         id,
@@ -11,9 +11,8 @@ function Ticket(props : any) {
       } = props;
   
     return (
-        <button onClick={onClick}>
-            <span className={active ? "ticketActive" : "ticketInactive"} />
-            <div className="ticketName _h2">{name}</div>
+        <button className={current || "dashTicketsSelected"} onClick={onClick}>
+            <div className={"ticketName _h2 " + (current || "selected")}>{name}</div>
             <div className="ticketMessage _body">{message}</div>
             <div className="ticketId _body">{id ?? "Created On:"}</div>
             <div className="ticketDate _body">{createdAt}</div>

@@ -52,7 +52,7 @@ function ChatFlyout(props: any) {
     }, []);
 
     useEffect(()=>{
-      if(ticket!==null){
+      if (ticket !== null) {
         console.log(ticket.userID);
         setChannel(client.channel('messaging', "support-"+ticket.userID , {
           name: 'Welcome to customer support.',
@@ -112,17 +112,42 @@ function ChatFlyout(props: any) {
     
             <div className="dashFeatureHeader _h1">CHAT: Customer Queue</div>
             { assigned ?
-            <><button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
-                        {tickets.map((ticket:any) => (
-                            <Ticket active={ticket.resolved} name={ticket.name} message={ticket.userID} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { handleTicket(ticket); } } />
-                        ))}
-                    </div></>
+              <>
+                <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you</p></button>
+                <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button>
+                <span className="dashFeatureLine" />
+                <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
+                <div className="dashFeatureType _h2">Chat</div>
+                <div className="dashTickets">
+                  {tickets.map((t : any) => (
+                    <Ticket 
+                      current={t !== ticket} 
+                      name={t.name}
+                      message={t.userID} 
+                      createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
+                      onClick={ () => handleTicket(t) } 
+                    />
+                  ))}
+                </div>
+              </>
             : 
-            <><button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button><button className="dashFeatureSub2 _h2" onClick={unassign}><p>Unassigned</p></button><span className="dashFeatureLine" /><div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div><div className="dashFeatureType _h2">Chat</div><div className="dashTickets">
-                        {unassignedTickets.map((ticket:any) => (
-                            <Ticket active={ticket.resolved} name={ticket.name} message={ticket.userID} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { assignTicket(ticket); } } />
-                        ))}
-                    </div></>
+              <>
+                <button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button>
+                <button className="dashFeatureSub2 _h2" onClick={unassign}><p>Unassigned</p></button>
+                <span className="dashFeatureLine" />
+                <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
+                <div className="dashFeatureType _h2">Chat</div>
+                <div className="dashTickets">
+                  {unassignedTickets.map((t : any) => (
+                    <Ticket 
+                      name={t.name}
+                      message={t.userID} 
+                      createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
+                      onClick={ () => assignTicket(t) }
+                    />
+                  ))}
+                </div>
+              </>
             }
           </div>
     
