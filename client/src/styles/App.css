@@ -719,6 +719,7 @@
   position: absolute;
   top: 27.5%;
   left: 7.5%;
+  width: 57%;
   transform: translate(0%, -50%);
   color: #111827;
   white-space: nowrap;
@@ -730,7 +731,7 @@
   position: absolute;
   top: 72.5%;
   left: 7.5%;
-  width: 58.5%;
+  width: 57%;
   transform: translate(0%, -50%);
   color: #6D7280;
   white-space: nowrap;
