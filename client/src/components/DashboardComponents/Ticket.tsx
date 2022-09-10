@@ -6,7 +6,7 @@ function Ticket(props : any) {
         name,
         message,
         id,
-        date,
+        createdAt,
         onClick
       } = props;
   
@@ -15,10 +15,10 @@ function Ticket(props : any) {
             <span className={active ? "ticketActive" : "ticketInactive"} />
             <div className="ticketName _h2">{name}</div>
             <div className="ticketMessage _body">{message}</div>
-            <div className="ticketId _body">Ticket #{id}</div>
-            <div className="ticketDate _body">{date}</div>
+            <div className="ticketId _body">{id ?? "Created On:"}</div>
+            <div className="ticketDate _body">{createdAt}</div>
         </button>
     );
 }
 
-export default Ticket
+export default Ticket;
