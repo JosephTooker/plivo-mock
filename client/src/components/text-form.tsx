@@ -5,7 +5,10 @@ import { db } from "../firebase-config"
 import { doc, setDoc } from "firebase/firestore"
 
 
-export default function TextUs() {
+export default function TextUs(props: any) {
+  const {
+    location
+  } = props;
     const [phoneNumber, setPhoneNumber] = useState();
     const nameRef = useRef<HTMLInputElement>(null)
     const numberRef = useRef<HTMLInputElement>(null)
@@ -17,7 +20,8 @@ export default function TextUs() {
       await setDoc(doc(db, "text-form", nameRef.current.value), {
         full_name: nameRef.current.value,
         phone_number: numberRef.current.value,
-        message: messageRef.current.value
+        message: messageRef.current.value,
+        location: location
       })
 
     }

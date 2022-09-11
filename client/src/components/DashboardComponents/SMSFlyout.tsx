@@ -18,6 +18,7 @@ function SMSFlyout(props: any) {
     const [number, setNumber] = useState("")
     const [message, setMessage] = useState("")
     const [body, setBody] = useState("")
+    const [location, setLocation] = useState("")
 
     const assign = () => setAssigned(true);
     const unassign = () => setAssigned(false);
@@ -44,6 +45,7 @@ function SMSFlyout(props: any) {
       setName(ticket.full_name)
       setNumber(ticket.phone_number)
       setMessage(ticket.message)
+      setLocation(ticket.location)
     }
 
     const handleSubmit = async (e) => {
@@ -111,10 +113,10 @@ function SMSFlyout(props: any) {
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo">
-                  <div className="dashInfoName _h2">{ticket?.name}</div>
+                  <div className="dashInfoName _h2">{name}</div>
                   <div className="dashInfoActive _h2">{ticket?.active == true ? "Ticket Active" : "Ticket Inactive"}</div>
-                  <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
-                  <div className="dashInfoEmail _h2">Email: dianne.russell@mail.com</div>
+                  <div className="dashInfoAddress _h2">{location}</div>
+                  <div className="dashInfoEmail _h2">Number: {number}</div>
                   <span className={"dashInfoDot " + (ticket?.active && "active")} />
                 </div>
               </div>

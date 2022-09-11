@@ -163,7 +163,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <SupportModal hideModal={hideModal} setHideModal={setHideModal}/>
+      <SupportModal hideModal={hideModal} setHideModal={setHideModal} location={location}/>
     </div>
   );
 };

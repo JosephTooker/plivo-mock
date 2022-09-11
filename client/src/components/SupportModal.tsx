@@ -7,6 +7,7 @@ export default function SupportModal(props: any) {
   const {
     hideModal,
     setHideModal,
+    location
   } = props;
 
   const [menu, setMenu] = useState("Default");
@@ -114,7 +115,7 @@ export default function SupportModal(props: any) {
                 }
 
                 {menu === "Text" && 
-                <TextUs />
+                <TextUs location={location} />
                 }
 
                 {menu === "Chat" && 
