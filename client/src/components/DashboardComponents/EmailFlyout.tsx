@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Ticket from './Ticket';
 import Email from './Email';
-import { emailCollection } from '../../firebase-config';
+import { db } from '../../firebase-config';
 import { collection, query, where, onSnapshot, Timestamp, runTransaction, doc, getDoc } from "firebase/firestore";
+
+
+
+const emailCollection = collection(db, "emailQueue")
+
+
 
 function EmailFlyout(props: any) {
     const {
@@ -18,6 +24,8 @@ function EmailFlyout(props: any) {
     const handleTicket = (ticket: any) => setTicket(ticket);
 
     const [emails, setEmails] = useState([]);
+    const [emailss, setEmailss] = useState<any[]>([]);
+    const [clickedEmail, setClikedEmail] = useState("test");
       
     useEffect(() => {
         onSnapshot(emailCollection, (snapshot: any) => {
@@ -27,7 +35,35 @@ function EmailFlyout(props: any) {
             })))
         })
     }, [])
+
+
+    useEffect(() => {
+      const emailCollections = collection(db, "emailQueue", clickedEmail, "emails")
+      onSnapshot(emailCollections, (snapshot: any) => {
+          setEmailss(snapshot.docs.map(doc => ({
+              email: doc.id,
+              data: doc.data()
+          })))
+      })
+      // console.log(emailss)
+      { emailss.map(({emails}) => (<>
+        {emails}
+        </>
+          
+
+          
+        ))}
+  }, [clickedEmail])
+
+
+
+  function displayEmails(email) {
   
+    setClikedEmail(email)
+
+
+
+  }
 
     return (
         <div className="dashFlyout">
@@ -47,8 +83,18 @@ function EmailFlyout(props: any) {
                 <div className="dashTickets">
 
 
-                { emails.map(({email}) => (
-                  <Ticket active="1" name={email} message="{data[0]}" id="1323" date="Today 9:12am" />
+                { emails.map(({email}) => (<>
+                
+                  <button className={"dashTicketsSelected"} onClick={() => displayEmails(email)}>
+                  {email}
+                  </button></>
+
+
+
+                  // <Ticket active="1" name={email} message="Message..." id="1323" date="Today 9:12am" />
+ 
+
+                  
                 ))}
 
                 
@@ -86,12 +132,28 @@ function EmailFlyout(props: any) {
                   <div className="dashInfoName _h2">{ticket?.name}</div>
                   <div className="dashInfoActive _h2">{ticket?.active == true ? "Ticket Active" : "Ticket Inactive"}</div>
                   <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
-                  <div className="dashInfoEmail _h2">Email: dianne.russell@mail.com</div>
+                  <div className="dashInfoEmail _h2">Email: {clickedEmail}</div>
                   <span className={"dashInfoDot " + (ticket?.active && "active")} />
                 </div>
               </div>
 
               <div className="dashFlow">
+              { emailss.map((emails) => (<>
+          {console.log(emails)}
+          <hr></hr>
+         { emails.data.text}
+         <hr></hr>
+              </>
+                
+        
+
+
+
+
+
+                
+              ))}
+
               </div>
             </div>
           </div>
@@ -101,6 +163,5 @@ function EmailFlyout(props: any) {
 
 export default EmailFlyout
 
-  
   
   
