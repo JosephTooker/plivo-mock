@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Ticket from './Ticket';
 import Email from './Email';
 import { db } from '../../firebase-config';
-import { collection, query, where, onSnapshot, Timestamp, runTransaction, doc, getDoc } from "firebase/firestore";
+import { collection, query, where, onSnapshot, Timestamp, runTransaction, doc, getDoc, setDoc } from "firebase/firestore";
+import { AiOutlineSend } from 'react-icons/ai';
 
 
 
@@ -13,7 +14,7 @@ const emailCollection = collection(db, "emailQueue")
 function EmailFlyout(props: any) {
     const {
     } = props;
-
+    const [commentText,setCommentText] = useState("")
     const [assigned, setAssigned] = useState(true);
     const [ticket, setTicket]:any = useState(null);
     const [tickets, setTickets] = useState([]);
@@ -63,6 +64,27 @@ function EmailFlyout(props: any) {
 
 
 
+  }
+
+
+  async function sendEmail() { 
+    const res = await fetch("/api/sendgrid", {
+      body: JSON.stringify({
+        email: clickedEmail,
+        fullname: "fullname",
+        subject: "BEST-T's support",
+        message: commentText,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+    let x = Math.random() * 10;
+    await setDoc(doc(db, "emailQueue", clickedEmail, "emails", "support" + x), {
+      text: commentText,
+      from: "support",
+    });
   }
 
     return (
@@ -145,17 +167,24 @@ function EmailFlyout(props: any) {
           <hr></hr>
          {emails.data["text"]}
          <hr></hr></div>
-              </>
-                
-        
-
-
-
-
-
-                
+              </>                       
               ))}
 
+              </div>
+                       {/* Content Area */}
+                       <div className="dashContent">
+                <div className="dashContentHeader"></div>
+         
+                <textarea
+                  id="message" 
+        
+                  className="dashContentTextArea _body"
+                  placeholder="Your message..."
+                  onChange={e => setCommentText(e.target.value)}
+                />
+                <div className="dashContentFooter">
+                  <button onClick={sendEmail} className='dashContentSendButton' >Send Text<AiOutlineSend/></button>
+                </div>
               </div>
             </div>
           </div>
