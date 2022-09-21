@@ -50,19 +50,19 @@ export default function login() {
   };
 
   return (
-    <div className="flex flex-row justify-center h-screen overflow-hidden">
-      <div className="flex flex-col md:w-[50%] max-h-screen align-middle justify-center text-center bg-white md:px-[10%] md:scale-[80%]">
-        <h1 className="text-3xl font-medium">Welcome Back.👋 </h1>
+    <div className="flex flex-row justify-center h-screen overflow-hidden bg-[#FDFDFB]">
+      <div className="flex flex-col md:w-[50%] max-h-screen align-middle justify-center text-center bg-[#FDFDFB] md:px-[10%] md:scale-[80%]">
+        <h1 className="text-3xl font-medium">Welcome Back!</h1>
         <div className="my-5">
           <button 
           onClick={handleGoogleSignIn}
-          className="w-full text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
+          className="w-full text-center py-3 border flex space-x-2 items-center justify-center bg-white border-[#667080] rounded-lg text-slate-700 hover:text-slate-900 hover:shadow transition duration-150">
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
               className="w-6 h-6"
               alt=""
             />{" "}
-            <span>Login with Google</span>
+            <span>Sign In with Google</span>
           </button>
         </div>
 
@@ -72,7 +72,7 @@ export default function login() {
           <div className="w-[100%] border-b border-gray-300 mb-2" />
         </div>
 
-        <p className="text-[#37414F] mt-5">Please enter your details. </p>
+        <p className="mt-5">Please enter your details. </p>
 
         <form action="" className="my-5" onSubmit={handleSubmit}>
           <div className="flex flex-col space-y-5">
@@ -83,7 +83,7 @@ export default function login() {
                 name="email"
                 type="email"
                 ref={emailRef}
-                className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+                className="w-full py-3 border border-[#667080] rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                 placeholder="Enter email address"
                 required
               />
@@ -95,7 +95,7 @@ export default function login() {
                 name="password"
                 type="password"
                 ref={passwordRef} 
-                className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+                className="w-full py-3 border border-[#667080] rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                 placeholder="Enter your password"
                 required
               />
@@ -106,7 +106,7 @@ export default function login() {
                   <input
                     type="checkbox"
                     id="remember"
-                    className="mr-2 w-4 h-4 border-slate-200 focus:bg-[#A5CBBE] rounded"
+                    className="mr-2 w-4 h-4 border-[#667080] focus:bg-[#A5CBBE] rounded"
                     onChange={()=>{setChecked(!checked)}}
                     checked={checked}
                   />
@@ -114,7 +114,7 @@ export default function login() {
                 </label>
               </div>
               <div>
-                <a href="#" className="ml-2 font-medium text-[#A5CBBE]">
+                <a href="#" className="ml-2 font-medium">
                   Forgot Password?
                 </a>
               </div>
@@ -134,15 +134,15 @@ export default function login() {
                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                 />
               </svg>
-              <span className="text-black">Login</span>
+              <span className="text-black">Sign In</span>
             </button>
             <p className="text-center">
-              Not registered yet?{" "}
+              Don't have an account?{" "}
               <a
                 href="/signup"
-                className="text-[#A5CBBE] font-medium inline-flex space-x-1 items-center"
+                className="font-bold underline inline-flex space-x-1 items-center"
               >
-                <span>Register now </span>
+                <span>Create Account </span>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -165,10 +165,15 @@ export default function login() {
         </form>
       </div>
 
-      <div className="hidden md:w-[50%] flex-col md:flex bg-[#F5F5F5] justify-center text-center">
-        <div className="object-fill">
+      <div className="hidden md:w-[50%] flex-col md:flex bg-[#f0f3dc] justify-center text-center overflow-hidden">
+        <div className="object-fill ">
             {backgroundExample()}
         </div>
+        <h1 className="italic font-extrabold text-8xl text-white absolute z-10 top-1/2 ml-10" style={{fontFamily:"Averia Sans Libre"}}>
+              <p className="text-[#F0F3DC]" >BEST-T'S</p>
+              <p className="text-[#B7E1D3]">BEST-T'S</p>
+              <p className="text-[#F0F3DC]">BEST-T'S</p>
+          </h1>
       </div>
     </div>
   );

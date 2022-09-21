@@ -187,10 +187,10 @@ const signup = () => {
             Keep it simple.
           </h1>
           <h1 className="italic font-extrabold text-9xl text-white" style={{fontFamily:"Averia Sans Libre"}}>
-            <p>BEST-T's</p>
-            <p className="text-black">BEST-T's</p>
-            <p>BEST-T's</p>
-            <p className="text-black">BEST-T's</p>
+            <p>BEST-T'S</p>
+            <p className="text-black">BEST-T'S</p>
+            <p>BEST-T'S</p>
+            <p className="text-black">BEST-T'S</p>
           </h1>
       </div>
 
