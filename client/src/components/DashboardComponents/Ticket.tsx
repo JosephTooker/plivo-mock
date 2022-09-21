@@ -13,7 +13,6 @@ function Ticket(props : any) {
   
     return (
         <button className={current || "dashTicketsSelected"} onClick={onClick}>
-            a
             <div className={"ticketName _h2 " + (current || "selected")}>{name}</div>
             <div className="ticketMessage _body">{message}</div>
             <div className="ticketId _body">{id ?? "Created On:"}</div>
