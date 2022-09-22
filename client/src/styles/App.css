@@ -832,31 +832,6 @@
   background: #908E8F;
 }
 
-.dashSection1 {
-  box-sizing: border-box;
-
-  position: relative;
-  top: 20%;
-  left: 6%;
-  width: 88%;
-  height: 30%;
-
-  border: 0.2vmin solid #D9D9D9;
-  border-radius: 5px;
-}
-
-.dashSection2 {
-  box-sizing: border-box;
-
-  position: relative;
-  top: 55%;
-  left: 6%;
-  width: 88%;
-  height: 40%;
-
-  border: 0.2vmin solid #D9D9D9;
-  border-radius: 5px;
-}
 
 
 
