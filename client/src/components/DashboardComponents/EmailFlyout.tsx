@@ -61,13 +61,20 @@ function EmailFlyout(props: any) {
   }
 
 
-  async function sendEmail() { 
+  async function sendEmail() {
+    
+    await setDoc(doc(db, "emailQueue", clickedEmail, "emails",(Math.random() + 1).toString(36).substring(7)), {
+      text: commentText,
+      "Email Address": "Customer Support Center",
+      Subject: "Link Support Team"
+    });
+
     const res = await fetch("/api/sendgrid", {
       body: JSON.stringify({
         email: clickedEmail,
         fullname: "fullname",
         subject: "BEST-T's support",
-        message: commentText,
+        msg: commentText,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -76,11 +83,7 @@ function EmailFlyout(props: any) {
     });
     let x = Math.random() * 10;
 
-    await setDoc(doc(db, "emailQueue", clickedEmail, "emails", "support" + x), {
-      text: commentText,
-      "Email Address": "Customer Support Center",
-      Subject: "Link Support Team"
-    });
+
 
   }
 
