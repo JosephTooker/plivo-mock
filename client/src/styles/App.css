@@ -65,7 +65,6 @@
   font-style: normal;
   font-weight: 400;
   font-size: max(10px, 2vmin);
-  display: flex;
   align-items: center;
 }
 
@@ -415,24 +414,76 @@
 
 .dashFeatureHeader {
   position: absolute;
-  top: 5%;
+  top: 5vh;
   left: 15%;
   white-space: nowrap;
 }
 
-.dashFeatureSub1 {
+.dashFeatureButton1 {
   position: absolute;
-  top: 10%;
-  left: 6%;
+  top: 10vh;
+  left: 4%;
+  width: 46%;
+  height: 5vh;
+  border-radius: 10px 10px 0px 0px;
+  transition: all 150ms ease-in-out 0s;
+  text-align: center;
+
+  padding-left: 2%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5%;
+  overflow: hidden;
+}
+
+.dashFeatureButton2 {
+  position: absolute;
+  top: 10vh;
+  right: 4%;
+  width: 46%;
+  height: 5vh;
+  border-radius: 10px 10px 0px 0px;
+  transition: all 150ms ease-in-out 0s;
+  text-align: center;
+
+  padding-left: 2%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 5%;
+  overflow: hidden;
+}
+
+.dashFeatureButton1 button, .dashFeatureButton2 button {
   white-space: nowrap;
   letter-spacing: -0.02em;
 }
 
-.dashFeatureSub2 {
-  position: absolute;
-  top: 10%;
-  right: 6%;
-  white-space: nowrap;
+.dashFeatureButton1 span, .dashFeatureButton2 span {
+  display: relative;
+  width: 5vh;
+  height: 5vh;
+  color: #FFFFFF;
+  background-color: #757575;
+  clip-path: circle(1.5vh);
+}
+
+.dashFeatureButton1 span p, .dashFeatureButton2 span p {
+  margin-top: 2.5vh;
+  transform: translate(0%, -50%);
+}
+
+.dashFeatureButton1:hover, .dashFeatureButton2:hover {
+  cursor: pointer;
+  background-color: #D3D2D3;
+}
+
+.dashFeatureButton1:active, .dashFeatureButton2:active {
+  transition: 50ms;
+  background-color: #F0C7C5;
 }
 
 .dashUnfocused {
@@ -440,18 +491,16 @@
   color: #6E727F;
 }
 
-.dashFeatureSub1 :hover, .dashFeatureSub2 :hover {
-  cursor: pointer;
-  text-decoration: underline;
-  color: #9321ed;
+.dashUnfocused2 {
+  background-color: #A4A2A3 !important;
 }
 
 .dashFeatureLine {
   position: absolute;
-  top: 15%;
+  top: 15vh;
   left: 4%;
   width: 92%;
-  border-top: solid 0.25vmin #6E727F;
+  border-top: solid 0.25vmin black;
 }
 
 .dashFeatureLine2 {

@@ -95,8 +95,16 @@ function ChatFlyout(props: any) {
             <div className="dashFeatureHeader _h1">CHAT: Customer Queue</div>
             { assigned ?
               <>
-                <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you ◂</p></button>
-                <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button>
+                <div className='dashFeatureButton1' onClick={assign}> 
+                  <button className="_h2">Assigned to you</button>
+                  <span className='_body'><p>{tickets.length}</p></span>
+                </div>
+
+                <div className='dashFeatureButton2' onClick={unassign}> 
+                  <button className="_h2 dashUnfocused">Unassigned</button>
+                  <span className='_body dashUnfocused2'><p>{unassignedTickets.length}</p></span>
+                </div>
+
                 <span className="dashFeatureLine2" />
                 <span className="dashFeatureLine" />
                 <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
@@ -115,10 +123,20 @@ function ChatFlyout(props: any) {
               </>
             : 
               <>
-                <button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button>
-                <button className="dashFeatureSub2 _h2" onClick={unassign}><p>▸ Unassigned</p></button>
+                <div className='dashFeatureButton1' onClick={assign}> 
+                  <button className="_h2 dashUnfocused">Assigned to you</button>
+                  <span className='_body dashUnfocused2'><p>{tickets.length}</p></span>
+                </div>
+
+                <div className='dashFeatureButton2' onClick={unassign}> 
+                  <button className="_h2">Unassigned</button>
+                  <span className='_body'><p>{unassignedTickets.length}</p></span>
+                </div>
+
                 <span className="dashFeatureLine" />
                 <span className="dashFeatureLine3" />
+
+
                 <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>
                 <div className="dashTickets">
