@@ -167,14 +167,14 @@ function EmailFlyout(props: any) {
                   <img src={clickedEmail !== "test" ? "https://picsum.photos/seed/" + clickedEmail + "/300" : ""}/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo">
-                  <div className="dashInfoName _h2">{clickedEmail}</div>
+                  <div className="dashInfoName _h2">{clickedEmail.replace(/^(.*?)<.*$/, "$1")}</div>
                   <div className="dashInfo1 _h2">
                     <img className="dashInfoIcon" src='/dashboard/map-pin.svg' alt='map-pin'/>
-                    location
+                    Location: (Unknown location)
                   </div>
                   <div className="dashInfo2 _h2">
-                    <img className="dashInfoIcon" src='/dashboard/phone-call.svg' alt='phone-call'/>
-                    Phone Number:
+                    <img className="dashInfoIcon" src='/dashboard/mail.svg' alt='phone-call'/>
+                    Email: {clickedEmail.replace(/(^.*<)/, "").replace('>','')}
                   </div>
                 </div>
               </div>

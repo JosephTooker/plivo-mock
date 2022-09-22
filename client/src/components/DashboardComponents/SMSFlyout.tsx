@@ -101,7 +101,7 @@ function SMSFlyout(props: any) {
                   <Ticket
                     current={t !== ticket} 
                     active={t.resolved} 
-                    name={t.full_name || number} 
+                    name={t.full_name || t.phone_number} 
                     message={t.message} 
                     id={"Ticket #" + (t.sid?.slice(2, 8) || "unknown")}
                     createdAt={t.time?.toDate().toLocaleDateString('en-US') || "(no date)"}
