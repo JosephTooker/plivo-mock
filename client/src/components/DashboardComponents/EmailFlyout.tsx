@@ -83,7 +83,7 @@ function EmailFlyout(props: any) {
     });
     let x = Math.random() * 10;
 
-
+    setCommentText("")
 
   }
 
