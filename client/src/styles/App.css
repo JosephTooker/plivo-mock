@@ -756,8 +756,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 10px;
-  gap: 10px;
+  padding: 2.5vmin 2vmin;
+  gap: 1vmin;
 
   top: 50%;
   right: 2.25vmin;
@@ -767,7 +767,7 @@
   height: 50%;
 
   background: #817589;
-  border-radius: 10px;
+  border-radius: 1vmin;
 
   color: white;
   white-space: nowrap;
