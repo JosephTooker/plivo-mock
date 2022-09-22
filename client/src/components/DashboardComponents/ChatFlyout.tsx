@@ -137,15 +137,15 @@ function ChatFlyout(props: any) {
     
           <div className="dashRight">
             <div className="dashRightBox">
-
+            {ticket !== null ? <>
               <div className="dashRightHeader">
                 <div className="dashRightImage">
-                  <img src={ticket !== null ? "https://picsum.photos/seed/" + ticket?.userID + "/300" : ""}/> {/* Generates a new image using the userID as a seed */}
+                  <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300"}/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo">
                   <div className="dashInfoName _h2">{ticket?.name}</div>
-                  <div className="dashInfoAddress _h2">{ticket !== null ? "2972 Westheimer Rd. Santa Ana, Illinois 85486" : ""}</div>
-                  <div className="dashInfoEmail _h2">{ticket !== null ? "Email: dianne.russell@mail.com" : "" } </div>
+                  <div className="dashInfoAddress _h2">{"2972 Westheimer Rd. Santa Ana, Illinois 85486"}</div>
+                  <div className="dashInfoEmail _h2">{"Email: dianne.russell@mail.com"} </div>
                 </div>
               </div>
 
@@ -161,6 +161,7 @@ function ChatFlyout(props: any) {
                 </Chat>
               </div>
               }
+             </> : null}
             </div>
           </div>
         </div>

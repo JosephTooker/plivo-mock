@@ -133,17 +133,17 @@ function EmailFlyout(props: any) {
               </>
             }
           </div>
-    
+            
           <div className="dashRight">
             <div className="dashRightBox">
-
+            {clickedEmail !== "test" ? <>
               <div className="dashRightHeader">
                 <div className="dashRightImage">
                   <img src={clickedEmail !== "test" ? "https://picsum.photos/seed/" + clickedEmail + "/300" : ""}/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo">
                   {/* <div className="dashInfoName _h2">{clickedEmail}</div> */}
-                  <div className="dashInfoName _h2">{clickedEmail !== "test" ?  `Email: ${clickedEmail}` : null}</div>
+                  <div className="dashInfoName _h2">{`Email: ${clickedEmail}`}</div>
                 </div>
               </div>
 
@@ -160,20 +160,27 @@ function EmailFlyout(props: any) {
 
               </div>
                        {/* Content Area */}
-                       <div className="dashContent">
+                <div className="dashContent">
                 <div className="dashContentHeader"></div>
          
-                <textarea
-                  id="message" 
-        
-                  className="dashContentTextArea _body"
-                  placeholder="Your message..."
-                  onChange={e => setCommentText(e.target.value)}
-                />
-                <div className="dashContentFooter">
-                  <button onClick={sendEmail} className='dashContentSendButton' >Send Email<AiOutlineSend/></button>
+                  <textarea
+                    id="message" 
+                    className="dashContentEmail _body"
+                    placeholder="Your message..."
+                    onChange={e => setCommentText(e.target.value)}
+                  />
+                <div className="dashContentEmailFooter">
+                  <button onClick={sendEmail} className='dashContentSendButton' >           
+                  <svg width="18" height="16" viewBox="0 0 32 27"  xmlns="http://www.w3.org/2000/svg" stroke="#817589" strokeWidth={3} stroke-linecap="round" stroke-linejoin="round" fill="white">
+                    <path d="M30.75 4.875C30.75 3.29375 29.4562 2 27.875 2H4.875C3.29375 2 2 3.29375 2 4.875M30.75 4.875V22.125C30.75 23.7062 29.4562 25 27.875 25H4.875C3.29375 25 2 23.7062 2 22.125V4.875M30.75 4.875L16.375 14.9375L2 4.875" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.75 4.875L16.375 14.9375L2 4.875" />
+                  </svg>
+                  Send
+                  </button>
                 </div>
               </div>
+              </>
+              : null }
             </div>
           </div>
         </div>

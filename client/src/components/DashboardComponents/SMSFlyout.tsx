@@ -113,7 +113,9 @@ function SMSFlyout(props: any) {
             <div className="dashRightBox">
 
               {/* Border Box + Info Card Header + Profile Image */}
+              {ticket !== null ? <>
               <div className="dashRightHeader">
+
                 <div className="dashRightImage">
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
                 </div>
@@ -136,10 +138,16 @@ function SMSFlyout(props: any) {
                   ref={bodyRef}
                 />
                 <div className="dashContentFooter">
-                  <button className='dashContentSendButton' onClick={handleSubmit}>Send Text<AiOutlineSend/></button>
+                  <button className='dashContentSendButton' onClick={handleSubmit}>
+                  <svg width="18" height="16" viewBox="0 0 32 27"  xmlns="http://www.w3.org/2000/svg" stroke="#817589" strokeWidth={3} stroke-linecap="round" stroke-linejoin="round" fill="white">
+                    <path d="M30.75 4.875C30.75 3.29375 29.4562 2 27.875 2H4.875C3.29375 2 2 3.29375 2 4.875M30.75 4.875V22.125C30.75 23.7062 29.4562 25 27.875 25H4.875C3.29375 25 2 23.7062 2 22.125V4.875M30.75 4.875L16.375 14.9375L2 4.875" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.75 4.875L16.375 14.9375L2 4.875" />
+                  </svg>
+                     Send</button>
                 </div>
-              </div>
 
+              </div>
+              </> : null}
             </div>
           </div>
         </div>
