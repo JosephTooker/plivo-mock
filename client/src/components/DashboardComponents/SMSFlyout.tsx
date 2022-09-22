@@ -149,8 +149,8 @@ function SMSFlyout(props: any) {
                 </div>
                 <div className="dashInfo">
                   <div className="dashInfoName _h2">{name}</div>
-                  <div className="dashInfoAddress _h2">{location}</div>
-                  <div className="dashInfoEmail _h2">Number: {number}</div>
+                  <div className="dashInfoAddress _h2"><img className="dashInfoIcon" src='/dashboard/map-pin.svg' alt='map-pin'/>{location}</div>
+                  <div className="dashInfoEmail _h2"><img className="dashInfoIcon" src='/dashboard/phone-call.svg' alt='phone-call'/>Number: {number}</div>
                 </div>
               </div>
 

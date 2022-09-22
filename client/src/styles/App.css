@@ -850,6 +850,10 @@
 
 
 
+.dashInfoIcon {
+  width: max(12px, 2.4vmin);
+  margin: 1vmin;
+}
 
 .dashInfoName {
   position: absolute;
@@ -952,7 +956,7 @@
   position: absolute;
   top: 66%;
   left: 66%;
-  color: #000000;
+  color: black;
   transform: translate(0%, -50%);
   white-space: nowrap;
 }
@@ -962,7 +966,7 @@
   position: absolute;
   top: 33%;
   left: 66%;
-  color: #000000;
+  color: black;
   transform: translate(0%, -50%);
   white-space: nowrap;
 }
