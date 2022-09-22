@@ -2,6 +2,7 @@ import React from 'react'
 
 function Ticket(props : any) {
     const {
+        resolve,
         email,
         active,
         current,
