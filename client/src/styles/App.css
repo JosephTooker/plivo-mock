@@ -704,28 +704,6 @@
   resize: none;
 }
 
-.dashContentTextArea::-webkit-scrollbar {
-  margin-right: 15px;
-  width: 6px;
-}
-
-/* Track */
-.dashContentTextArea::-webkit-scrollbar-track {
-  background: #F5F5F5;
-  border-radius: 5px;
-}
-
-/* Handle */
-.dashContentTextArea::-webkit-scrollbar-thumb {
-  background: #D9D9D9;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-.dashContentTextArea::-webkit-scrollbar-thumb:hover {
-  background: #908E8F;
-}
-
 .dashContentEmail {
   width: 100%;
   height: 80%;
@@ -784,6 +762,31 @@
 
   transform: translate(0%, -50%);
 }
+
+
+.dashContentTextArea::-webkit-scrollbar, .dashContentEmail::-webkit-scrollbar {
+  margin-right: 15px;
+  width: 6px;
+}
+
+/* Track */
+.dashContentTextArea::-webkit-scrollbar-track, .dashContentEmail::-webkit-scrollbar-track {
+  background: #F5F5F5;
+  border-radius: 5px;
+}
+
+/* Handle */
+.dashContentTextArea::-webkit-scrollbar-thumb, .dashContentEmail::-webkit-scrollbar-thumb {
+  background: #D9D9D9;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.dashContentTextArea::-webkit-scrollbar-thumb:hover, .dashContentEmail::-webkit-scrollbar-thumb:hover {
+  background: #908E8F;
+}
+
+
 
 .dashFlow {
   position: relative;
