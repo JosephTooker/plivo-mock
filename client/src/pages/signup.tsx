@@ -56,13 +56,13 @@ const signup = () => {
   };
 
   return (
-    <div className="flex flex-row justify-center">
-      <div className="flex flex-col md:w-[50%] min-h-screen align-middle justify-center text-center bg-white md:px-[10%] scale-[80%]">
-          <h1 className="text-4xl font-medium ">Create an account. 🙌</h1>
+    <div className="flex flex-row justify-center bg-[#FDFDFB]">
+      <div className="flex flex-col md:w-[50%] min-h-screen align-middle justify-center text-center bg-[#FDFDFB] md:px-[10%] scale-[80%]">
+          <h1 className="text-2xl font-medium ">Create an account.</h1>
           <div className="my-5">
             <button 
             onClick={handleGoogleSignIn}
-            className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
+            className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center bg-white border-[#667080] rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
               <img
                 src="https://www.svgrepo.com/show/355037/google.svg"
                 className="w-6 h-6"
@@ -78,17 +78,17 @@ const signup = () => {
             <div className="w-[100%] border-b border-gray-300 mb-2" />
           </div>
 
-          <form action="" className="w-full mt-5" onSubmit={handleSubmit}>
+          <form action="" className="w-full mt-5 text-left" onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  className="block tracking-wide font-medium mb-2"
                   htmlFor="firstName"
                 >
                   First Name
                 </label>
                 <input
-                  className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+                  className="w-full py-3 border border-[#667080] rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                   name="firstName"
                   type="text"
                   placeholder="Jane"
@@ -98,13 +98,13 @@ const signup = () => {
               </div>
               <div className="w-full md:w-1/2 px-3">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  className="block tracking-wide font-medium mb-2"
                   htmlFor="lastName"
                 >
                   Last Name
                 </label>
                 <input
-                  className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+                  className="w-full py-3 border border-[#667080] rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                   name="lastName"
                   type="text"
                   placeholder="Doe"
@@ -114,15 +114,15 @@ const signup = () => {
               </div>
             </div>
 
-            <div className="flex flex-col space-y-5 mb-5">
+            <div className="flex flex-col space-y-2 mb-5 text-left">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  className="block tracking-wide font-medium"
                   htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+                  className="w-full py-3 border border-[#667080] rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                   name="email"
                   type="text"
                   placeholder="example@email.com"
@@ -130,13 +130,13 @@ const signup = () => {
                   required
                 />
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  className="block tracking-wide font-medium2"
                   htmlFor="password"
                 >
                   Password
                 </label>
                 <input
-                  className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+                  className="w-full py-3 border border-[#667080] rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                   name="password"
                   type="password"
                   ref={passwordRef}
@@ -147,7 +147,7 @@ const signup = () => {
 
             <button 
               type="submit"
-              className="w-full py-3 my-3 shadow bg-black hover:bg-[#85A499] focus:shadow-outline focus:outline-none text-white font-bold px-4 rounded"
+              className="w-full py-3 my-3 shadow bg-[#A5CBBE] hover:bg-[#85A499] focus:shadow-outline focus:outline-none font-medium px-4 rounded"
               disabled={loading}
             >
               Sign Up
@@ -157,9 +157,9 @@ const signup = () => {
               Already a member?{" "}
               <a
                 href="/login"
-                className="text-[#A5CBBE] font-medium inline-flex space-x-1 items-center"
+                className="font-bold underline inline-flex space-x-1 items-center"
               >
-                <span>Log In </span>
+                <span>Login </span>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -183,14 +183,13 @@ const signup = () => {
         </div>
 
         <div className="hidden md:w-[50%] flex-col md:flex bg-[#B7E1D3] justify-center text-center">
-        <h1 className="italic font-bold text-3xl">
+        <h1 className="italic font-bold text-2xl">
             Keep it simple.
           </h1>
           <h1 className="italic font-extrabold text-9xl text-white" style={{fontFamily:"Averia Sans Libre"}}>
-            <p>BEST-T'S</p>
+            <p className="text-[#FDFDFB]">BEST-T'S</p>
             <p className="text-black">BEST-T'S</p>
-            <p>BEST-T'S</p>
-            <p className="text-black">BEST-T'S</p>
+            <p className="text-[#FDFDFB]">BEST-T'S</p>
           </h1>
       </div>
 
