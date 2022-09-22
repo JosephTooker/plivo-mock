@@ -212,7 +212,7 @@ function EmailFlyout(props: any) {
                 </div>
               </div>
 
-              </>}
+              </> || <div className='dashEmpty'><img src='/dashboard/logo-full.svg' alt='map-pin'/>Select a ticket from the left.</div>}
             </div> {/*End Border Box*/}
           </div> {/*End dashRight*/}
         </div>

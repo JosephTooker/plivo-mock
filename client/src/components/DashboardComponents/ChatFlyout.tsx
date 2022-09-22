@@ -197,7 +197,7 @@ function ChatFlyout(props: any) {
                 </div>
                 <div className='mr-5 text-xl font-bold text-[#817589] cursor-pointer' onClick={()=> resolveTicket(ticket)}>Resolve?</div>
               </div>
-              
+
 
               {ticket && <div className="dashboardChat">
                 <Chat client={client}>
@@ -210,7 +210,7 @@ function ChatFlyout(props: any) {
                 </Chat>
               </div>}
               
-              </>}
+              </> || <div className='dashEmpty'><img src='/dashboard/logo-full.svg' alt='map-pin'/>Select a ticket from the left.</div>}
             </div> {/*End Border Box*/}
           </div> {/*End dashRight*/}
         </div>

@@ -602,6 +602,18 @@
 
 
 
+
+
+
+.dashEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #6D7280;
+}
+
 .dashRight {
   position: absolute;
   display: flex; /* allow the dashPanelBox to fill the remaining space */
