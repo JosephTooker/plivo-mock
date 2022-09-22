@@ -19,6 +19,8 @@ function SMSFlyout(props: any) {
     const [message, setMessage] = useState("")
     const [body, setBody] = useState("")
     const [location, setLocation] = useState("")
+    const [unassignedTickets, setUnassignedTickets] = useState([]);
+
 
     const assign = () => setAssigned(true);
     const unassign = () => setAssigned(false);
@@ -74,6 +76,7 @@ function SMSFlyout(props: any) {
               <>
                 <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you ◂</p></button>
                 <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button>
+                <span className="dashFeatureLine2" />
                 <span className="dashFeatureLine" />
                 <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>
@@ -87,6 +90,7 @@ function SMSFlyout(props: any) {
               <>
                 <button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button>
                 <button className="dashFeatureSub2 _h2" onClick={unassign}><p>▸ Unassigned</p></button>
+                <span className="dashFeatureLine3" />
                 <span className="dashFeatureLine" />
                 <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>

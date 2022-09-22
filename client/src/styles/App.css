@@ -418,7 +418,6 @@
   top: 5%;
   left: 15%;
   white-space: nowrap;
-  color: #6E727F;
 }
 
 .dashFeatureSub1 {
@@ -453,6 +452,24 @@
   left: 4%;
   width: 92%;
   border-top: solid 0.25vmin #6E727F;
+}
+
+.dashFeatureLine2 {
+  position: absolute;
+  z-index: 1;
+  top: 14.8%;
+  left: 4%;
+  width: 46%;
+  border-top: solid .35vmin black;
+}
+
+.dashFeatureLine3 {
+  position: absolute;
+  z-index: 1;
+  top: 14.8%;
+  right: 4%;
+  width: 46%;
+  border-top: solid .35vmin black;
 }
 
 .dashFeatureBody {
