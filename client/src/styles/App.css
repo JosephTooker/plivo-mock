@@ -481,7 +481,7 @@
 
 .dashFeatureButton1:active, .dashFeatureButton2:active {
   transition: 50ms;
-  background-color: #F0C7C5;
+  background-color: #E6CEC6;
 }
 
 .dashUnfocused {
@@ -708,7 +708,7 @@
   top: -0.2vmin;
   left: -0.2vmin;
   width: calc(100% + 0.4vmin);
-  height: 80%;
+  height: calc(80% + 0.4vmin);
 
   padding: 2.5%;
 
