@@ -25,6 +25,7 @@ function SMSFlyout(props: any) {
     const [body, setBody] = useState("")
     const [location, setLocation] = useState("")
     const [sid, setSid] = useState("")
+    const [time, setTime] = useState("")
 
     const assign = () => setAssigned(true);
     const unassign = () => setAssigned(false);
@@ -170,7 +171,7 @@ function SMSFlyout(props: any) {
                   <body className='_body'>Conversation with - {name || number}</body>
                   <span>
                     <p className='_body'>Ticket #{sid}</p>
-                    <p className='_body'>Today 9:00am</p>
+                    <p className='_body'>Today 9:00am {time}</p>
                   </span>
                 </div>
 

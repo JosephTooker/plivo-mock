@@ -42,7 +42,8 @@ const receiveText = async (req, res) => {
         location: FromState,
         message: Body,
         phone_number: From,
-        sid: MessageSid
+        sid: MessageSid,
+        time: admin.firestore.FieldValue.serverTimestamp(),
     });
 
     res.send('done');
