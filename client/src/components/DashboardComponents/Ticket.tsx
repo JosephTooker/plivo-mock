@@ -5,9 +5,9 @@ function Ticket(props : any) {
         resolve,
         email,
         active,
-        current, /* the id of the current ticket */
-        onClick, /* sets the new current*/
-        name,
+        current,   /* the id of the current ticket */
+        onClick,   /* sets the new current*/
+        name,      /* the name of the ticket in bold*/
         message,
         id,
         createdAt,
@@ -15,7 +15,7 @@ function Ticket(props : any) {
   
     return (
         <button className={current || "dashTicketsSelected"} onClick={onClick}>
-            <div className={"ticketName _h2 " + (current /*hacky*/ || "selected")}>{name}</div>
+            <div className={"ticketName _h2 " + (current /*hacky*/ || "selected")}>{name || "(Unknown Sender)"}</div>
             <div className="ticketMessage _body">{message}</div>
             <div className="ticketId _body">{createdAt ? "Created On:" : null}</div>
             <div className="ticketDate _body">{createdAt}</div>

@@ -12,11 +12,19 @@ function ChatFlyout(props: any) {
     } = props;
 
     const [assigned, setAssigned] = useState(true);
+
     const [ticket, setTicket]:any = useState(null);
-    const [channel, setChannel]:any = useState();
     const [tickets, setTickets] = useState([])
     const [unassignedTickets, setUnassignedTickets] = useState([]);
 
+    const [channel, setChannel]:any = useState();
+
+
+
+
+
+
+    
     const assign = () => setAssigned(true);
     const unassign = () => setAssigned(false);
     const handleTicket = (ticket: any) => setTicket(ticket);
@@ -116,7 +124,7 @@ function ChatFlyout(props: any) {
 
                 <span className="dashFeatureLine2" />
                 <span className="dashFeatureLine" />
-                <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
+                <div className="dashFeatureBody _body">{tickets.length + unassignedTickets.length === 1 ? "1 conversation" : tickets.length + unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>
                 <div className="dashTickets">
                   {tickets.map((t : any) => (
@@ -146,7 +154,7 @@ function ChatFlyout(props: any) {
                 <span className="dashFeatureLine3" />
 
 
-                <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
+                <div className="dashFeatureBody _body">{tickets.length + unassignedTickets.length === 1 ? "1 conversation" : tickets.length + unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Incoming Chat Requests...</div>
                 <div className="dashTickets">
                   {unassignedTickets.map((t : any) => (

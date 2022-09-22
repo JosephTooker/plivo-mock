@@ -7,19 +7,22 @@ import axios from 'axios';
 
 function SMSFlyout(props: any) {
     const {
+
+
     } = props;
 
     const [assigned, setAssigned] = useState(true);
 
-    const [tickets, setTickets] = useState([])
     const [ticket, setTicket] = useState(null)
+    const [tickets, setTickets] = useState<any[]>([])
+    const [unassignedTickets, setUnassignedTickets] = useState([]);
+
     const [activeTicket, setActiveTicket] = useState(tickets[0]) 
     const [name, setName] = useState("")
     const [number, setNumber] = useState("")
     const [message, setMessage] = useState("")
     const [body, setBody] = useState("")
     const [location, setLocation] = useState("")
-    const [unassignedTickets, setUnassignedTickets] = useState([]);
 
 
     const assign = () => setAssigned(true);
@@ -87,11 +90,17 @@ function SMSFlyout(props: any) {
 
                 <span className="dashFeatureLine2" />
                 <span className="dashFeatureLine" />
-                <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
+                <div className="dashFeatureBody _body">{tickets.length + unassignedTickets.length === 1 ? "1 conversation" : tickets.length + unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>
                 <div className="dashTickets">
                 {tickets.map((t:any) => (
-                  <Ticket current={t !== ticket} active={t.resolved} name={t.full_name} message={t.message} onClick={() => { handleTicket(t); } } />
+                  <Ticket
+                    current={t !== ticket} 
+                    active={t.resolved} 
+                    name={t.full_name} 
+                    message={t.message} 
+                    onClick={() => handleTicket(t)} 
+                  />
                 ))}
                 </div>
               </>
@@ -109,11 +118,12 @@ function SMSFlyout(props: any) {
 
                 <span className="dashFeatureLine3" />
                 <span className="dashFeatureLine" />
-                <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
+                <div className="dashFeatureBody _body">{tickets.length + unassignedTickets.length === 1 ? "1 conversation" : tickets.length + unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>
                 <div className="dashTickets">
                   {unassignedTickets.map((t : any) => (
                     <Ticket 
+                      current={t !== ticket} 
                       name={t.name}
                       message={t.userID} 
                       createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
@@ -126,12 +136,14 @@ function SMSFlyout(props: any) {
           </div>
     
           <div className="dashRight">
+
+            {/*Border Box*/}
             <div className="dashRightBox">
 
-              {/* Border Box + Info Card Header + Profile Image */}
-              {ticket !== null ? <>
-              <div className="dashRightHeader">
+              {/*Info Card Header + Profile Image */}
+              {ticket && <>
 
+              <div className="dashRightHeader">
                 <div className="dashRightImage">
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
                 </div>
@@ -147,25 +159,25 @@ function SMSFlyout(props: any) {
                 <div className="dashContentHeader"></div>
                 <div className="dashContentFlow _body">{message}</div>
                 <textarea
-                  id="message" 
-                  rows="auto"
+                  id="message"
                   class="dashContentTextArea _body"
                   placeholder="Your message..."
                   ref={bodyRef}
                 />
                 <div className="dashContentFooter">
                   <button className='dashContentSendButton' onClick={handleSubmit}>
-                  <svg width="18" height="16" viewBox="0 0 32 27"  xmlns="http://www.w3.org/2000/svg" stroke="#817589" strokeWidth={3} stroke-linecap="round" stroke-linejoin="round" fill="white">
-                    <path d="M30.75 4.875C30.75 3.29375 29.4562 2 27.875 2H4.875C3.29375 2 2 3.29375 2 4.875M30.75 4.875V22.125C30.75 23.7062 29.4562 25 27.875 25H4.875C3.29375 25 2 23.7062 2 22.125V4.875M30.75 4.875L16.375 14.9375L2 4.875" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M30.75 4.875L16.375 14.9375L2 4.875" />
-                  </svg>
-                     Send</button>
+                    <svg width="18" height="16" viewBox="0 0 32 27"  xmlns="http://www.w3.org/2000/svg" stroke="#817589" strokeWidth={3} stroke-linecap="round" stroke-linejoin="round" fill="white">
+                      <path d="M30.75 4.875C30.75 3.29375 29.4562 2 27.875 2H4.875C3.29375 2 2 3.29375 2 4.875M30.75 4.875V22.125C30.75 23.7062 29.4562 25 27.875 25H4.875C3.29375 25 2 23.7062 2 22.125V4.875M30.75 4.875L16.375 14.9375L2 4.875" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M30.75 4.875L16.375 14.9375L2 4.875" />
+                    </svg>
+                    Send
+                  </button>
                 </div>
-
               </div>
-              </> : null}
-            </div>
-          </div>
+
+              </>}
+            </div> {/*End Border Box*/}
+          </div> {/*End dashRight*/}
         </div>
       );  
 }
