@@ -118,7 +118,6 @@ function EmailFlyout(props: any) {
                 <button className="dashFeatureSub2 _h2" onClick={unassign}><p>▸ Unassigned</p></button>
                 <span className="dashFeatureLine" />
                 <span className="dashFeatureLine3" />
-                <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Emails</div>
                 <div className="dashTickets">
                   {unassignedTickets.map((t : any) => (
@@ -143,18 +142,20 @@ function EmailFlyout(props: any) {
                 </div>
                 <div className="dashInfo">
                   {/* <div className="dashInfoName _h2">{clickedEmail}</div> */}
-                  <div className="dashInfoName _h2">{`Email: ${clickedEmail}`}</div>
+                  <div className="dashInfoName _h2">{clickedEmail}</div>
                 </div>
               </div>
 
               <div className="dashFlow">
               { emailss.map((emails) => (<>
           {console.log(emails)}
-          <div className='container p-5 mb-4'><hr></hr>
-          <b>{emails.data["Subject"]}</b>
-          <hr></hr>
-         {emails.data["text"]}
-         <hr></hr></div>
+          <div className='container p-5'>
+            <b>{emails.data["Subject"]}</b>
+            <p className=' text-sm text-gray-500'> {emails.data["Email Address"]}</p>
+            
+            <p className='mt-5 mb-5'>{emails.data["text"]}</p>
+            <hr></hr>
+          </div>
               </>                       
               ))}
 
