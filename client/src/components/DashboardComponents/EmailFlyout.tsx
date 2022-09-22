@@ -164,7 +164,7 @@ function EmailFlyout(props: any) {
               <div className="dashFlow">
               { emailss.map((emails) => (<>
           {console.log(emails)}
-          <div className='container p-5 bg-slate-600 mb-4'><hr></hr>
+          <div className='container p-5 mb-4'><hr></hr>
           <b>{emails.data["Subject"]}</b>
           <hr></hr>
          {emails.data["text"]}
