@@ -840,6 +840,15 @@
   transform: translate(0%, -50%);
 }
 
+.dashContentSendButton:hover {
+  background: #005fff;
+  transition: 100ms;
+}
+
+.dashContentSendButton:active {
+  background: black;
+}
+
 
 .dashContentTextArea::-webkit-scrollbar, .dashContentEmail::-webkit-scrollbar {
   margin-right: 15px;
