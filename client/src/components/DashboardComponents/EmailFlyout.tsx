@@ -51,19 +51,14 @@ function EmailFlyout(props: any) {
         {emails}
         </>
           
-
-          
         ))}
   }, [clickedEmail])
 
 
 
   function displayEmails(email) {
-  
     setClikedEmail(email)
-
-
-
+    console.log(clickedEmail);
   }
 
 
@@ -101,7 +96,7 @@ function EmailFlyout(props: any) {
                 <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button>
                 <span className="dashFeatureLine" />
                 <span className="dashFeatureLine2" />
-                <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
+                <div className="dashFeatureBody _body">{emails.length === 1 ? "1 conversation" : emails.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Emails</div>
                 <div className="dashTickets">
 
@@ -150,21 +145,18 @@ function EmailFlyout(props: any) {
 
               <div className="dashRightHeader">
                 <div className="dashRightImage">
-                  <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
+                  <img src={clickedEmail !== "test" ? "https://picsum.photos/seed/" + clickedEmail + "/300" : ""}/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo">
-                  <div className="dashInfoName _h2">{ticket?.name}</div>
-                  <div className="dashInfoActive _h2">{ticket?.active == true ? "Ticket Active" : "Ticket Inactive"}</div>
-                  <div className="dashInfoAddress _h2">2972 Westheimer Rd. Santa Ana, Illinois 85486</div>
-                  <div className="dashInfoEmail _h2">Email: {clickedEmail}</div>
-                  <span className={"dashInfoDot " + (ticket?.active && "active")} />
+                  {/* <div className="dashInfoName _h2">{clickedEmail}</div> */}
+                  <div className="dashInfoName _h2">{clickedEmail !== "test" ?  `Email: ${clickedEmail}` : null}</div>
                 </div>
               </div>
 
               <div className="dashFlow">
               { emailss.map((emails) => (<>
           {console.log(emails)}
-          <div className='container p-5 bg-slate-600 mb-4'><hr></hr>
+          <div className='container p-5 mb-4'><hr></hr>
           <b>{emails.data["Subject"]}</b>
           <hr></hr>
          {emails.data["text"]}
@@ -185,7 +177,7 @@ function EmailFlyout(props: any) {
                   onChange={e => setCommentText(e.target.value)}
                 />
                 <div className="dashContentFooter">
-                  <button onClick={sendEmail} className='dashContentSendButton' >Send Text<AiOutlineSend/></button>
+                  <button onClick={sendEmail} className='dashContentSendButton' >Send Email<AiOutlineSend/></button>
                 </div>
               </div>
             </div>

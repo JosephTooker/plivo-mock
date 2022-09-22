@@ -44,6 +44,7 @@ function SMSFlyout(props: any) {
     }, []);
 
     function handleTicket(ticket){
+      setTicket(ticket);
       setName(ticket.full_name)
       setNumber(ticket.phone_number)
       setMessage(ticket.message)
@@ -81,8 +82,8 @@ function SMSFlyout(props: any) {
                 <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Chat</div>
                 <div className="dashTickets">
-                {tickets.map((ticket:any) => (
-                  <Ticket active={ticket.resolved} name={ticket.full_name} message={ticket.message} createdAt={new Timestamp(ticket.createdAt?.seconds, ticket.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} onClick={() => { handleTicket(ticket); } } />
+                {tickets.map((t:any) => (
+                  <Ticket current={t !== ticket} active={t.resolved} name={t.full_name} message={t.message} onClick={() => { handleTicket(t); } } />
                 ))}
                 </div>
               </>
@@ -118,10 +119,8 @@ function SMSFlyout(props: any) {
                 </div>
                 <div className="dashInfo">
                   <div className="dashInfoName _h2">{name}</div>
-                  <div className="dashInfoActive _h2">{ticket?.active == true ? "Ticket Active" : "Ticket Inactive"}</div>
                   <div className="dashInfoAddress _h2">{location}</div>
                   <div className="dashInfoEmail _h2">Number: {number}</div>
-                  <span className={"dashInfoDot " + (ticket?.active && "active")} />
                 </div>
               </div>
 

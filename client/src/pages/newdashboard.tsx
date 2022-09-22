@@ -40,7 +40,7 @@ const Sidebar = (props: any) => {
         <img src='/dashboard/logo.svg' alt='logo' onClick={() => router.push('/')}/>
       </div>
 
-      <div className="dashSidebarNavContainer">
+      <div className="dashSidebarNavContainer"  >
         <nav onClick={() => setPanel("chat")}>
           <svg className="dashSidebarCardIcon" width="27" height="30" viewBox="0 0 27 30"  xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M2 2V22.2222H7.94444C8.49673 22.2222 8.94444 22.6699 8.94444 23.2222V26.3636L12.7929 22.5151C12.9804 22.3276 13.2348 22.2222 13.5 22.2222H20.0302L25 17.2525V2H2ZM13.1111 7.94445C13.1111 7.39216 12.6634 6.94445 12.1111 6.94445C11.5588 6.94445 11.1111 7.39216 11.1111 7.94445V13.5C11.1111 14.0523 11.5588 14.5 12.1111 14.5C12.6634 14.5 13.1111 14.0523 13.1111 13.5V7.94445ZM20.0556 7.94445C20.0556 7.39216 19.6078 6.94445 19.0556 6.94445C18.5033 6.94445 18.0556 7.39216 18.0556 7.94445V13.5C18.0556 14.0523 18.5033 14.5 19.0556 14.5C19.6078 14.5 20.0556 14.0523 20.0556 13.5V7.94445Z" stroke-width="0"/>
