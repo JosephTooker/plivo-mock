@@ -28,7 +28,7 @@ const sendText = (req, res) => {
 }
 
 const receiveText = async (req, res) => {
-    const { Body, From, FromCity, FromState } = req.body
+    const { Body, From, FromCity, FromState, MessageSid } = req.body
     const twiml = new MessagingResponse();
 
     twiml.message(Body);
@@ -41,7 +41,8 @@ const receiveText = async (req, res) => {
     await docRef.set({
         location: FromState,
         message: Body,
-        phone_number: From
+        phone_number: From,
+        sid: MessageSid
     });
 
     res.send('done');

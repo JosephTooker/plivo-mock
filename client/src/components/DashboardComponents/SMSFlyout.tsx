@@ -24,7 +24,7 @@ function SMSFlyout(props: any) {
     const [message, setMessage] = useState("")
     const [body, setBody] = useState("")
     const [location, setLocation] = useState("")
-
+    const [sid, setSid] = useState("")
 
     const assign = () => setAssigned(true);
     const unassign = () => setAssigned(false);
@@ -42,7 +42,7 @@ function SMSFlyout(props: any) {
             data.push(doc.data());
           }
         });
-        setTickets(data);  
+        setTickets(data);
       });
       return () => unsubscribe()
     }, []);
@@ -53,6 +53,7 @@ function SMSFlyout(props: any) {
       setNumber(ticket.phone_number)
       setMessage(ticket.message)
       setLocation(ticket.location)
+      setSid(ticket.sid)
     }
 
     const handleSubmit = async (e) => {
@@ -98,7 +99,7 @@ function SMSFlyout(props: any) {
                   <Ticket
                     current={t !== ticket} 
                     active={t.resolved} 
-                    name={t.full_name || "(Unknown Sender)"} 
+                    name={t.full_name || number} 
                     message={t.message} 
                     onClick={() => handleTicket(t)} 
                   />
@@ -125,7 +126,7 @@ function SMSFlyout(props: any) {
                   {unassignedTickets.map((t : any) => (
                     <Ticket 
                       current={t !== ticket} 
-                      name={t.full_name || "(Unknown Sender)"}
+                      name={t.full_name || number}
                       message={t.userID} 
                       createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
                       onClick={ () => alert("assignTicket(t)") }
@@ -149,7 +150,7 @@ function SMSFlyout(props: any) {
                   <img src={"https://picsum.photos/seed/" + name + "/300" }/> {/* Generates a new image using the name as a seed */}
                 </div>
                 <div className="dashInfo">
-                  <div className="dashInfoName _h2">{name || "(Unknown Sender)"}</div>
+                  <div className="dashInfoName _h2">{name || number}</div>
                   <div className="dashInfo1 _h2">
                     <img className="dashInfoIcon" src='/dashboard/map-pin.svg' alt='map-pin'/>
                     {location || "(Unknown location)"}
@@ -166,9 +167,9 @@ function SMSFlyout(props: any) {
 
                 {/* Header Area */}
                 <div className="dashContentHeader">
-                  <body className='_body'>Conversation with - {name || "(Unknown Sender)"}</body>
+                  <body className='_body'>Conversation with - {name || number}</body>
                   <span>
-                    <p className='_body'>Ticket #1621</p>
+                    <p className='_body'>Ticket #{sid}</p>
                     <p className='_body'>Today 9:00am</p>
                   </span>
                 </div>
@@ -181,7 +182,7 @@ function SMSFlyout(props: any) {
                         <img src={"https://picsum.photos/seed/" + name + "/300" }/> {/* Generates a new image using the name as a seed */}
                       </div>
                       <span>
-                        <div className='smsName _h2'>{name || "(Unknown Sender)"}</div>
+                        <div className='smsName _h2'>{name || number}</div>
                         <div className='smsText _body'>{message}</div>
                       </span>
                       <div className='smsTime _body'>Less than a minute ago</div>
