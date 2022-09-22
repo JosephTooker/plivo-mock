@@ -16,7 +16,6 @@ import LoadingSpinner from "../components/LoadingSpinner";
 const Sidebar = (props: any) => {
   const {logOut} = UserAuth()
   
-
   const {
     setPanel,
   } = props;
@@ -103,7 +102,7 @@ const NewDash: NextPage = () => {
         const data: any = result.data;
         authToken = data
         if (user.uid !== undefined){
-          const apiKey = "nypvarqgsd9a";
+          const apiKey = "b3zj3pbbztmg";
           const client = StreamChat.getInstance(apiKey, {
             timeout: 6000,
           });    

@@ -75,10 +75,13 @@ function EmailFlyout(props: any) {
       method: "POST",
     });
     let x = Math.random() * 10;
+
     await setDoc(doc(db, "emailQueue", clickedEmail, "emails", "support" + x), {
       text: commentText,
-      from: "support",
+      "Email Address": "Customer Support Center",
+      Subject: "Link Support Team"
     });
+
   }
 
     return (
@@ -134,6 +137,7 @@ function EmailFlyout(props: any) {
 
                 <span className="dashFeatureLine" />
                 <span className="dashFeatureLine3" />
+                <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Emails</div>
                 <div className="dashTickets">
                   {unassignedTickets.map((t : any) => (

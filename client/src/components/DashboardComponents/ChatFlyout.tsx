@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Ticket from './Ticket';
 import { Chat, Window, Channel, MessageList, MessageInput} from "stream-chat-react";
 import { WindowsFilled } from '@ant-design/icons';
-import { collection, query, where, onSnapshot, Timestamp, runTransaction, doc } from "firebase/firestore";
+import { collection, query, where, onSnapshot, Timestamp, runTransaction, doc, deleteDoc } from "firebase/firestore";
 import {db} from '../../firebase-config'
 
 function ChatFlyout(props: any) {
@@ -85,6 +85,15 @@ function ChatFlyout(props: any) {
       }
     }
 
+    async function resolveTicket(t){
+      if(window.confirm("Would you like to resolve this conversation?")){
+        await deleteDoc(doc(db, "chatQueue", t.userID));
+        setTicket(null);
+        const destroy = await channel.delete();
+        location.reload(); 
+      }
+    }
+
     return (
         <div className="dashFlyout">
           <div className="dashFeature">
@@ -114,7 +123,7 @@ function ChatFlyout(props: any) {
                     <Ticket 
                       current={t !== ticket} 
                       name={t.name}
-                      message={t.userID} 
+                      message={" ID: " + t.userID} 
                       createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
                       onClick={ () => handleTicket(t) } 
                     />
@@ -138,15 +147,17 @@ function ChatFlyout(props: any) {
 
 
                 <div className="dashFeatureBody _body">{unassignedTickets.length === 1 ? "1 conversation" : unassignedTickets.length + " conversations"} </div>
-                <div className="dashFeatureType _h2">Chat</div>
+                <div className="dashFeatureType _h2">Incoming Chat Requests...</div>
                 <div className="dashTickets">
                   {unassignedTickets.map((t : any) => (
+                    <div className='flex flex-row'>
                     <Ticket 
                       name={t.name}
                       message={t.userID} 
                       createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
                       onClick={ () => assignTicket(t) }
                     />
+                      </div>
                   ))}
                 </div>
               </>
@@ -160,11 +171,13 @@ function ChatFlyout(props: any) {
                 <div className="dashRightImage">
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300"}/> {/* Generates a new image using the userID as a seed */}
                 </div>
-                <div className="dashInfo">
+                <div className="dashInfo ml-5">
                   <div className="dashInfoName _h2">{ticket?.name}</div>
-                  <div className="dashInfoAddress _h2">{"2972 Westheimer Rd. Santa Ana, Illinois 85486"}</div>
-                  <div className="dashInfoEmail _h2">{"Email: dianne.russell@mail.com"} </div>
+                  <div className="dashInfoAddress _h2">{"Ticket ID: " + ticket?.userID}</div>
+                  <div className="dashInfoEmail _h2">{"Email: " + ticket?.email} </div>
                 </div>
+                <div className='mr-5 text-xl font-bold text-[#817589] cursor-pointer' onClick={()=> resolveTicket(ticket)}>Resolve?</div>
+
               </div>
 
               {ticket === null ? null:

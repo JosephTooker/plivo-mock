@@ -35,6 +35,7 @@ function ChatView() {
       try {
        const docRef : any = await setDoc(doc(db, 'chatQueue', user?.uid),{
           name: user?.displayName,
+          email: user?.email,
           userID: user?.uid,
           createdAt: serverTimestamp() ,
           resolved: false,
@@ -53,6 +54,11 @@ function ChatView() {
     if(user !== null){
     const unsub = onSnapshot(doc(db, "chatQueue", user?.uid), (doc) => {
       console.log("Current data: ", doc.data());
+      if(doc.data() === undefined){
+        setLoading(false)
+        setConnected(false)
+        setClient(undefined)
+      }
       if(doc.data()?.isAssigned === true && doc.data()?.adminID !== ""){
         console.log(true);
         console.log(doc.data()?.adminID);
@@ -67,7 +73,7 @@ function ChatView() {
             const data: any = result.data;
             authToken = data
             if (user.uid !== undefined){
-              const apiKey = "nypvarqgsd9a";
+              const apiKey = "b3zj3pbbztmg";
               const client = StreamChat.getInstance(apiKey, {
                 timeout: 6000,
               });    
