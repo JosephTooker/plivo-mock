@@ -113,7 +113,8 @@ function EmailFlyout(props: any) {
                 { emails.map(({email}) => (<>
                   <Ticket 
                       current={email !== clickedEmail} 
-                      email={email}
+                      name={email.replace(/^(.*?)<.*$/, "$1")}
+                      message={email.replace(/(^.*<)/, "").replace('>','')}
                       onClick={ () => displayEmails(email) } 
                     />
                   </>

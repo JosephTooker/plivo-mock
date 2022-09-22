@@ -104,7 +104,7 @@ function SMSFlyout(props: any) {
                     name={t.full_name || number} 
                     message={t.message} 
                     id={"Ticket #" + (t.sid?.slice(2, 8) || "unknown")}
-                    createdAt={t.time?.toDate().toLocaleDateString('en-US')}
+                    createdAt={t.time?.toDate().toLocaleDateString('en-US') || "(no date)"}
                     onClick={() => handleTicket(t)} 
                   />
                 ))}
@@ -173,8 +173,8 @@ function SMSFlyout(props: any) {
                 <div className="dashContentHeader">
                   <body className='_body'>Conversation with - {name || number}</body>
                   <span>
-                    <p className='_body'>Ticket #{sid?.slice(2, 8)}</p>
-                    <p className='_body'>{time}</p>
+                    <p className='_body'>Ticket #{(sid?.slice(2, 8) || "unknown")}</p>
+                    <p className='_body'>{time ?? "(no date)"}</p>
                   </span>
                 </div>
 
