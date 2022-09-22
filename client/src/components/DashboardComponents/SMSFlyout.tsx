@@ -163,7 +163,20 @@ function SMSFlyout(props: any) {
               {/* Content Area */}
               <div className="dashContent">
                 <div className="dashContentHeader"></div>
-                <div className="dashContentFlow _body">{message}</div>
+                <div className="dashContentMain">
+                  <div className="dashContentFlow">
+                    <nav>
+                      <div className="smsIcon">
+                        <img src={"https://picsum.photos/seed/" + name + "/300" }/> {/* Generates a new image using the name as a seed */}
+                      </div>
+                      <span>
+                        <div className='smsName _h2'>{name}</div>
+                        <div className='smsText _body'>{message}</div>
+                      </span>
+                      <div className='smsTime _body'>Less than a minute ago</div>
+                    </nav>
+                  </div>
+                </div>
                 <textarea
                   id="message"
                   class="dashContentTextArea _body"
