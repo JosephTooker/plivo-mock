@@ -776,7 +776,7 @@
 
 .dashInfoName {
   position: absolute;
-  top: 66%;
+  top: 50%;
   transform: translate(0%, -50%);
   color: #111827;
   white-space: nowrap;

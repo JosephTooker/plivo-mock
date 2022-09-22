@@ -58,7 +58,6 @@ function EmailFlyout(props: any) {
 
   function displayEmails(email) {
     setClikedEmail(email)
-    console.log(clickedEmail);
   }
 
 
@@ -100,22 +99,17 @@ function EmailFlyout(props: any) {
                 <div className="dashFeatureType _h2">Emails</div>
                 <div className="dashTickets">
 
-
                 { emails.map(({email}) => (<>
-                
-                  <button className={"dashTicketsSelected"} onClick={() => displayEmails(email)}>
-                  {email}
-                  </button></>
-
-
-
+                  <Ticket 
+                      current={email !== clickedEmail} 
+                      email={email}
+                      onClick={ () => displayEmails(email) } 
+                    />
+                  </>
                   // <Ticket active="1" name={email} message="Message..." id="1323" date="Today 9:12am" />
- 
 
-                  
                 ))}
 
-                
                 </div>
               </>
             : 
