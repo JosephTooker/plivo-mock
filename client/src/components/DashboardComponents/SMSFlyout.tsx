@@ -55,6 +55,7 @@ function SMSFlyout(props: any) {
       setMessage(ticket.message)
       setLocation(ticket.location)
       setSid(ticket.sid)
+      setTime(ticket.time?.toDate().toLocaleDateString('en-US'))
     }
 
     const handleSubmit = async (e) => {
@@ -102,6 +103,8 @@ function SMSFlyout(props: any) {
                     active={t.resolved} 
                     name={t.full_name || number} 
                     message={t.message} 
+                    id={"Ticket #" + (t.sid?.slice(2, 8) || "unknown")}
+                    createdAt={t.time?.toDate().toLocaleDateString('en-US')}
                     onClick={() => handleTicket(t)} 
                   />
                 ))}
@@ -170,8 +173,8 @@ function SMSFlyout(props: any) {
                 <div className="dashContentHeader">
                   <body className='_body'>Conversation with - {name || number}</body>
                   <span>
-                    <p className='_body'>Ticket #{sid}</p>
-                    <p className='_body'>Today 9:00am {time}</p>
+                    <p className='_body'>Ticket #{sid?.slice(2, 8)}</p>
+                    <p className='_body'>{time}</p>
                   </span>
                 </div>
 
