@@ -65,7 +65,6 @@
   font-style: normal;
   font-weight: 400;
   font-size: max(10px, 2vmin);
-  align-items: center;
 }
 
 .adminLogin_background{
@@ -945,6 +944,7 @@
   color: #6E727F;
   white-space: nowrap;
   overflow: hidden;
+  text-align: left;
 }
 
 .ticketDate {
