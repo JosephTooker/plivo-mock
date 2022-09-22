@@ -78,7 +78,7 @@ const signup = () => {
             <div className="w-[100%] border-b border-gray-300 mb-2" />
           </div>
 
-          <form action="" className="w-full mt-5" onSubmit={handleSubmit}>
+          <form action="" className="w-full mt-5 text-left" onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
@@ -114,9 +114,9 @@ const signup = () => {
               </div>
             </div>
 
-            <div className="flex flex-col space-y-5 mb-5">
+            <div className="flex flex-col space-y-3 mb-5 text-left">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold"
                   htmlFor="email"
                 >
                   Email
@@ -157,7 +157,7 @@ const signup = () => {
               Already a member?{" "}
               <a
                 href="/adminlogin"
-                className="text-[#817589] font-medium inline-flex space-x-1 items-center"
+                className="font-bold underline inline-flex space-x-1 items-center"
               >
                 <span>Log In </span>
                 <span>
@@ -183,12 +183,12 @@ const signup = () => {
         </div>
 
         <div className="hidden md:w-[50%] flex-col md:flex bg-gradient-to-b from-[#D6B8B6] via-[#817589] to-[#8fa5cd] justify-center text-center">
-            <img className="h-[10%] m-10 fill-white" src='/logoFull.svg' alt='logo'/>
-            <h1 className="font-bold text-3xl">
-                Customer Satisfaction
+            <img className="h-[15%] m-5 fill-white" src='/logoFull.svg' alt='logo'/>
+            <h1 className="font-medium text-3xl text-[#F5F5F5]">
+            customer service
             </h1>
-            <h1 className="font-bold text-7xl text-white">
-                Guaranteed.
+            <h1 className="font-medium text-3xl text-[#F5F5F5]">
+             in sync.
             </h1>
       </div>
 

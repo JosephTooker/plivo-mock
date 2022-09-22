@@ -50,8 +50,8 @@ export default function login() {
 
   return (
     <div className="adminLogin_background">
-      <div className="flex flex-col md:w-[50%] h-[100%] max-h-screen align-middle justify-center text-center md:py-[6%] md:px-[6%] md:scale-[70%] bg-[#E9E7E7] rounded-xl z-10 shadow-2xl self-center">
-        <h1 className="text-5xl font-medium">Welcome Back </h1>
+      <div className="flex flex-col md:w-[50%] h-[100%] max-h-screen align-middle justify-center text-center md:py-[6%] md:px-[10%] md:scale-[70%] bg-[#E9E7E7] rounded-xl z-10 shadow-2xl self-center">
+        <h1 className="text-3xl font-medium">Welcome Back </h1>
         <div className="my-5">
           <button 
           onClick={handleGoogleSignIn}
@@ -66,9 +66,9 @@ export default function login() {
         </div>
 
         <div className="flex flex-row justify-evenly">
-          <div className="w-[100%] border-b border-gray-300 mb-2" />{" "}
+          <div className="w-[100%] border-b border-gray-500 mb-2" />{" "}
           <p className="mx-2"> Or </p>{" "}
-          <div className="w-[100%] border-b border-gray-300 mb-2" />
+          <div className="w-[100%] border-b border-gray-500 mb-2" />
         </div>
 
         <p className="text-[#000000] mt-5">Please enter your details. </p>
@@ -139,7 +139,7 @@ export default function login() {
               Don't have an account?{" "}
               <a
                 href="/adminsignup"
-                className="font-medium inline-flex space-x-1 items-center"
+                className="font-bold underline inline-flex space-x-1 items-center"
               >
                 <span>Create Account </span>
                 <span>
@@ -165,7 +165,7 @@ export default function login() {
       </div>
 
       <div className="">
-        <img className="mr-[50px] mt-[50px]"src='/logoFull.svg' alt='logo'/>
+        <img className="mr-[50px] mt-[50px] scale-75" src='/logoFull.svg' alt='logo'/>
       </div>
 
       </div>
