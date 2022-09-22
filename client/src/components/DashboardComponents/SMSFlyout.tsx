@@ -76,7 +76,7 @@ function SMSFlyout(props: any) {
             { assigned ?
               <>
                 <button className="dashFeatureSub1 _h2" onClick={assign}><p>Assigned to you ◂</p></button>
-                <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p></button>
+                <button className="dashFeatureSub2 _h2 dashUnfocused" onClick={unassign}><p>Unassigned</p> {unassignedTickets.length >= 1 ? <div className="text-xs p-0.5 pl-2 pr-2 ml-2 text-white rounded-full bg-[#757575] flex items-center justify-center font-mono hover:cursor-default">{unassignedTickets.length}</div> : null }  </button>
                 <span className="dashFeatureLine2" />
                 <span className="dashFeatureLine" />
                 <div className="dashFeatureBody _body">{tickets.length === 1 ? "1 conversation" : tickets.length + " conversations"} </div>
@@ -89,7 +89,7 @@ function SMSFlyout(props: any) {
               </>
             : 
               <>
-                <button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p></button>
+                <button className="dashFeatureSub1 _h2 dashUnfocused" onClick={assign}><p>Assigned to you</p> {tickets.length >= 1 ? <div className="text-xs m-1 p-0.5 pl-2 pr-2 text-white rounded-full bg-[#757575] flex items-center justify-center font-mono hover:cursor-default">{tickets.length}</div> : null } </button>
                 <button className="dashFeatureSub2 _h2" onClick={unassign}><p>▸ Unassigned</p></button>
                 <span className="dashFeatureLine3" />
                 <span className="dashFeatureLine" />
