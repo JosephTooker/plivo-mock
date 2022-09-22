@@ -19,6 +19,7 @@ function SMSFlyout(props: any) {
 
     const [activeTicket, setActiveTicket] = useState(tickets[0]) 
     const [name, setName] = useState("")
+    
     const [number, setNumber] = useState("")
     const [message, setMessage] = useState("")
     const [body, setBody] = useState("")
@@ -97,7 +98,7 @@ function SMSFlyout(props: any) {
                   <Ticket
                     current={t !== ticket} 
                     active={t.resolved} 
-                    name={t.full_name} 
+                    name={t.full_name || "(Unknown Sender)"} 
                     message={t.message} 
                     onClick={() => handleTicket(t)} 
                   />
@@ -124,7 +125,7 @@ function SMSFlyout(props: any) {
                   {unassignedTickets.map((t : any) => (
                     <Ticket 
                       current={t !== ticket} 
-                      name={t.name}
+                      name={t.full_name || "(Unknown Sender)"}
                       message={t.userID} 
                       createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
                       onClick={ () => alert("assignTicket(t)") }
@@ -148,7 +149,7 @@ function SMSFlyout(props: any) {
                   <img src={"https://picsum.photos/seed/" + name + "/300" }/> {/* Generates a new image using the name as a seed */}
                 </div>
                 <div className="dashInfo">
-                  <div className="dashInfoName _h2">{name}</div>
+                  <div className="dashInfoName _h2">{name || "(Unknown Sender)"}</div>
                   <div className="dashInfo1 _h2">
                     <img className="dashInfoIcon" src='/dashboard/map-pin.svg' alt='map-pin'/>
                     {location || "(Unknown location)"}
@@ -162,7 +163,17 @@ function SMSFlyout(props: any) {
 
               {/* Content Area */}
               <div className="dashContent">
-                <div className="dashContentHeader"></div>
+
+                {/* Header Area */}
+                <div className="dashContentHeader">
+                  <body className='_body'>Conversation with - {name || "(Unknown Sender)"}</body>
+                  <span>
+                    <p className='_body'>Ticket #1621</p>
+                    <p className='_body'>Today 9:00am</p>
+                  </span>
+                </div>
+
+                {/* Main Area */}
                 <div className="dashContentMain">
                   <div className="dashContentFlow">
                     <nav>
@@ -170,19 +181,23 @@ function SMSFlyout(props: any) {
                         <img src={"https://picsum.photos/seed/" + name + "/300" }/> {/* Generates a new image using the name as a seed */}
                       </div>
                       <span>
-                        <div className='smsName _h2'>{name}</div>
+                        <div className='smsName _h2'>{name || "(Unknown Sender)"}</div>
                         <div className='smsText _body'>{message}</div>
                       </span>
                       <div className='smsTime _body'>Less than a minute ago</div>
                     </nav>
                   </div>
                 </div>
+                  
+                {/* Text Area */}
                 <textarea
                   id="message"
                   class="dashContentTextArea _body"
                   placeholder="Your message..."
                   ref={bodyRef}
                 />
+
+                {/* Footer Area */}
                 <div className="dashContentFooter">
                   <button className='dashContentSendButton _body' onClick={handleSubmit}>
                     <svg width="18" height="16" viewBox="0 0 32 27"  xmlns="http://www.w3.org/2000/svg" stroke="#817589" strokeWidth={3} stroke-linecap="round" stroke-linejoin="round" fill="white">
@@ -192,8 +207,8 @@ function SMSFlyout(props: any) {
                     Send
                   </button>
                 </div>
-              </div>
 
+              </div>
               </> || <div className='dashEmpty'><img src='/dashboard/logo-full.svg' alt='map-pin'/>Select a ticket from the left.</div>}
             </div> {/*End Border Box*/}
           </div> {/*End dashRight*/}
