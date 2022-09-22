@@ -858,6 +858,8 @@
 .dashInfoName {
   position: absolute;
   top: 50%;
+  width: 27%;
+  overflow: hidden;
   transform: translate(0%, -50%);
   color: #111827;
   white-space: nowrap;
@@ -890,10 +892,10 @@
   color: #000000;
 }
 
-.dashInfoAddress {
+.dashInfo1 {
   position: absolute;
   left: 25%;
-  top: 20%;
+  top: 25%;
   transform: translate(0%, -50%);
 
   font-weight: 400;
@@ -902,10 +904,10 @@
   color: #000000;
 }
 
-.dashInfoEmail {
+.dashInfo2 {
   position: absolute;
   left: 25%;
-  top: 66%;
+  top: 75%;
   transform: translate(0%, -50%);
 
   font-weight: 400;

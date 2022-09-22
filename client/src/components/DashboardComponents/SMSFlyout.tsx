@@ -76,7 +76,7 @@ function SMSFlyout(props: any) {
             </svg>
     
             <div className="dashFeatureHeader _h1">SMS: Customer Queue</div>
-            { assigned ?
+            {assigned ?
               <>
                 <div className='dashFeatureButton1' onClick={assign}> 
                   <button className="_h2">Assigned to you</button>
@@ -127,7 +127,7 @@ function SMSFlyout(props: any) {
                       name={t.name}
                       message={t.userID} 
                       createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
-                      onClick={ () => assignTicket(t) }
+                      onClick={ () => alert("assignTicket(t)") }
                     />
                   ))}
                 </div>
@@ -145,12 +145,18 @@ function SMSFlyout(props: any) {
 
               <div className="dashRightHeader">
                 <div className="dashRightImage">
-                  <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300" }/> {/* Generates a new image using the userID as a seed */}
+                  <img src={"https://picsum.photos/seed/" + name + "/300" }/> {/* Generates a new image using the name as a seed */}
                 </div>
                 <div className="dashInfo">
                   <div className="dashInfoName _h2">{name}</div>
-                  <div className="dashInfoAddress _h2"><img className="dashInfoIcon" src='/dashboard/map-pin.svg' alt='map-pin'/>{location}</div>
-                  <div className="dashInfoEmail _h2"><img className="dashInfoIcon" src='/dashboard/phone-call.svg' alt='phone-call'/>Number: {number}</div>
+                  <div className="dashInfo1 _h2">
+                    <img className="dashInfoIcon" src='/dashboard/map-pin.svg' alt='map-pin'/>
+                    {location || "(Unknown location)"}
+                  </div>
+                  <div className="dashInfo2 _h2">
+                    <img className="dashInfoIcon" src='/dashboard/phone-call.svg' alt='phone-call'/>
+                    Phone Number: {number}
+                  </div>
                 </div>
               </div>
 

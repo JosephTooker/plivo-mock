@@ -145,7 +145,7 @@ function EmailFlyout(props: any) {
                       name={t.name}
                       message={t.userID} 
                       createdAt={new Timestamp(t.createdAt?.seconds, t.createdAt?.nanoseconds).toDate().toLocaleDateString('en-US')} 
-                      onClick={ () => assignTicket(t) }
+                      onClick={ () => alert("assignTicket(t)") }
                     />
                   ))}
                 </div>

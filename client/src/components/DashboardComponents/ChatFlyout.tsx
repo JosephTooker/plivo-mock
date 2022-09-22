@@ -24,7 +24,7 @@ function ChatFlyout(props: any) {
 
 
 
-    
+
     const assign = () => setAssigned(true);
     const unassign = () => setAssigned(false);
     const handleTicket = (ticket: any) => setTicket(ticket);
@@ -174,35 +174,40 @@ function ChatFlyout(props: any) {
     
           <div className="dashRight">
             <div className="dashRightBox">
-            {ticket !== null ? <>
+            {ticket && <>
               <div className="dashRightHeader">
                 <div className="dashRightImage">
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300"}/> {/* Generates a new image using the userID as a seed */}
                 </div>
                 <div className="dashInfo ml-5">
                   <div className="dashInfoName _h2">{ticket?.name}</div>
-                  <div className="dashInfoAddress _h2">{"Ticket ID: " + ticket?.userID}</div>
-                  <div className="dashInfoEmail _h2">{"Email: " + ticket?.email} </div>
+                  <div className="dashInfo1 _h2">
+                    <img className="dashInfoIcon" src='/dashboard/map-pin.svg' alt='map-pin'/>
+                    {"Ticket ID: " + ticket?.userID}
+                  </div>
+                  <div className="dashInfo2 _h2">
+                    <img className="dashInfoIcon" src='/dashboard/mail.svg' alt='map-pin'/>
+                    {"Email: " + ticket?.email} 
+                  </div>
                 </div>
                 <div className='mr-5 text-xl font-bold text-[#817589] cursor-pointer' onClick={()=> resolveTicket(ticket)}>Resolve?</div>
 
               </div>
 
-              {ticket === null ? null:
-               <div className="dashboardChat">
+              {ticket && <div className="dashboardChat">
                 <Chat client={client}>
                   <Channel channel={channel}>
                     <Window>
-                    <MessageList />
-                    <MessageInput/>
+                      <MessageList />
+                      <MessageInput/>
                     </Window> 
                   </Channel>
                 </Chat>
-              </div>
-              }
-             </> : null}
-            </div>
-          </div>
+              </div>}
+              
+              </>}
+            </div> {/*End Border Box*/}
+          </div> {/*End dashRight*/}
         </div>
       );
 }
