@@ -17,7 +17,7 @@ export default function TextUs(props: any) {
     const handleSubmit = async (e) => {
       e.preventDefault()
       console.log("Sending data")
-      await setDoc(doc(db, "text-form", nameRef.current.value), {
+      await setDoc(doc(db, "text-form", numberRef.current.value), {
         full_name: nameRef.current.value,
         phone_number: numberRef.current.value,
         message: messageRef.current.value,

@@ -8,6 +8,7 @@
 /server/node_modules
 /node_modules
 .pnp.js
+/server/plivo-mock-firebase-adminsdk-geiew-cb0fbdf553.json
 
 # testing
 /coverage
