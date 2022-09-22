@@ -195,7 +195,7 @@ function ChatFlyout(props: any) {
                     {"Email: " + ticket?.email} 
                   </div>
                 </div>
-                <div className='mr-5 text-xl font-bold text-[#817589] cursor-pointer' onClick={()=> resolveTicket(ticket)}>Resolve?</div>
+                <div className='dashEndChat _body' onClick={()=> resolveTicket(ticket)}>End Chat</div>
               </div>
 
 

@@ -909,6 +909,18 @@
 }
 
 
+.dashEndChat {
+  position: absolute;
+  white-space: nowrap;
+  color: #CF460B;
+  font-weight: 900;
+  right: 3%;
+}
+
+.dashEndChat:hover {
+  cursor: pointer;
+}
+
 
 
 
