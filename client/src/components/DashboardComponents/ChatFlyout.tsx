@@ -173,8 +173,13 @@ function ChatFlyout(props: any) {
           </div>
     
           <div className="dashRight">
+
+            {/*Border Box*/}
             <div className="dashRightBox">
-            {ticket && <>
+
+              {/*Info Card Header + Profile Image */}
+              {ticket && <>
+
               <div className="dashRightHeader">
                 <div className="dashRightImage">
                   <img src={"https://picsum.photos/seed/" + ticket?.userID + "/300"}/> {/* Generates a new image using the userID as a seed */}
@@ -191,8 +196,8 @@ function ChatFlyout(props: any) {
                   </div>
                 </div>
                 <div className='mr-5 text-xl font-bold text-[#817589] cursor-pointer' onClick={()=> resolveTicket(ticket)}>Resolve?</div>
-
               </div>
+              
 
               {ticket && <div className="dashboardChat">
                 <Chat client={client}>
