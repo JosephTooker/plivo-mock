@@ -19,6 +19,7 @@ a solution for businesses to scale and modernize their way of communicating with
 ## Tools and Technologies:
 ### Frontend:
 - Next.js
+- TypeScript
 - Tailwind CSS
 - Stream Chat SDK
 
