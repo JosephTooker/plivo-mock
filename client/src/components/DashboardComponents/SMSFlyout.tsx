@@ -33,7 +33,7 @@ function SMSFlyout(props: any) {
 
     const qActive = query(collection(db, "text-form"))
 
-    const bodyRef = useRef<HTMLInputElement>(null)
+    const bodyRef: any = useRef<HTMLInputElement>(null)
 
     useEffect(()=>{
       const unsubscribe = onSnapshot(qActive, (querySnapshot) => {
@@ -58,17 +58,17 @@ function SMSFlyout(props: any) {
       setTime(ticket.time?.toDate().toLocaleDateString('en-US'))
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: any) => {
       e.preventDefault()
+if (bodyRef.current != null){      setBody(bodyRef.current.value)
 
-      setBody(bodyRef.current.value)
+  const URL = "http://localhost:5000/text"
 
-      const URL = "http://localhost:5000/text"
+  await axios.post(`${URL}/text`, {
+    body: bodyRef?.current?.value,
+    number: number
+  })}
 
-      await axios.post(`${URL}/text`, {
-        body: bodyRef.current.value,
-        number: number
-      })
       
     }
 
@@ -197,7 +197,7 @@ function SMSFlyout(props: any) {
                 {/* Text Area */}
                 <textarea
                   id="message"
-                  class="dashContentTextArea _body"
+                  className="dashContentTextArea _body"
                   placeholder="Your message..."
                   ref={bodyRef}
                 />

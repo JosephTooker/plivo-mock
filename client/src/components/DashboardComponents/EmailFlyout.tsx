@@ -114,12 +114,12 @@ function EmailFlyout(props: any) {
                 <div className="dashTickets">
 
                 { emails.map(({email}) => (<>
-                  <Ticket 
+                  {/* <Ticket 
                       current={email !== clickedEmail} 
                       name={email.replace(/^(.*?)<.*$/, "$1")}
                       message={email.replace(/(^.*<)/, "").replace('>','')}
                       onClick={ () => displayEmails(email) } 
-                    />
+                    /> */}
                   </>
                   // <Ticket active="1" name={email} message="Message..." id="1323" date="Today 9:12am" />
 
