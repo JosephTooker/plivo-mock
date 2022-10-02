@@ -23,6 +23,6 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js"
-, "src/components/CreateChannel.jsx", "src/components/ChatView.jsx", "src/components/ChannelSearch.jsx", "src/components/ChannelListContainer.jsx", "src/components/ChannelInner.jsx", "src/components/ChannelContainer.jsx", "src/components/contact-form.jsx", "src/components/EditChannel.jsx"  ],
+, "src/components/CreateChannel.jsx", "src/components/ChatView.jsx", "src/components/ChannelSearch.jsx", "src/components/ChannelListContainer.jsx", "src/components/ChannelInner.jsx", "src/components/ChannelContainer.jsx", "src/components/contact-form.jsx", "src/components/EditChannel.jsx", "src/components/TeamChannelPreview.jsx", "src/components/TeamChannelList.jsx"  ],
   "exclude": ["node_modules"]
 }
