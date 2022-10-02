@@ -33,7 +33,7 @@ function SMSFlyout(props: any) {
 
     const qActive = query(collection(db, "text-form"))
 
-    const bodyRef: any = useRef<HTMLInputElement>(null)
+    const bodyRef: any = useRef<HTMLInputElement>()
 
     useEffect(()=>{
       const unsubscribe = onSnapshot(qActive, (querySnapshot) => {
