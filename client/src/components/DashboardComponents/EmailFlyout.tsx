@@ -112,9 +112,12 @@ function EmailFlyout(props: any) {
                 <div className="dashFeatureBody _body">{emails.length === 1 ? "1 conversation" : emails.length + " conversations"} </div>
                 <div className="dashFeatureType _h2">Emails</div>
                 <div className="dashTickets">
+                  
 
                 { emails.map(({email}) => (<>
-                  {/* <Ticket 
+                  {/* Add new code
+                  
+                  <Ticket 
                       current={email !== clickedEmail} 
                       name={email.replace(/^(.*?)<.*$/, "$1")}
                       message={email.replace(/(^.*<)/, "").replace('>','')}
